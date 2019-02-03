@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="home.component.css">
+</head>
+<body>
+    <div class="container-fluid">
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/students']">Student List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/pictures']">Upload Picture</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/tuition']">Tuition</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h1>{{class.title}}</h1>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+        DELETE THIS CLASS
+      </button>
+      <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this class?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Deleting this class cannot be undone
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+              <button (click)="deleteClass()" type="button" class="btn btn-danger" data-dismiss="modal">DELETE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div id="applied">
+        <h3>Waitlist</h3>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Student</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of applied">
+              <td>{{student.f_name}} {{student.l_name}}</td>
+              <button (click)="onClick(student)" class="btn btn-success">Accept</button>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="accepted">
+        <h3>Enrolled</h3>
+        <table class="table table-striped table-bordered">
+          <thead>
+            <th scope="scoped">Student</th>
+            <th scope="scoped">Action</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of accepted">
+              <td>{{student.f_name}} {{student.l_name}}</td>
+              <button (click)="onUnenroll(student)" class="btn btn-warning">Unenroll</button>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</body>
+</html>

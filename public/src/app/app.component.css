@@ -1,0 +1,22 @@
+#contact{
+    text-emphasis: bold;
+    color: white;
+    padding-left: 15rem;
+}
+#link{
+    color: white;
+}
+#topjumbo{
+    background-color: rgb(254,191,88)
+}
+.btn-primary-outline{
+    background-color: transparent;
+    outline:none;
+}
+#footer{
+    text-align: center;
+    padding: 10px;
+}
+#footer-text{
+    color: white;
+}

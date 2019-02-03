@@ -1,0 +1,7 @@
+#studcard{
+    display: inline-block
+}
+#showstudent{
+    border: 1px solid black;
+    padding: 5px;
+}

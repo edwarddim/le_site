@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="home.component.css">
+</head>
+<body>
+    <div class="container-fluid">
+      <div id='studentInfo'>
+        <div id="left">
+          <h2 id="title">Student Info</h2>
+          <h4>{{student.f_name}} {{student.l_name}}</h4>
+          <p class="fontUp">School: {{student.school}}</p>
+          <p class="fontUp">Grade: {{student.grade}}</p>
+          
+          <h3>Emergency Contact</h3>
+          <p class="e_contact">{{student.e_contact1_name}}</p>
+          <p class="e_contact">Relation: {{student.e_contact1_relation}}</p>
+          <p class="e_contact">Contact: {{student.e_contact1_phone}}</p>
+          <br>
+          <br>
+          <p class="e_contact" [hidden]="!student.e_contact2_name">{{student.e_contact2_name}}</p>
+          <p class="e_contact" [hidden]="!student.e_contact2_relation">Relation: {{student.e_contact2_relation}}</p>
+          <p class="e_contact" [hidden]="!student.e_contact2_phone">Phone: {{student.e_contact2_phone}}</p>
+        </div>
+        <div id="right">
+          <table class="table table-striped">
+              <thead>
+                <th>Allergy Type</th>
+                <th>Severity</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let allergy of dballergy">
+                  <td>{{allergy.type}}</td>
+                  <td>{{allergy.severity}}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+      <form (submit)="onSubmit()">
+          <div class="form-row">
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="allergy">Allergy</label>
+                <input [(ngModel)]="allergy.type" name="allergy.type" type="text" class="form-control" id="allergy" aria-describedby="allergy" placeholder="Peanut">
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="allergySelect">Severity</label>
+                <select [(ngModel)]="allergy.severity" name="allergy.severity" class="form-control" id="allergySelect">
+                    <option value="Potentially Fatal">Potentially Fatal</option>
+                    <option value="Damaging to Health">Damaging to Health</option>
+                    <option value="Inconvenient">Inconvenient</option>
+                  </select>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                  <label for="allergyBtn">Add Allergy</label>
+                  <button type="submit" class="btn btn-primary form-control" id="allergyBtn">Submit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <hr>
+          <form (submit)="onEdit()">
+            <div class="form-row">
+                <div class='col-md-3 col-sm-12'>
+                  <div class="form-group">
+                    <label for="f_name">First Name</label>
+                    <input [(ngModel)]="student.f_name" name="student.f_name" type="text" class="form-control" id="f_name" aria-describedby="f_name" placeholder="John">
+                    <!-- <small *ngIf="errorMessages['f_name']['message'] == 'error' " id="f_name" class="form-text text-danger">Invalid First Name</small> -->
+                  </div>
+                </div>
+                <div class='col-md-3 col-sm-12'>
+                  <div class="form-group">
+                    <label for="l_name">Last Name</label>
+                    <input [(ngModel)]="student.l_name" name="student.l_name" type="text" class="form-control" id="l_name" aria-describedby="l_name" placeholder="Doe">
+                    <!-- <small *ngIf="errorMessages['l_name']['message'] == 'error' " id="f_name" class="form-text text-danger">Invalid Last Name</small>             -->
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                  <div class="form-group">
+                    <label for="gradeSelect">Grade</label>
+                    <select [(ngModel)]="student.grade" name="student.grade" class="form-control" id="gradeSelect">
+                      <option value="1st">1st</option>
+                      <option value="2nd">2nd</option>
+                      <option value="3rd">3rd</option>
+                      <option value="4th">4th</option>
+                      <option value="5th">5th</option>
+                      <option value="6th">6th</option>
+                      <option value="7th">7th</option>
+                      <option value="8th">8th</option>
+                      <option value="9th">9th</option>
+                      <option value="10th">10th</option>
+                      <option value="11th">11th</option>
+                      <option value="12th">12th</option>              
+                    </select>
+                    <!-- <small *ngIf="errorMessages['grade']['message'] == 'error' " class="form-text text-danger">Invalid Grade</small>             -->
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                  <label for="updateBtn">Edit Information</label>
+                  <button type="submit" class="btn btn-primary form-control" id="updateBtn">Submit</button>
+                </div>
+              </div>
+            </form>
+    </div>    
+
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper.js/popper.min.js"></script>
+</body>
+</html>

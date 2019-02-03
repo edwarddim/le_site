@@ -1,0 +1,12 @@
+#tuition-box{
+    border: 1px black solid;
+    padding: 10px;
+}
+.tuit-box{
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+}
+#tuition-heading{
+    margin: 5px;
+}

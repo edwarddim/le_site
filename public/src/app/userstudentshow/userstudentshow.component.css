@@ -1,0 +1,24 @@
+#studentInfo{
+    border: 1px solid black;
+    padding: 5px;
+}
+.fontUp{
+    font-size: 1.2em;
+    margin-bottom: 3px;
+}
+#title{
+    margin-bottom: 1px;
+}
+.e_contact{
+    margin-bottom: 3px;
+}
+#left{
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+}
+#right{
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+}

@@ -1,0 +1,21 @@
+#contact{
+    text-emphasis: bold;
+    color: white;
+    margin-left: 200rem;
+}
+#navbar{
+    background: rgb(73,144,226);
+}
+#link{
+    color: white;
+}
+.ml-5{
+    margin-left: ($spacer * 24) !important;
+}
+#topjumbo{
+    background-color: rgb(254,191,88)
+}
+
+h6{
+    margin-bottom: 15px;
+}

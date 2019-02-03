@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="container-fluid">
+    <img *ngFor="let pic of gallery" src="{{pic.filePath}}" alt="No Image" id="pic" class="col-md-5">
+  </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="home.component.css">
+</head>
+<body>
+    <div class="container-fluid">
+      <div id='studentInfo'>
+        <div id="left">
+          <h2>{{student.f_name}} {{student.l_name}}</h2>
+          <p class="fontUp"><span>School:</span> {{student.school}}</p>
+          <p class="fontUp"><span>Grade:</span> {{student.grade}}</p>
+          <p class="fontUp"><span>Home Address:</span> {{parent.street_address}} {{parent.city}}, {{parent.zip}}</p>
+          <br>
+          <p class="fontUp"><span>Guardian:</span> {{parent.f_name}} {{parent.l_name}}</p>
+          <p class="fontUp"><span>Contact Info:</span> {{parent.phone}} // {{parent.email}}</p>
+
+          
+          <h3>Emergency Contact</h3>
+          <p class="e_contact"><span>Name:</span> {{student.e_contact1_name}}</p>
+          <p class="e_contact"><span>Relation:</span> {{student.e_contact1_relation}}</p>
+          <p class="e_contact"><span>Contact:</span> {{student.e_contact1_phone}}</p>
+          <br>
+          <br>
+          <p class="e_contact" [hidden]="!student.e_contact2_name">{{student.e_contact2_name}}</p>
+          <p class="e_contact" [hidden]="!student.e_contact2_relation">Relation: {{student.e_contact2_relation}}</p>
+          <p class="e_contact" [hidden]="!student.e_contact2_phone">Phone: {{student.e_contact2_phone}}</p>
+        </div>
+        <div id="right">
+          <table class="table table-striped">
+              <thead>
+                <th>Allergy Type</th>
+                <th>Severity</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let allergy of dballergy">
+                  <td>{{allergy.type}}</td>
+                  <td>{{allergy.severity}}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+      <hr>
+        <form (submit)="onEdit()">
+          <div class="form-row">
+            <div class="col-md-3 col-sm-12">
+              <div class="form-group">
+                <label for="gradeSelect">Grade</label>
+                <select [(ngModel)]="student.grade" name="student.grade" class="form-control" id="gradeSelect">
+                  <option value="1st">1st</option>
+                  <option value="2nd">2nd</option>
+                  <option value="3rd">3rd</option>
+                  <option value="4th">4th</option>
+                  <option value="5th">5th</option>
+                  <option value="6th">6th</option>
+                  <option value="7th">7th</option>
+                  <option value="8th">8th</option>
+                  <option value="9th">9th</option>
+                  <option value="10th">10th</option>
+                  <option value="11th">11th</option>
+                  <option value="12th">12th</option>              
+                </select>
+                <!-- <small *ngIf="errorMessages['grade']['message'] == 'error' " class="form-text text-danger">Invalid Grade</small>             -->
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12">
+              <label for="updateBtn">Edit Information</label>
+              <button type="submit" class="btn btn-primary form-control" id="updateBtn">Submit</button>
+            </div>
+          </div>
+        </form>
+    </div>    
+</body>
+</html>

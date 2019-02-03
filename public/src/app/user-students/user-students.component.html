@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="home.component.css">
+</head>
+<body>
+    <div class="container-fluid">
+      <div id='showstudent'>
+        <h3>Current Students</h3>
+        <h4 [hidden]="students[0]">You currently have no students added</h4>
+        <div *ngFor="let student of students" class="card m-3" id="studcard" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{student.f_name}} {{student.l_name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{student.grade}} Grade</h6>
+            <p class="card-text">{{student.school}}</p>
+            <a class="card-link" [routerLink]="['/students', student._id]">Show</a>
+          </div>
+        </div>
+      </div>
+      <h3>Add a Student</h3>
+      <form (submit)="onSubmit()">
+        <div class="row">
+          <div class='col-md-3 col-sm-12'>
+              <div class="form-group">
+                <label for="student.f_name">First Name</label>
+                <input [(ngModel)]="student.f_name" name="student.f_name" type="text" class="form-control" id="f_name" aria-describedby="f_name">
+                <small *ngIf="errorMessages['f_name']['message'] == 'error' " id="f_name" class="form-text text-danger">Invalid First Name</small>
+              </div>
+            </div>
+            <div class='col-md-3 col-sm-12'>
+              <div class="form-group">
+                <label for="student.l_name">Last Name</label>
+                <input [(ngModel)]="student.l_name" name="student.l_name" type="text" class="form-control" id="l_name" aria-describedby="l_name">
+                <small *ngIf="errorMessages['l_name']['message'] == 'error' " id="f_name" class="form-text text-danger">Invalid Last Name</small>            
+              </div>
+            </div>
+            <div class='col-md-3 col-sm-12'>
+              <div class="form-group">
+                <label for="student.school">School</label>
+                <input [(ngModel)]="student.school" name="student.school" type="text" class="form-control" id="school" aria-describedby="school">
+                <small *ngIf="errorMessages['school']['message'] == 'error' " id="school" class="form-text text-danger">Require School</small>            
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-12">
+              <div class="form-group">
+                <label for="gradeSelect">Grade</label>
+                <select [(ngModel)]="student.grade" name="student.grade" class="form-control" id="gradeSelect">
+                  <option value="1st">1st</option>
+                  <option value="2nd">2nd</option>
+                  <option value="3rd">3rd</option>
+                  <option value="4th">4th</option>
+                  <option value="5th">5th</option>
+                  <option value="6th">6th</option>
+                  <option value="7th">7th</option>
+                  <option value="8th">8th</option>
+                  <option value="9th">9th</option>
+                  <option value="10th">10th</option>
+                  <option value="11th">11th</option>
+                  <option value="12th">12th</option>              
+                </select>
+                <small *ngIf="errorMessages['grade']['message'] == 'error' " class="form-text text-danger">Invalid Grade</small>            
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact1_name">Emergency Contact(Required)</label>
+                <input [(ngModel)]="student.e_contact1_name" name="student.e_contact1_name" type="text" class="form-control" id="e_contact1_name" aria-describedby="e_contact1_name">
+                <small *ngIf="errorMessages['e_contact1_name']['message'] == 'error' " id="e_contact1_name" class="form-text text-danger">Requires Name</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact1_relation">Relation</label>
+                <input [(ngModel)]="student.e_contact1_relation" name="student.e_contact1_relation" type="text" class="form-control" id="e_contact1_relation" aria-describedby="e_contact1_relation">
+                <small *ngIf="errorMessages['e_contact1_relation']['message'] == 'error' " id="e_contact1_relation" class="form-text text-danger">Requires Relation</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact1_phone">Phone</label>
+                <input [(ngModel)]="student.e_contact1_phone" name="student.e_contact1_phone" type="text" class="form-control" id="e_contact1_phone" aria-describedby="e_contact1_phone">
+                <small *ngIf="errorMessages['e_contact1_phone']['message'] == 'error' " id="e_contact1_phone" class="form-text text-danger">Requires Phone</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact2_name">Emergency Contact(Optional)</label>
+                <input [(ngModel)]="student.e_contact2_name" name="student.e_contact2_name" type="text" class="form-control" id="e_contact2_name" aria-describedby="e_contact2_name">
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact2_relation">Relation</label>
+                <input [(ngModel)]="student.e_contact2_relation" name="student.e_contact2_relation" type="text" class="form-control" id="e_contact2_relation" aria-describedby="e_contact2_relation">
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact2_phone">Phone</label>
+                <input [(ngModel)]="student.e_contact2_phone" name="student.e_contact2_phone" type="text" class="form-control" id="e_contact2_phone" aria-describedby="e_contact2_phone">
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Student</button>
+      </form>
+      <br>
+      <br>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="home.component.css">
+</head>
+<body>
+    <div class="container-fluid">
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/students']">Student List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/pictures']">Upload Picture</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/tuition']">Tuition</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h1>Manage pictures for front page</h1>
+      <div>
+        <br>
+        <div class="custom-file">
+          <input (change)="frontPage($event)" type="file" class="custom-file-input" id="upfile" name="upfile">
+          <label class="custom-file-label" for="upfile">Choose file</label>
+        </div>
+        <div>
+          <table>
+            <tbody>
+              <tr *ngFor="let pic of frontPics">
+                <td>
+                  <h6>{{pic.fileName}}</h6>
+                  <img src="{{pic.filePath}}" alt="No Image" class="picbox">
+                  <button (click)="deletePic(pic._id)" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div id="gallery">
+        <h1>Manage pictures for gallery page</h1>
+        <div class="custom-file">
+          <input (change)="galleryPage($event)" type="file" class="custom-file-input" id="upfile" name="upfile">
+          <label class="custom-file-label" for="upfile">Choose file</label>
+        </div>
+        <div>
+          <table>
+            <tbody>
+              <tr *ngFor="let pic of galleryPics">
+                <td>
+                  <h6>{{pic.fileName}}</h6>
+                  <img src="{{pic.filePath}}" alt="No Image" class="picbox">
+                  <button (click)="deletePic(pic._id)" class="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>    
+</body>
+</html>
