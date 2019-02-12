@@ -21,10 +21,12 @@ export class AdminStudentShowComponent implements OnInit {
     zip:""
   };
   student = {
+    _id:"",
     f_name: "",
     l_name: "",
     grade: "",
-    parent_id: ""
+    parent_id: "",
+    notes:""
   };
   allergy = {
     type: "",
@@ -51,4 +53,18 @@ export class AdminStudentShowComponent implements OnInit {
       })
     })
   };
+
+  onEdit(){
+    let observ = this._httpService.updateStudentOnly(this.student._id, this.student);
+    observ.subscribe((data:any)=>{
+
+    })
+  }
+
+  updateNotes(){
+    let observ = this._httpService.updateStudentOnly(this.student._id, this.student);
+    observ.subscribe((data:any)=>{
+
+    })
+  }
 }

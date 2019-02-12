@@ -424,7 +424,7 @@ var AdminPictureComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#studentInfo{\r\n    border: 1px solid black;\r\n    padding: 5px;\r\n}\r\n.fontUp{\r\n    font-size: 1.2em;\r\n    margin-bottom: 3px;\r\n}\r\n#title{\r\n    margin-bottom: 1px;\r\n}\r\n.e_contact{\r\n    font-size: 1.2em;\r\n    margin-bottom: 3px;\r\n}\r\n#left{\r\n    display: inline-block;\r\n    width: 40%;\r\n    vertical-align: top;\r\n}\r\n#right{\r\n    display: inline-block;\r\n    width: 40%;\r\n    vertical-align: top;\r\n}\r\nspan{\r\n    font-weight: bold;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4tc3R1ZGVudC1zaG93L2FkbWluLXN0dWRlbnQtc2hvdy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksd0JBQXdCO0lBQ3hCLGFBQWE7Q0FDaEI7QUFDRDtJQUNJLGlCQUFpQjtJQUNqQixtQkFBbUI7Q0FDdEI7QUFDRDtJQUNJLG1CQUFtQjtDQUN0QjtBQUNEO0lBQ0ksaUJBQWlCO0lBQ2pCLG1CQUFtQjtDQUN0QjtBQUNEO0lBQ0ksc0JBQXNCO0lBQ3RCLFdBQVc7SUFDWCxvQkFBb0I7Q0FDdkI7QUFDRDtJQUNJLHNCQUFzQjtJQUN0QixXQUFXO0lBQ1gsb0JBQW9CO0NBQ3ZCO0FBQ0Q7SUFDSSxrQkFBa0I7Q0FDckIiLCJmaWxlIjoic3JjL2FwcC9hZG1pbi1zdHVkZW50LXNob3cvYWRtaW4tc3R1ZGVudC1zaG93LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjc3R1ZGVudEluZm97XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIHBhZGRpbmc6IDVweDtcclxufVxyXG4uZm9udFVwe1xyXG4gICAgZm9udC1zaXplOiAxLjJlbTtcclxuICAgIG1hcmdpbi1ib3R0b206IDNweDtcclxufVxyXG4jdGl0bGV7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxcHg7XHJcbn1cclxuLmVfY29udGFjdHtcclxuICAgIGZvbnQtc2l6ZTogMS4yZW07XHJcbiAgICBtYXJnaW4tYm90dG9tOiAzcHg7XHJcbn1cclxuI2xlZnR7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogNDAlO1xyXG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxufVxyXG4jcmlnaHR7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogNDAlO1xyXG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxufVxyXG5zcGFue1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn0iXX0= */"
+module.exports = "#studentInfo{\r\n    border: 1px solid black;\r\n    padding: 5px;\r\n}\r\n.fontUp{\r\n    font-size: 1.2em;\r\n    margin-bottom: 3px;\r\n}\r\n#title{\r\n    margin-bottom: 1px;\r\n}\r\n.e_contact{\r\n    font-size: 1.2em;\r\n    margin-bottom: 3px;\r\n}\r\n#left{\r\n    display: inline-block;\r\n    width: 40%;\r\n    vertical-align: top;\r\n}\r\n#right{\r\n    display: inline-block;\r\n    width: 40%;\r\n    vertical-align: top;\r\n}\r\nspan{\r\n    font-weight: bold;\r\n}\r\ntextarea{\r\n    display: block;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRtaW4tc3R1ZGVudC1zaG93L2FkbWluLXN0dWRlbnQtc2hvdy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksd0JBQXdCO0lBQ3hCLGFBQWE7Q0FDaEI7QUFDRDtJQUNJLGlCQUFpQjtJQUNqQixtQkFBbUI7Q0FDdEI7QUFDRDtJQUNJLG1CQUFtQjtDQUN0QjtBQUNEO0lBQ0ksaUJBQWlCO0lBQ2pCLG1CQUFtQjtDQUN0QjtBQUNEO0lBQ0ksc0JBQXNCO0lBQ3RCLFdBQVc7SUFDWCxvQkFBb0I7Q0FDdkI7QUFDRDtJQUNJLHNCQUFzQjtJQUN0QixXQUFXO0lBQ1gsb0JBQW9CO0NBQ3ZCO0FBQ0Q7SUFDSSxrQkFBa0I7Q0FDckI7QUFDRDtJQUNJLGVBQWU7Q0FDbEIiLCJmaWxlIjoic3JjL2FwcC9hZG1pbi1zdHVkZW50LXNob3cvYWRtaW4tc3R1ZGVudC1zaG93LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjc3R1ZGVudEluZm97XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCBibGFjaztcclxuICAgIHBhZGRpbmc6IDVweDtcclxufVxyXG4uZm9udFVwe1xyXG4gICAgZm9udC1zaXplOiAxLjJlbTtcclxuICAgIG1hcmdpbi1ib3R0b206IDNweDtcclxufVxyXG4jdGl0bGV7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAxcHg7XHJcbn1cclxuLmVfY29udGFjdHtcclxuICAgIGZvbnQtc2l6ZTogMS4yZW07XHJcbiAgICBtYXJnaW4tYm90dG9tOiAzcHg7XHJcbn1cclxuI2xlZnR7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogNDAlO1xyXG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxufVxyXG4jcmlnaHR7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogNDAlO1xyXG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxufVxyXG5zcGFue1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbn1cclxudGV4dGFyZWF7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -435,7 +435,7 @@ module.exports = "#studentInfo{\r\n    border: 1px solid black;\r\n    padding: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div id='studentInfo'>\n        <div id=\"left\">\n          <h2>{{student.f_name}} {{student.l_name}}</h2>\n          <p class=\"fontUp\"><span>School:</span> {{student.school}}</p>\n          <p class=\"fontUp\"><span>Grade:</span> {{student.grade}}</p>\n          <p class=\"fontUp\"><span>Home Address:</span> {{parent.street_address}} {{parent.city}}, {{parent.zip}}</p>\n          <br>\n          <p class=\"fontUp\"><span>Guardian:</span> {{parent.f_name}} {{parent.l_name}}</p>\n          <p class=\"fontUp\"><span>Contact Info:</span> {{parent.phone}} // {{parent.email}}</p>\n\n          \n          <h3>Emergency Contact</h3>\n          <p class=\"e_contact\"><span>Name:</span> {{student.e_contact1_name}}</p>\n          <p class=\"e_contact\"><span>Relation:</span> {{student.e_contact1_relation}}</p>\n          <p class=\"e_contact\"><span>Contact:</span> {{student.e_contact1_phone}}</p>\n          <br>\n          <br>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_name\">{{student.e_contact2_name}}</p>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_relation\">Relation: {{student.e_contact2_relation}}</p>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_phone\">Phone: {{student.e_contact2_phone}}</p>\n        </div>\n        <div id=\"right\">\n          <table class=\"table table-striped\">\n              <thead>\n                <th>Allergy Type</th>\n                <th>Severity</th>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let allergy of dballergy\">\n                  <td>{{allergy.type}}</td>\n                  <td>{{allergy.severity}}</td>\n                </tr>\n              </tbody>\n            </table>\n        </div>\n      </div>\n      <hr>\n        <form (submit)=\"onEdit()\">\n          <div class=\"form-row\">\n            <div class=\"col-md-3 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"gradeSelect\">Grade</label>\n                <select [(ngModel)]=\"student.grade\" name=\"student.grade\" class=\"form-control\" id=\"gradeSelect\">\n                  <option value=\"1st\">1st</option>\n                  <option value=\"2nd\">2nd</option>\n                  <option value=\"3rd\">3rd</option>\n                  <option value=\"4th\">4th</option>\n                  <option value=\"5th\">5th</option>\n                  <option value=\"6th\">6th</option>\n                  <option value=\"7th\">7th</option>\n                  <option value=\"8th\">8th</option>\n                  <option value=\"9th\">9th</option>\n                  <option value=\"10th\">10th</option>\n                  <option value=\"11th\">11th</option>\n                  <option value=\"12th\">12th</option>              \n                </select>\n                <!-- <small *ngIf=\"errorMessages['grade']['message'] == 'error' \" class=\"form-text text-danger\">Invalid Grade</small>             -->\n              </div>\n            </div>\n            <div class=\"col-md-3 col-sm-12\">\n              <label for=\"updateBtn\">Edit Information</label>\n              <button type=\"submit\" class=\"btn btn-primary form-control\" id=\"updateBtn\">Submit</button>\n            </div>\n          </div>\n        </form>\n    </div>    \n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <div id='studentInfo'>\n        <div id=\"left\">\n          <h2>{{student.f_name}} {{student.l_name}}</h2>\n          <p class=\"fontUp\"><span>School:</span> {{student.school}}</p>\n          <p class=\"fontUp\"><span>Grade:</span> {{student.grade}}</p>\n          <p class=\"fontUp\"><span>Home Address:</span> {{parent.street_address}} {{parent.city}}, {{parent.zip}}</p>\n          <br>\n          <p class=\"fontUp\"><span>Guardian:</span> {{parent.f_name}} {{parent.l_name}}</p>\n          <p class=\"fontUp\"><span>Contact Info:</span> {{parent.phone}} // {{parent.email}}</p>\n\n          <h3>Emergency Contact</h3>\n          <p class=\"e_contact\"><span>Name:</span> {{student.e_contact1_name}}</p>\n          <p class=\"e_contact\"><span>Relation:</span> {{student.e_contact1_relation}}</p>\n          <p class=\"e_contact\"><span>Contact:</span> {{student.e_contact1_phone}}</p>\n          <br>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_name\"><span>Name:</span> {{student.e_contact2_name}}</p>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_relation\"><span>Relation:</span> {{student.e_contact2_relation}}</p>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_phone\"><span>Contact:</span> {{student.e_contact2_phone}}</p>\n\n          <textarea [(ngModel)]=\"student.notes\" name=\"student.notes\" cols=\"50\" rows=\"10\">{{student.notes}}</textarea>\n          <button (click)=\"updateNotes()\" class=\"btn btn-primary\">Update Notes</button>\n        </div>\n        <div id=\"right\">\n          <table class=\"table table-striped\">\n              <thead>\n                <th>Allergy Type</th>\n                <th>Severity</th>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let allergy of dballergy\">\n                  <td>{{allergy.type}}</td>\n                  <td>{{allergy.severity}}</td>\n                </tr>\n              </tbody>\n            </table>\n        </div>\n      </div>\n      <hr>\n        <form (submit)=\"onEdit()\">\n          <div class=\"form-row\">\n            <div class=\"col-md-3 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"gradeSelect\">Grade</label>\n                <select [(ngModel)]=\"student.grade\" name=\"student.grade\" class=\"form-control\" id=\"gradeSelect\">\n                  <option value=\"1st\">1st</option>\n                  <option value=\"2nd\">2nd</option>\n                  <option value=\"3rd\">3rd</option>\n                  <option value=\"4th\">4th</option>\n                  <option value=\"5th\">5th</option>\n                  <option value=\"6th\">6th</option>\n                  <option value=\"7th\">7th</option>\n                  <option value=\"8th\">8th</option>\n                  <option value=\"9th\">9th</option>\n                  <option value=\"10th\">10th</option>\n                  <option value=\"11th\">11th</option>\n                  <option value=\"12th\">12th</option>              \n                </select>\n                <!-- <small *ngIf=\"errorMessages['grade']['message'] == 'error' \" class=\"form-text text-danger\">Invalid Grade</small>             -->\n              </div>\n            </div>\n            <div class=\"col-md-3 col-sm-12\">\n              <label for=\"updateBtn\">Edit Information</label>\n              <button type=\"submit\" class=\"btn btn-primary form-control\" id=\"updateBtn\">Submit</button>\n            </div>\n          </div>\n        </form>\n    </div>    \n</body>\n</html>"
 
 /***/ }),
 
@@ -475,10 +475,12 @@ var AdminStudentShowComponent = /** @class */ (function () {
             zip: ""
         };
         this.student = {
+            _id: "",
             f_name: "",
             l_name: "",
             grade: "",
-            parent_id: ""
+            parent_id: "",
+            notes: ""
         };
         this.allergy = {
             type: "",
@@ -505,6 +507,16 @@ var AdminStudentShowComponent = /** @class */ (function () {
         });
     };
     ;
+    AdminStudentShowComponent.prototype.onEdit = function () {
+        var observ = this._httpService.updateStudentOnly(this.student._id, this.student);
+        observ.subscribe(function (data) {
+        });
+    };
+    AdminStudentShowComponent.prototype.updateNotes = function () {
+        var observ = this._httpService.updateStudentOnly(this.student._id, this.student);
+        observ.subscribe(function (data) {
+        });
+    };
     AdminStudentShowComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-admin-student-show',
@@ -1317,6 +1329,9 @@ var HttpService = /** @class */ (function () {
     HttpService.prototype.updateStudent = function (uid, studObj) {
         return this._http.post('/api/student/' + uid + '/updatestudent', studObj);
     };
+    HttpService.prototype.updateStudentOnly = function (studID, studObj) {
+        return this._http.put('/api/student/' + studID + '/updatestudent', studObj);
+    };
     HttpService.prototype.createClass = function (classObj) {
         return this._http.post('/api/class', classObj);
     };
@@ -1677,11 +1692,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserRegisterComponent", function() { return UserRegisterComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.es5.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/index.esm.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.es5.js");
+
 
 
 
@@ -1704,10 +1721,10 @@ var UserRegisterComponent = /** @class */ (function () {
             storageBucket: "le-website-78ad8.appspot.com",
             messagingSenderId: "568996387999"
         };
-        if (!firebase__WEBPACK_IMPORTED_MODULE_2__["apps"].length) {
-            firebase__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](config);
+        if (!firebase_app__WEBPACK_IMPORTED_MODULE_2__["apps"].length) {
+            firebase_app__WEBPACK_IMPORTED_MODULE_2__["initializeApp"](config);
         }
-        firebase__WEBPACK_IMPORTED_MODULE_2__["auth"]().onAuthStateChanged(function (firebaseUser) {
+        firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().onAuthStateChanged(function (firebaseUser) {
             if (firebaseUser) {
                 _this.storage.set('uid', firebaseUser.uid);
                 _this.storage.set('email', firebaseUser.email);
@@ -1725,16 +1742,16 @@ var UserRegisterComponent = /** @class */ (function () {
         });
         var signbutton = document.getElementById('googbutton');
         var signbuttonout = document.getElementById('googbuttonout');
-        var provider = new firebase__WEBPACK_IMPORTED_MODULE_2__["auth"].GoogleAuthProvider();
+        var provider = new firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"].GoogleAuthProvider();
         signbutton.addEventListener('click', function (e) {
-            firebase__WEBPACK_IMPORTED_MODULE_2__["auth"]().signInWithRedirect(provider).then(function (result) {
+            firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().signInWithRedirect(provider).then(function (result) {
                 this.fireLog == true;
             }).catch(function (error) {
                 console.log("Error: ", error);
             });
         });
         signbuttonout.addEventListener('click', function (e) {
-            firebase__WEBPACK_IMPORTED_MODULE_2__["auth"]().signOut();
+            firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().signOut();
             _this.fireLog == false;
             _this.storage.remove('uid');
             _this.storage.remove('email');
@@ -1747,9 +1764,9 @@ var UserRegisterComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./user-register.component.html */ "./src/app/user-register/user-register.component.html"),
             styles: [__webpack_require__(/*! ./user-register.component.css */ "./src/app/user-register/user-register.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(angular_webstorage_service__WEBPACK_IMPORTED_MODULE_5__["SESSION_STORAGE"])),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
-            angular_webstorage_service__WEBPACK_IMPORTED_MODULE_5__["WebStorageService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(angular_webstorage_service__WEBPACK_IMPORTED_MODULE_6__["SESSION_STORAGE"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_4__["HttpService"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
+            angular_webstorage_service__WEBPACK_IMPORTED_MODULE_6__["WebStorageService"]])
     ], UserRegisterComponent);
     return UserRegisterComponent;
 }());
@@ -2276,34 +2293,6 @@ var UserstudentshowComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/environments/environment.ts":
-/*!*****************************************!*\
-  !*** ./src/environments/environment.ts ***!
-  \*****************************************/
-/*! exports provided: environment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-var environment = {
-    production: false
-};
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
-
-
-/***/ }),
-
 /***/ "./src/main.ts":
 /*!*********************!*\
   !*** ./src/main.ts ***!
@@ -2316,14 +2305,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js");
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
 
 
 
-
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
-}
+Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
 Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
     .catch(function (err) { return console.error(err); });
 

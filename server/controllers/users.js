@@ -155,6 +155,26 @@ module.exports = {
             })
         })
     },
+    updateStudentOnly: function(req, res){
+        Student.findOne({_id:req.params.id}, function(err, data){
+            console.log(data)
+            if(err){
+                res.json(err)
+            }
+            else{
+                data.notes = req.body.notes
+                data.grade = req.body.grade
+                data.save(function(err, data){
+                    if(err){
+                        res.json(err)
+                    }
+                    else{
+                        res.json(data)
+                    }
+                })
+            }
+        })
+    },
     createClass: function(req, res){
         var newClass = new Class(req.body)
         newClass.save(function(err){

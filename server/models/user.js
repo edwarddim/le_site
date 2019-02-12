@@ -10,6 +10,7 @@ var StudentSchema = mongoose.Schema({
     l_name: {type: String, required: [true, "error"], minlength: [2, "error"]},
     parent_id: {type: String, required: true},
     grade: {type: String, required: [true, "error"]},
+    notes: {type: String},
 
     e_contact1_name: {type: String, required: [true, "error"]},
     e_contact1_relation: {type: String, required: [true, "error"]},

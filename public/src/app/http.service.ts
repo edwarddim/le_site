@@ -57,6 +57,9 @@ export class HttpService implements OnInit{
   updateStudent(uid, studObj){
     return this._http.post('/api/student/'+uid+'/updatestudent', studObj)
   }
+  updateStudentOnly(studID, studObj){
+    return this._http.put('/api/student/'+studID+'/updatestudent', studObj)
+  }
   createClass(classObj){
     return this._http.post('/api/class', classObj)
   }

@@ -8,6 +8,21 @@
 </head>
 <body>
     <div class="container-fluid">
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/students']">Student List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/pictures']">Upload Picture</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/tuition']">Tuition</a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div id='studentInfo'>
         <div id="left">
           <h2>{{student.f_name}} {{student.l_name}}</h2>
@@ -18,16 +33,17 @@
           <p class="fontUp"><span>Guardian:</span> {{parent.f_name}} {{parent.l_name}}</p>
           <p class="fontUp"><span>Contact Info:</span> {{parent.phone}} // {{parent.email}}</p>
 
-          
           <h3>Emergency Contact</h3>
           <p class="e_contact"><span>Name:</span> {{student.e_contact1_name}}</p>
           <p class="e_contact"><span>Relation:</span> {{student.e_contact1_relation}}</p>
           <p class="e_contact"><span>Contact:</span> {{student.e_contact1_phone}}</p>
           <br>
-          <br>
-          <p class="e_contact" [hidden]="!student.e_contact2_name">{{student.e_contact2_name}}</p>
-          <p class="e_contact" [hidden]="!student.e_contact2_relation">Relation: {{student.e_contact2_relation}}</p>
-          <p class="e_contact" [hidden]="!student.e_contact2_phone">Phone: {{student.e_contact2_phone}}</p>
+          <p class="e_contact" [hidden]="!student.e_contact2_name"><span>Name:</span> {{student.e_contact2_name}}</p>
+          <p class="e_contact" [hidden]="!student.e_contact2_relation"><span>Relation:</span> {{student.e_contact2_relation}}</p>
+          <p class="e_contact" [hidden]="!student.e_contact2_phone"><span>Contact:</span> {{student.e_contact2_phone}}</p>
+
+          <textarea [(ngModel)]="student.notes" name="student.notes" cols="50" rows="10">{{student.notes}}</textarea>
+          <button (click)="updateNotes()" class="btn btn-primary">Update Notes</button>
         </div>
         <div id="right">
           <table class="table table-striped">

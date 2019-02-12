@@ -28,6 +28,7 @@ module.exports = function(app){
     app.get('/api/student/lastname/:l_name', users.findStudentLastName)
     app.get('/api/student/:id/:uid', users.getStudent)
     app.get('/api/student/:id', users.getStudentOnly)
+    app.put('/api/student/:id/updatestudent', users.updateStudentOnly)
     app.post('/api/student/:id/updatestudent', users.updateStudent)
 
     app.post('/api/allergy/:uid/:id/create', users.createAllergy)
