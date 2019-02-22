@@ -20,7 +20,7 @@ import { AdminPolicyComponent } from './admin-policy/admin-policy.component';
 
 const routes: Routes = [
   // ROUTES FOR USERS //
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'class', component: UserClassComponent},
   {path: 'class/:id', component: UserShowClassComponent},
   {path: 'registration', component: UserRegisterComponent},
