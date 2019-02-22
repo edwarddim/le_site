@@ -12,7 +12,6 @@ export class AppComponent implements OnInit{
   constructor(private _http:HttpClient, private _router:Router, private titleService: Title){}
 
   ngOnInit(){
-    this._router.navigate(['/home']);
     this.titleService.setTitle('Learning Edge');
   }
 }

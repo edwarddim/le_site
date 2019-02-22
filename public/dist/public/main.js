@@ -1097,7 +1097,6 @@ var AppComponent = /** @class */ (function () {
         this.titleService = titleService;
     }
     AppComponent.prototype.ngOnInit = function () {
-        this._router.navigate(['/home']);
         this.titleService.setTitle('Learning Edge');
     };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
