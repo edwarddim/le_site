@@ -41,7 +41,7 @@ module.exports = "#applied{\r\n    display: inline-block;\r\n    width: 45%;\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <h1>{{class.title}}</h1>\n      <button type=\"button\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#deleteModal\">\n        DELETE THIS CLASS\n      </button>\n      <div class=\"modal fade\" id=\"deleteModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"deleteModalLabel\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n          <div class=\"modal-content\">\n            <div class=\"modal-header\">\n              <h5 class=\"modal-title\" id=\"exampleModalLabel\">Are you sure you want to delete this class?</h5>\n              <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n            <div class=\"modal-body\">\n              Deleting this class cannot be undone\n            </div>\n            <div class=\"modal-footer\">\n              <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">CLOSE</button>\n              <button (click)=\"deleteClass()\" type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">DELETE</button>\n            </div>\n          </div>\n        </div>\n      </div>\n      <br>\n      <div id=\"applied\">\n        <h3>Waitlist</h3>\n        <table class=\"table table-striped table-bordered\">\n          <thead>\n            <tr>\n              <th scope=\"col\">Student</th>\n              <th scope=\"col\">Action</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let student of applied\">\n              <td>{{student.f_name}} {{student.l_name}}</td>\n              <button (click)=\"onClick(student)\" class=\"btn btn-success\">Accept</button>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n      <div id=\"accepted\">\n        <h3>Enrolled</h3>\n        <table class=\"table table-striped table-bordered\">\n          <thead>\n            <th scope=\"scoped\">Student</th>\n            <th scope=\"scoped\">Action</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let student of accepted\">\n              <td>{{student.f_name}} {{student.l_name}}</td>\n              <button (click)=\"onUnenroll(student)\" class=\"btn btn-warning\">Unenroll</button>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/policy']\">Policy</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <h1>{{class.title}}</h1>\n      <h3>{{class.description}}</h3>\n      <button type=\"button\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#deleteModal\">\n        DELETE THIS CLASS\n      </button>\n      <div class=\"modal fade\" id=\"deleteModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"deleteModalLabel\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n          <div class=\"modal-content\">\n            <div class=\"modal-header\">\n              <h5 class=\"modal-title\" id=\"exampleModalLabel\">Are you sure you want to delete this class?</h5>\n              <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n            <div class=\"modal-body\">\n              Deleting this class cannot be undone\n            </div>\n            <div class=\"modal-footer\">\n              <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">CLOSE</button>\n              <button (click)=\"deleteClass()\" type=\"button\" class=\"btn btn-danger\" data-dismiss=\"modal\">DELETE</button>\n            </div>\n          </div>\n        </div>\n      </div>\n      <br>\n      <div id=\"applied\">\n        <h3>Waitlist</h3>\n        <table class=\"table table-striped table-bordered\">\n          <thead>\n            <tr>\n              <th scope=\"col\">Student</th>\n              <th scope=\"col\">Action</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let student of applied\">\n              <td>{{student.f_name}} {{student.l_name}}</td>\n              <button (click)=\"onClick(student)\" class=\"btn btn-success\">Accept</button>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n      <div id=\"accepted\">\n        <h3>Enrolled</h3>\n        <table class=\"table table-striped table-bordered\">\n          <thead>\n            <th scope=\"scoped\">Student</th>\n            <th scope=\"scoped\">Action</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let student of accepted\">\n              <td>{{student.f_name}} {{student.l_name}}</td>\n              <button (click)=\"onUnenroll(student)\" class=\"btn btn-warning\">Unenroll</button>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n    </div>\n</body>\n</html>"
 
 /***/ }),
 
@@ -75,7 +75,8 @@ var AdminClassShowComponent = /** @class */ (function () {
         this.class = {
             title: '',
             grade: '',
-            capcity: 0
+            capcity: 0,
+            description: ""
         };
         this.applied = [];
         this.accepted = [];
@@ -155,7 +156,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n        <form (submit)=\"onSubmit()\">\n          <div class=\"row\">\n            <div class='col'>\n              <div class=\"form-group\">\n                <label for=\"class.title\">Class Title</label>\n                <input [(ngModel)]=\"class.title\" name=\"class.title\" type=\"text\" class=\"form-control\" id=\"class.title\" aria-describedby=\"class.title\" placeholder=\"Class Title\">\n              </div>\n            </div>\n            <div class=\"col\">\n              <div class=\"form-group\">\n                <label for=\"class.grade\">Grade</label>\n                <select [(ngModel)]=\"class.grade\" name=\"class.grade\" class=\"form-control\" id=\"class.grade\">\n                  <option value=\"1st\">1st</option>\n                  <option value=\"2nd\">2nd</option>\n                  <option value=\"3rd\">3rd</option>\n                  <option value=\"4th\">4th</option>\n                  <option value=\"5th\">5th</option>\n                  <option value=\"6th\">6th</option>\n                  <option value=\"7th\">7th</option>\n                  <option value=\"8th\">8th</option>\n                  <option value=\"9th\">9th</option>\n                  <option value=\"10th\">10th</option>\n                  <option value=\"11th\">11th</option>\n                  <option value=\"12th\">12th</option>              \n                </select>\n              </div>\n            </div>\n            <div class='col'>\n              <div class=\"form-group\">\n                <label for=\"student.l_name\">Capacity</label>\n                <input [(ngModel)]=\"class.capacity\" name=\"class.capacity\" type=\"number\" class=\"form-control\" id=\"class.capacity\" aria-describedby=\"class.capacity\">\n              </div>\n            </div>\n          </div>\n          <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" id=\"submitBtn\">Create Class</button>\n        </form>\n        <div id=\"class-list\">\n          <h1>Currently Available Classes</h1>\n          <table class=\"table\">\n            <thead>\n              <th>Class Title</th>\n              <th>Grade</th>\n              <th>Capacity</th>\n            </thead>\n            <tbody>\n              <tr *ngFor=\"let class of allClass\">\n                <td>\n                  <a [routerLink]=\"['/admin/class', class._id]\">{{class.title}}</a>\n                </td>\n                <td>{{class.grade}}</td>\n                <td>{{class.capacity}}</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n    </div>    \n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/policy']\">Policy</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n        <form (submit)=\"onSubmit()\">\n          <div class=\"row\">\n            <div class='col'>\n              <div class=\"form-group\">\n                <label for=\"class.title\">Class Title</label>\n                <input [(ngModel)]=\"class.title\" name=\"class.title\" type=\"text\" class=\"form-control\" id=\"class.title\" aria-describedby=\"class.title\" placeholder=\"Class Title\">\n              </div>\n            </div>\n            <div class=\"col\">\n              <div class=\"form-group\">\n                <label for=\"class.grade\">Grade</label>\n                <select [(ngModel)]=\"class.grade\" name=\"class.grade\" class=\"form-control\" id=\"class.grade\">\n                  <option value=\"1st\">1st</option>\n                  <option value=\"2nd\">2nd</option>\n                  <option value=\"3rd\">3rd</option>\n                  <option value=\"4th\">4th</option>\n                  <option value=\"5th\">5th</option>\n                  <option value=\"6th\">6th</option>\n                  <option value=\"7th\">7th</option>\n                  <option value=\"8th\">8th</option>\n                  <option value=\"9th\">9th</option>\n                  <option value=\"10th\">10th</option>\n                  <option value=\"11th\">11th</option>\n                  <option value=\"12th\">12th</option>              \n                </select>\n              </div>\n            </div>\n            <div class='col'>\n              <div class=\"form-group\">\n                <label for=\"student.l_name\">Capacity</label>\n                <input [(ngModel)]=\"class.capacity\" name=\"class.capacity\" type=\"number\" class=\"form-control\" id=\"class.capacity\" aria-describedby=\"class.capacity\">\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"form-group col-md-12\">\n              <label for=\"class.description\">Class Description</label>\n              <input [(ngModel)]=\"class.description\" name=\"class.description\" type=\"text\" class=\"form-control\" id=\"class.description\" aria-describedby=\"class.description\" placeholder=\"Class Description\">\n            </div>\n          </div>\n          <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" id=\"submitBtn\">Create Class</button>\n        </form>\n        <div id=\"class-list\">\n          <h1>Currently Available Classes</h1>\n          <table class=\"table\">\n            <thead>\n              <th>Class Title</th>\n              <th>Grade</th>\n              <th>Capacity</th>\n            </thead>\n            <tbody>\n              <tr *ngFor=\"let class of allClass\">\n                <td>\n                  <a [routerLink]=\"['/admin/class', class._id]\">{{class.title}}</a>\n                </td>\n                <td>{{class.grade}}</td>\n                <td>{{class.capacity}}</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n    </div>    \n</body>\n</html>"
 
 /***/ }),
 
@@ -187,7 +188,8 @@ var AdminClassComponent = /** @class */ (function () {
         this.class = {
             title: "",
             grade: "",
-            capacity: 0
+            capacity: 0,
+            description: ""
         };
         this.allClass = [];
     }
@@ -209,7 +211,8 @@ var AdminClassComponent = /** @class */ (function () {
             _this.class = {
                 title: "",
                 grade: "",
-                capacity: 0
+                capacity: 0,
+                description: ""
             };
         });
     };
@@ -330,7 +333,7 @@ module.exports = ".picbox{\r\n    width: 500px;\r\n}\r\n/*# sourceMappingURL=dat
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <h1>Manage pictures for front page</h1>\n      <div>\n        <br>\n        <div class=\"custom-file\">\n          <input (change)=\"frontPage($event)\" type=\"file\" class=\"custom-file-input\" id=\"upfile\" name=\"upfile\">\n          <label class=\"custom-file-label\" for=\"upfile\">Choose file</label>\n        </div>\n        <div>\n          <table>\n            <tbody>\n              <tr *ngFor=\"let pic of frontPics\">\n                <td>\n                  <h6>{{pic.fileName}}</h6>\n                  <img src=\"{{pic.filePath}}\" alt=\"No Image\" class=\"picbox\">\n                  <button (click)=\"deletePic(pic._id)\" class=\"btn btn-danger\">Delete</button>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n      <br>\n      <hr>\n      <br>\n      <div id=\"gallery\">\n        <h1>Manage pictures for gallery page</h1>\n        <div class=\"custom-file\">\n          <input (change)=\"galleryPage($event)\" type=\"file\" class=\"custom-file-input\" id=\"upfile\" name=\"upfile\">\n          <label class=\"custom-file-label\" for=\"upfile\">Choose file</label>\n        </div>\n        <div>\n          <table>\n            <tbody>\n              <tr *ngFor=\"let pic of galleryPics\">\n                <td>\n                  <h6>{{pic.fileName}}</h6>\n                  <img src=\"{{pic.filePath}}\" alt=\"No Image\" class=\"picbox\">\n                  <button (click)=\"deletePic(pic._id)\" class=\"btn btn-danger\">Delete</button>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>    \n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/policy']\">Policy</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <h1>Manage pictures for front page</h1>\n      <div>\n        <br>\n        <div class=\"custom-file\">\n          <input (change)=\"frontPage($event)\" type=\"file\" class=\"custom-file-input\" id=\"upfile\" name=\"upfile\">\n          <label class=\"custom-file-label\" for=\"upfile\">Choose file</label>\n        </div>\n        <div>\n          <table>\n            <tbody>\n              <tr *ngFor=\"let pic of frontPics\">\n                <td>\n                  <h6>{{pic.fileName}}</h6>\n                  <img src=\"{{pic.filePath}}\" alt=\"No Image\" class=\"picbox\">\n                  <button (click)=\"deletePic(pic._id)\" class=\"btn btn-danger\">Delete</button>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n      <br>\n      <hr>\n      <br>\n      <div id=\"gallery\">\n        <h1>Manage pictures for gallery page</h1>\n        <div class=\"custom-file\">\n          <input (change)=\"galleryPage($event)\" type=\"file\" class=\"custom-file-input\" id=\"upfile\" name=\"upfile\">\n          <label class=\"custom-file-label\" for=\"upfile\">Choose file</label>\n        </div>\n        <div>\n          <table>\n            <tbody>\n              <tr *ngFor=\"let pic of galleryPics\">\n                <td>\n                  <h6>{{pic.fileName}}</h6>\n                  <img src=\"{{pic.filePath}}\" alt=\"No Image\" class=\"picbox\">\n                  <button (click)=\"deletePic(pic._id)\" class=\"btn btn-danger\">Delete</button>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>    \n</body>\n</html>"
 
 /***/ }),
 
@@ -417,6 +420,99 @@ var AdminPictureComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/admin-policy/admin-policy.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/admin-policy/admin-policy.component.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FkbWluLXBvbGljeS9hZG1pbi1wb2xpY3kuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/admin-policy/admin-policy.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/admin-policy/admin-policy.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n  <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/policy']\">Policy</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <form (submit)=\"onSubmit()\">\n        <div class=\"row\">\n          <div class=\"col-md-12\">\n            <input [(ngModel)]=\"policy.line1\" name=\"policy.line1\" type=\"text\" class=\"form-control\" id=\"policy.line1\" aria-describedby=\"policy.line1\" placeholder=\"Line 1\">\n          </div>\n        </div>\n        <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" id=\"submitBtn\">Create Policy</button>\n      </form>\n      <div id=\"policyBox\">\n        <h6>Policy</h6>\n        <hr>\n        <div class=\"policy\" *ngFor=\"let policy of savedPolicy\">\n          <p>{{policy.line1}}</p>\n          <button (click)=\"deletePolicy(policy._id)\" class=\"btn btn-danger\">Delete</button>\n        </div>\n      </div>\n  </div>\n</body>\n</html>"
+
+/***/ }),
+
+/***/ "./src/app/admin-policy/admin-policy.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/admin-policy/admin-policy.component.ts ***!
+  \********************************************************/
+/*! exports provided: AdminPolicyComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminPolicyComponent", function() { return AdminPolicyComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.es5.js");
+
+
+
+
+
+var AdminPolicyComponent = /** @class */ (function () {
+    function AdminPolicyComponent(_httpService, _router, storage) {
+        this._httpService = _httpService;
+        this._router = _router;
+        this.storage = storage;
+        this.policy = {
+            line1: ""
+        };
+    }
+    AdminPolicyComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var observ = this._httpService.getPolicy();
+        observ.subscribe(function (data) {
+            _this.savedPolicy = data;
+        });
+    };
+    ;
+    AdminPolicyComponent.prototype.onSubmit = function () {
+        var observ = this._httpService.createPolicy(this.policy);
+        observ.subscribe(function (data) {
+        });
+        this.policy = {
+            line1: ""
+        };
+        this.ngOnInit();
+    };
+    ;
+    AdminPolicyComponent.prototype.deletePolicy = function (policyID) {
+        var observ = this._httpService.deletePolicy(policyID);
+        observ.subscribe(function (data) {
+        });
+        this.ngOnInit();
+    };
+    ;
+    AdminPolicyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-admin-policy',
+            template: __webpack_require__(/*! ./admin-policy.component.html */ "./src/app/admin-policy/admin-policy.component.html"),
+            styles: [__webpack_require__(/*! ./admin-policy.component.css */ "./src/app/admin-policy/admin-policy.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__["SESSION_STORAGE"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__["WebStorageService"]])
+    ], AdminPolicyComponent);
+    return AdminPolicyComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/admin-student-show/admin-student-show.component.css":
 /*!*********************************************************************!*\
   !*** ./src/app/admin-student-show/admin-student-show.component.css ***!
@@ -435,7 +531,7 @@ module.exports = "#studentInfo{\r\n    border: 1px solid black;\r\n    padding: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <div id='studentInfo'>\n        <div id=\"left\">\n          <h2>{{student.f_name}} {{student.l_name}}</h2>\n          <p class=\"fontUp\"><span>School:</span> {{student.school}}</p>\n          <p class=\"fontUp\"><span>Grade:</span> {{student.grade}}</p>\n          <p class=\"fontUp\"><span>Home Address:</span> {{parent.street_address}} {{parent.city}}, {{parent.zip}}</p>\n          <br>\n          <p class=\"fontUp\"><span>Guardian:</span> {{parent.f_name}} {{parent.l_name}}</p>\n          <p class=\"fontUp\"><span>Contact Info:</span> {{parent.phone}} // {{parent.email}}</p>\n\n          <h3>Emergency Contact</h3>\n          <p class=\"e_contact\"><span>Name:</span> {{student.e_contact1_name}}</p>\n          <p class=\"e_contact\"><span>Relation:</span> {{student.e_contact1_relation}}</p>\n          <p class=\"e_contact\"><span>Contact:</span> {{student.e_contact1_phone}}</p>\n          <br>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_name\"><span>Name:</span> {{student.e_contact2_name}}</p>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_relation\"><span>Relation:</span> {{student.e_contact2_relation}}</p>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_phone\"><span>Contact:</span> {{student.e_contact2_phone}}</p>\n\n          <textarea [(ngModel)]=\"student.notes\" name=\"student.notes\" cols=\"50\" rows=\"10\">{{student.notes}}</textarea>\n          <button (click)=\"updateNotes()\" class=\"btn btn-primary\">Update Notes</button>\n        </div>\n        <div id=\"right\">\n          <table class=\"table table-striped\">\n              <thead>\n                <th>Allergy Type</th>\n                <th>Severity</th>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let allergy of dballergy\">\n                  <td>{{allergy.type}}</td>\n                  <td>{{allergy.severity}}</td>\n                </tr>\n              </tbody>\n            </table>\n        </div>\n      </div>\n      <hr>\n        <form (submit)=\"onEdit()\">\n          <div class=\"form-row\">\n            <div class=\"col-md-3 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"gradeSelect\">Grade</label>\n                <select [(ngModel)]=\"student.grade\" name=\"student.grade\" class=\"form-control\" id=\"gradeSelect\">\n                  <option value=\"1st\">1st</option>\n                  <option value=\"2nd\">2nd</option>\n                  <option value=\"3rd\">3rd</option>\n                  <option value=\"4th\">4th</option>\n                  <option value=\"5th\">5th</option>\n                  <option value=\"6th\">6th</option>\n                  <option value=\"7th\">7th</option>\n                  <option value=\"8th\">8th</option>\n                  <option value=\"9th\">9th</option>\n                  <option value=\"10th\">10th</option>\n                  <option value=\"11th\">11th</option>\n                  <option value=\"12th\">12th</option>              \n                </select>\n                <!-- <small *ngIf=\"errorMessages['grade']['message'] == 'error' \" class=\"form-text text-danger\">Invalid Grade</small>             -->\n              </div>\n            </div>\n            <div class=\"col-md-3 col-sm-12\">\n              <label for=\"updateBtn\">Edit Information</label>\n              <button type=\"submit\" class=\"btn btn-primary form-control\" id=\"updateBtn\">Submit</button>\n            </div>\n          </div>\n        </form>\n    </div>    \n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/policy']\">Policy</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <div id='studentInfo'>\n        <div id=\"left\">\n          <h2>{{student.f_name}} {{student.l_name}}</h2>\n          <p class=\"fontUp\"><span>School:</span> {{student.school}}</p>\n          <p class=\"fontUp\"><span>Grade:</span> {{student.grade}}</p>\n          <p class=\"fontUp\"><span>Home Address:</span> {{student.street_address}} {{student.city}} {{student.zip}}</p>\n          <br>\n          <p class=\"fontUp\"><span>Guardian:</span> {{student.guardian1_name}}</p>\n          <p class=\"fontUp\"><span>Contact Info:</span> {{student.guardian1_email}} // {{student.guardian1_cell}}</p>\n\n          <p class=\"fontUp\"><span>Guardian:</span> {{student.guardian2_name}}</p>\n          <p class=\"fontUp\"><span>Contact Info:</span> {{student.guardian2_email}} // {{student.guardian2_cell}}</p>\n\n          <h3>Emergency Contact</h3>\n          <p class=\"e_contact\"><span>Name:</span> {{student.e_contact1_name}}</p>\n          <p class=\"e_contact\"><span>Relation:</span> {{student.e_contact1_relation}}</p>\n          <p class=\"e_contact\"><span>Contact:</span> {{student.e_contact1_phone}}</p>\n          <br>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_name\"><span>Name:</span> {{student.e_contact2_name}}</p>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_relation\"><span>Relation:</span> {{student.e_contact2_relation}}</p>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_phone\"><span>Contact:</span> {{student.e_contact2_phone}}</p>\n\n          <textarea [(ngModel)]=\"student.notes\" name=\"student.notes\" cols=\"50\" rows=\"10\">{{student.notes}}</textarea>\n          <button (click)=\"updateNotes()\" class=\"btn btn-primary\">Update Notes</button>\n        </div>\n        <div id=\"right\">\n          <table class=\"table table-striped\">\n              <thead>\n                <th>Allergy Type</th>\n                <th>Severity</th>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let allergy of dballergy\">\n                  <td>{{allergy.type}}</td>\n                  <td>{{allergy.severity}}</td>\n                </tr>\n              </tbody>\n            </table>\n        </div>\n      </div>\n      <hr>\n      <form (submit)=\"onEdit()\">\n        <div class=\"form-row\">\n            <div class='col-md-3 col-sm-12'>\n              <div class=\"form-group\">\n                <label for=\"f_name\">First Name</label>\n                <input [(ngModel)]=\"student.f_name\" name=\"student.f_name\" type=\"text\" class=\"form-control\" id=\"f_name\" aria-describedby=\"f_name\" placeholder=\"John\">\n              </div>\n            </div>\n            <div class='col-md-3 col-sm-12'>\n              <div class=\"form-group\">\n                <label for=\"l_name\">Last Name</label>\n                <input [(ngModel)]=\"student.l_name\" name=\"student.l_name\" type=\"text\" class=\"form-control\" id=\"l_name\" aria-describedby=\"l_name\" placeholder=\"Doe\">\n              </div>\n            </div>\n            <div class=\"col-md-3 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"gradeSelect\">Grade</label>\n                <select [(ngModel)]=\"student.grade\" name=\"student.grade\" class=\"form-control\" id=\"gradeSelect\">\n                  <option value=\"1st\">1st</option>\n                  <option value=\"2nd\">2nd</option>\n                  <option value=\"3rd\">3rd</option>\n                  <option value=\"4th\">4th</option>\n                  <option value=\"5th\">5th</option>\n                  <option value=\"6th\">6th</option>\n                  <option value=\"7th\">7th</option>\n                  <option value=\"8th\">8th</option>\n                  <option value=\"9th\">9th</option>\n                  <option value=\"10th\">10th</option>\n                  <option value=\"11th\">11th</option>\n                  <option value=\"12th\">12th</option>              \n                </select>\n              </div>\n            </div>\n            <div class=\"col-md-3 col-sm-12\">\n              <label for=\"updateBtn\">Edit Information</label>\n              <button type=\"submit\" class=\"btn btn-primary form-control\" id=\"updateBtn\">Update</button>\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"street_address\">Address</label>\n            <input [(ngModel)]=\"student.street_address\" name=\"student.street_address\" type=\"text\" class=\"form-control\" id=\"street_address\" aria-describedby=\"street_address\" placeholder=\"1315 Fair Oaks Ave.\">\n            <small *ngIf=\"errorMessages['street_address']['message'] == 'error' \" id=\"street_address\" class=\"form-text text-danger\">Invalid Street Address</small>          \n          </div>\n          <div class=\"form-row\">\n            <div class=\"form-group col-md-6\">\n              <label for=\"city\">City</label>\n              <input [(ngModel)]=\"student.city\" name=\"student.city\" type=\"text\" class=\"form-control\" id=\"city\" placeholder=\"South Pasadena\">\n              <small *ngIf=\"errorMessages['city']['message'] == 'error' \" id=\"city\" class=\"form-text text-danger\">Invalid City</small>          \n            </div>\n            <div class=\"form-group col-md-2\">\n                <label for=\"zip\">Zip</label>\n                <input [(ngModel)]=\"student.zip\" name=\"student.zip\" type=\"text\" class=\"form-control\" id=\"zip\" placeholder=\"91030\">\n                <small *ngIf=\"errorMessages['zip']['message'] == 'error' \" id=\"zip\" class=\"form-text text-danger\">Invalid Zip Code</small>\n              </div>\n            <div class=\"form-group col-md-4\">\n              <label for=\"phone\">Home Phone</label>\n              <input [(ngModel)]=\"student.phone\" name=\"student.phone\" type=\"text\" class=\"form-control\" id=\"phone\" aria-describedby=\"phone\" placeholder=\"626-799-2654\">\n              <small *ngIf=\"errorMessages['phone']['message'] == 'error' \" id=\"phone\" class=\"form-text text-danger\">Invalid Phone Number</small>            \n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian1_name\">Mother/Guardian</label>\n                <input [(ngModel)]=\"student.guardian1_name\" name=\"student.guardian1_name\" type=\"text\" class=\"form-control\" id=\"student.guardian1_name\" aria-describedby=\"guardian1_name\">\n                <small *ngIf=\"errorMessages['guardian1_name']['message'] == 'error' \" id=\"guardian1_name\" class=\"form-text text-danger\">Requires Name</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian1_email\">Email</label>\n                <input [(ngModel)]=\"student.guardian1_email\" name=\"student.guardian1_email\" type=\"text\" class=\"form-control\" id=\"student.guardian1_email\" aria-describedby=\"guardian1_email\">\n                <small *ngIf=\"errorMessages['guardian1_email']['message'] == 'error' \" id=\"guardian1_email\" class=\"form-text text-danger\">Requires Email</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian1_cell\">Cell</label>\n                <input [(ngModel)]=\"student.guardian1_cell\" name=\"student.guardian1_cell\" type=\"text\" class=\"form-control\" id=\"student.guardian1_cell\" aria-describedby=\"guardian1_cell\">\n                <small *ngIf=\"errorMessages['guardian1_cell']['message'] == 'error' \" id=\"guardian1_cell\" class=\"form-text text-danger\">Requires Email</small>\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian2_name\">Father/Guardian</label>\n                <input [(ngModel)]=\"student.guardian2_name\" name=\"student.guardian2_name\" type=\"text\" class=\"form-control\" id=\"student.guardian2_name\" aria-describedby=\"guardian2_name\">\n                <small *ngIf=\"errorMessages['guardian2_name']['message'] == 'error' \" id=\"guardian2_name\" class=\"form-text text-danger\">Requires Name</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian2_email\">Email</label>\n                <input [(ngModel)]=\"student.guardian2_email\" name=\"student.guardian2_email\" type=\"text\" class=\"form-control\" id=\"student.guardian2_email\" aria-describedby=\"guardian2_email\">\n                <small *ngIf=\"errorMessages['guardian2_email']['message'] == 'error' \" id=\"guardian2_email\" class=\"form-text text-danger\">Requires Email</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian2_cell\">Cell</label>\n                <input [(ngModel)]=\"student.guardian2_cell\" name=\"student.guardian2_cell\" type=\"text\" class=\"form-control\" id=\"student.guardian2_cell\" aria-describedby=\"guardian2_cell\">\n                <small *ngIf=\"errorMessages['guardian2_cell']['message'] == 'error' \" id=\"guardian2_cell\" class=\"form-text text-danger\">Requires Email</small>\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact1_name\">Emergency Contact(Required)</label>\n                <input [(ngModel)]=\"student.e_contact1_name\" name=\"student.e_contact1_name\" type=\"text\" class=\"form-control\" id=\"e_contact1_name\" aria-describedby=\"e_contact1_name\">\n                <small *ngIf=\"errorMessages['e_contact1_name']['message'] == 'error' \" id=\"e_contact1_name\" class=\"form-text text-danger\">Requires Name</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact1_relation\">Relation</label>\n                <input [(ngModel)]=\"student.e_contact1_relation\" name=\"student.e_contact1_relation\" type=\"text\" class=\"form-control\" id=\"e_contact1_relation\" aria-describedby=\"e_contact1_relation\">\n                <small *ngIf=\"errorMessages['e_contact1_relation']['message'] == 'error' \" id=\"e_contact1_relation\" class=\"form-text text-danger\">Requires Relation</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact1_phone\">Phone</label>\n                <input [(ngModel)]=\"student.e_contact1_phone\" name=\"student.e_contact1_phone\" type=\"text\" class=\"form-control\" id=\"e_contact1_phone\" aria-describedby=\"e_contact1_phone\">\n                <small *ngIf=\"errorMessages['e_contact1_phone']['message'] == 'error' \" id=\"e_contact1_phone\" class=\"form-text text-danger\">Requires Phone</small>\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact2_name\">Emergency Contact(Optional)</label>\n                <input [(ngModel)]=\"student.e_contact2_name\" name=\"student.e_contact2_name\" type=\"text\" class=\"form-control\" id=\"e_contact2_name\" aria-describedby=\"e_contact2_name\">\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact2_relation\">Relation</label>\n                <input [(ngModel)]=\"student.e_contact2_relation\" name=\"student.e_contact2_relation\" type=\"text\" class=\"form-control\" id=\"e_contact2_relation\" aria-describedby=\"e_contact2_relation\">\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact2_phone\">Phone</label>\n                <input [(ngModel)]=\"student.e_contact2_phone\" name=\"student.e_contact2_phone\" type=\"text\" class=\"form-control\" id=\"e_contact2_phone\" aria-describedby=\"e_contact2_phone\">\n              </div>\n            </div>\n          </div>\n        </form>\n    </div>    \n</body>\n</html>"
 
 /***/ }),
 
@@ -465,22 +561,49 @@ var AdminStudentShowComponent = /** @class */ (function () {
         this._router = _router;
         this.storage = storage;
         this.activatedRoute = activatedRoute;
-        this.parent = {
-            city: "",
-            email: "",
-            f_name: "",
-            l_name: "",
-            street_address: "",
-            phone: "",
-            zip: ""
-        };
         this.student = {
             _id: "",
             f_name: "",
             l_name: "",
             grade: "",
             parent_id: "",
+            street_address: "",
+            city: "",
+            zip: "",
+            phone: "",
+            guardian1_name: "",
+            guardian1_email: "",
+            guardian1_cell: "",
+            guardian2_name: "",
+            guardian2_email: "",
+            guardian2_cell: "",
+            e_contact1_name: "",
+            e_contact1_relation: "",
+            e_contact1_phone: "",
+            e_contact2_name: "",
+            e_contact2_relation: "",
+            e_contact2_phone: "",
+            school: "",
             notes: ""
+        };
+        this.errorMessages = {
+            f_name: { message: "" },
+            l_name: { message: "" },
+            grade: { message: "" },
+            street_address: { message: "" },
+            city: { message: "" },
+            zip: { message: "" },
+            phone: { message: "" },
+            guardian1_name: { message: "" },
+            guardian1_email: { message: "" },
+            guardian1_cell: { message: "" },
+            guardian2_name: { message: "" },
+            guardian2_email: { message: "" },
+            guardian2_cell: { message: "" },
+            e_contact1_name: { message: "" },
+            e_contact1_relation: { message: "" },
+            e_contact1_phone: { message: "" },
+            school: { message: "" },
         };
         this.allergy = {
             type: "",
@@ -499,19 +622,71 @@ var AdminStudentShowComponent = /** @class */ (function () {
             observ.subscribe(function (data) {
                 _this.student = data[0];
                 _this.dballergy = data[0].allergies;
-                var parent = _this._httpService.getParent(_this.student.parent_id);
-                parent.subscribe(function (data) {
-                    _this.parent = data[0];
-                });
             });
         });
     };
     ;
     AdminStudentShowComponent.prototype.onEdit = function () {
-        var observ = this._httpService.updateStudentOnly(this.student._id, this.student);
+        var _this = this;
+        var observ = this._httpService.updateStudent(this.storage.get('uid'), this.student);
         observ.subscribe(function (data) {
+            console.log("onEdit returned: ", data);
+            if (data.errors) {
+                if (data.errors['f_name']) {
+                    _this.errorMessages['f_name']['message'] = "error";
+                }
+                if (data.errors['l_name']) {
+                    _this.errorMessages['l_name']['message'] = "error";
+                }
+                if (data.errors['grade']) {
+                    _this.errorMessages['grade']['message'] = "error";
+                }
+                if (data.errors['street_address']) {
+                    _this.errorMessages['street_address']['message'] = "error";
+                }
+                if (data.errors['city']) {
+                    _this.errorMessages['city']['message'] = "error";
+                }
+                if (data.errors['zip']) {
+                    _this.errorMessages['zip']['message'] = "error";
+                }
+                if (data.errors['phone']) {
+                    _this.errorMessages['phone']['message'] = "error";
+                }
+                if (data.errors['guardian1_name']) {
+                    _this.errorMessages['guardian1_name']['message'] = "error";
+                }
+                if (data.errors['guardian1_email']) {
+                    _this.errorMessages['guardian1_email']['message'] = "error";
+                }
+                if (data.errors['guardian1_cell']) {
+                    _this.errorMessages['guardian1_cell']['message'] = "error";
+                }
+                if (data.errors['guardian2_name']) {
+                    _this.errorMessages['guardian2_name']['message'] = "error";
+                }
+                if (data.errors['guardian2_email']) {
+                    _this.errorMessages['guardian2_email']['message'] = "error";
+                }
+                if (data.errors['guardian2_cell']) {
+                    _this.errorMessages['guardian2_cell']['message'] = "error";
+                }
+                if (data.errors['e_contact1_name']) {
+                    _this.errorMessages['e_contact1_name']['message'] = "error";
+                }
+                if (data.errors['e_contact1_relation']) {
+                    _this.errorMessages['e_contact1_relation']['message'] = "error";
+                }
+                if (data.errors['e_contact1_phone']) {
+                    _this.errorMessages['e_contact1_phone']['message'] = "error";
+                }
+                if (data.errors['school']) {
+                    _this.errorMessages['school']['message'] = "error";
+                }
+            }
         });
     };
+    ;
     AdminStudentShowComponent.prototype.updateNotes = function () {
         var observ = this._httpService.updateStudentOnly(this.student._id, this.student);
         observ.subscribe(function (data) {
@@ -552,7 +727,7 @@ module.exports = "#studcard{\r\n    display: inline-block;\r\n}\r\n/*# sourceMap
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <form (submit)=\"searchFirst()\">\n            <div class='row'>\n              <div class='col'>\n                <div class=\"form-group\">\n                  <label for=\"f_name\">First Name</label>\n                  <input [(ngModel)]=\"f_name_txt\" name=\"f_name_txt\" type=\"text\" class=\"form-control\" id=\"f_name\" aria-describedby=\"f_name\" placeholder=\"John\">\n                </div>\n              </div>\n            </div>\n            <button type=\"submit\" class=\"btn btn-primary\" id=\"submitBtn\">Search by First Name</button>\n          </form>\n        </div>\n        <div class=\"col\">\n          <form (submit)=\"searchLast()\">\n            <div class=\"row\">\n              <div class='col'>\n                <div class=\"form-group\">\n                  <label for=\"l_name\">Last Name</label>\n                  <input [(ngModel)]=\"l_name_txt\" name=\"l_name_txt\" type=\"text\" class=\"form-control\" id=\"l_name\" aria-describedby=\"l_name\" placeholder=\"Doe\">\n                </div>\n              </div>\n            </div>\n            <button type=\"submit\" class=\"btn btn-primary\" id=\"submitBtn\">Search by Last Name</button>\n          </form>\n        </div>\n      </div>\n\n      <div id=\"studentList\">\n        <h3>List of Students</h3>\n        <table class=\"table\">\n          <thead>\n            <th>Name</th>\n            <th>Grade</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let student of student_list\">\n              <th>\n                <a [routerLink]=\"['/admin/students', student._id]\">{{student.f_name}} {{student.l_name}}</a>\n              </th>\n              <th>{{student.grade}}</th>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n      \n    </div>    \n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/policy']\">Policy</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"col\">\n          <form (submit)=\"searchFirst()\">\n            <div class='row'>\n              <div class='col'>\n                <div class=\"form-group\">\n                  <label for=\"f_name\">First Name</label>\n                  <input [(ngModel)]=\"f_name_txt\" name=\"f_name_txt\" type=\"text\" class=\"form-control\" id=\"f_name\" aria-describedby=\"f_name\" placeholder=\"John\">\n                </div>\n              </div>\n            </div>\n            <button type=\"submit\" class=\"btn btn-primary\" id=\"submitBtn\">Search by First Name</button>\n          </form>\n        </div>\n        <div class=\"col\">\n          <form (submit)=\"searchLast()\">\n            <div class=\"row\">\n              <div class='col'>\n                <div class=\"form-group\">\n                  <label for=\"l_name\">Last Name</label>\n                  <input [(ngModel)]=\"l_name_txt\" name=\"l_name_txt\" type=\"text\" class=\"form-control\" id=\"l_name\" aria-describedby=\"l_name\" placeholder=\"Doe\">\n                </div>\n              </div>\n            </div>\n            <button type=\"submit\" class=\"btn btn-primary\" id=\"submitBtn\">Search by Last Name</button>\n          </form>\n        </div>\n      </div>\n\n      <div id=\"studentList\">\n        <h3>List of Students</h3>\n        <table class=\"table\">\n          <thead>\n            <th>Name</th>\n            <th>Grade</th>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let student of student_list\">\n              <th>\n                <a [routerLink]=\"['/admin/students', student._id]\">{{student.f_name}} {{student.l_name}}</a>\n              </th>\n              <th>{{student.grade}}</th>\n            </tr>\n          </tbody>\n        </table>\n      </div>\n      \n    </div>    \n</body>\n</html>"
 
 /***/ }),
 
@@ -644,7 +819,7 @@ module.exports = "#tuition-box{\r\n    border: 1px black solid;\r\n    padding: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <form (submit)=\"onSubmit()\">\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <label for=\"tuition.session\">Session Type</label>\n            <input [(ngModel)]=\"tuition.session\" name=\"tuition.session\" type=\"text\" class=\"form-control\" id=\"tuition.session\" aria-describedby=\"tuition.session\">\n          </div>\n          <div class=\"col-md-6\">\n            <label for=\"tuition.year\">Year</label>\n            <input [(ngModel)]=\"tuition.year\" name=\"tuition.year\" type=\"text\" class=\"form-control\" id=\"tuition.year\" aria-describedby=\"tuition.year\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line1\" name=\"tuition.line1\" type=\"text\" class=\"form-control\" id=\"tuition.line1\" aria-describedby=\"tuition.line1\" placeholder=\"Line 1\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line2\" name=\"tuition.line2\" type=\"text\" class=\"form-control\" id=\"tuition.line2\" aria-describedby=\"tuition.line2\" placeholder=\"Line 2\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line3\" name=\"tuition.line3\" type=\"text\" class=\"form-control\" id=\"tuition.line3\" aria-describedby=\"tuition.line3\" placeholder=\"Line 3\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line4\" name=\"tuition.line4\" type=\"text\" class=\"form-control\" id=\"tuition.line4\" aria-describedby=\"tuition.line4\" placeholder=\"Line 4\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line5\" name=\"tuition.line5\" type=\"text\" class=\"form-control\" id=\"tuition.line5\" aria-describedby=\"tuition.line5\" placeholder=\"Line 5\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line6\" name=\"tuition.line6\" type=\"text\" class=\"form-control\" id=\"tuition.line6\" aria-describedby=\"tuition.line6\" placeholder=\"Line 6\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line7\" name=\"tuition.line7\" type=\"text\" class=\"form-control\" id=\"tuition.line7\" aria-describedby=\"tuition.line7\" placeholder=\"Line 7\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line8\" name=\"tuition.line8\" type=\"text\" class=\"form-control\" id=\"tuition.line8\" aria-describedby=\"tuition.line8\" placeholder=\"Line 8\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line9\" name=\"tuition.line9\" type=\"text\" class=\"form-control\" id=\"tuition.line9\" aria-describedby=\"tuition.line9\" placeholder=\"Line 9\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line10\" name=\"tuition.line10\" type=\"text\" class=\"form-control\" id=\"tuition.line10\" aria-describedby=\"tuition.line10\" placeholder=\"Line 10\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line11\" name=\"tuition.line11\" type=\"text\" class=\"form-control\" id=\"tuition.line11\" aria-describedby=\"tuition.line11\" placeholder=\"Line 11\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line12\" name=\"tuition.line12\" type=\"text\" class=\"form-control\" id=\"tuition.line12\" aria-describedby=\"tuition.line12\" placeholder=\"Line 12\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line13\" name=\"tuition.line13\" type=\"text\" class=\"form-control\" id=\"tuition.line13\" aria-describedby=\"tuition.line13\" placeholder=\"Line 13\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line14\" name=\"tuition.line14\" type=\"text\" class=\"form-control\" id=\"tuition.line14\" aria-describedby=\"tuition.line14\" placeholder=\"Line 14\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line15\" name=\"tuition.line15\" type=\"text\" class=\"form-control\" id=\"tuition.line15\" aria-describedby=\"tuition.line15\" placeholder=\"Line 15\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line16\" name=\"tuition.line16\" type=\"text\" class=\"form-control\" id=\"tuition.line16\" aria-describedby=\"tuition.line16\" placeholder=\"Line 16\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line17\" name=\"tuition.line17\" type=\"text\" class=\"form-control\" id=\"tuition.line17\" aria-describedby=\"tuition.line17\" placeholder=\"Line 17\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line18\" name=\"tuition.line18\" type=\"text\" class=\"form-control\" id=\"tuition.line18\" aria-describedby=\"tuition.line18\" placeholder=\"Line 18\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line19\" name=\"tuition.line19\" type=\"text\" class=\"form-control\" id=\"tuition.line19\" aria-describedby=\"tuition.line19\" placeholder=\"Line 19\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line20\" name=\"tuition.line20\" type=\"text\" class=\"form-control\" id=\"tuition.line20\" aria-describedby=\"tuition.line20\" placeholder=\"Line 20\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line21\" name=\"tuition.line21\" type=\"text\" class=\"form-control\" id=\"tuition.line21\" aria-describedby=\"tuition.line21\" placeholder=\"Line 21\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line22\" name=\"tuition.line22\" type=\"text\" class=\"form-control\" id=\"tuition.line22\" aria-describedby=\"tuition.line22\" placeholder=\"Line 22\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line23\" name=\"tuition.line23\" type=\"text\" class=\"form-control\" id=\"tuition.line23\" aria-describedby=\"tuition.line23\" placeholder=\"Line 23\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line24\" name=\"tuition.line24\" type=\"text\" class=\"form-control\" id=\"tuition.line24\" aria-describedby=\"tuition.line24\" placeholder=\"Line 24\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line25\" name=\"tuition.line25\" type=\"text\" class=\"form-control\" id=\"tuition.line25\" aria-describedby=\"tuition.line25\" placeholder=\"Line 25\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line26\" name=\"tuition.line26\" type=\"text\" class=\"form-control\" id=\"tuition.line26\" aria-describedby=\"tuition.line26\" placeholder=\"Line 26\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line27\" name=\"tuition.line27\" type=\"text\" class=\"form-control\" id=\"tuition.line27\" aria-describedby=\"tuition.line27\" placeholder=\"Line 27\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line28\" name=\"tuition.line28\" type=\"text\" class=\"form-control\" id=\"tuition.line28\" aria-describedby=\"tuition.line28\" placeholder=\"Line 28\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line29\" name=\"tuition.line29\" type=\"text\" class=\"form-control\" id=\"tuition.line29\" aria-describedby=\"tuition.line29\" placeholder=\"Line 29\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line30\" name=\"tuition.line30\" type=\"text\" class=\"form-control\" id=\"tuition.line30\" aria-describedby=\"tuition.line30\" placeholder=\"Line 30\">\n          </div>\n        </div>\n\n        <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" id=\"submitBtn\">Create Tuition</button>\n      </form>\n      <div id=\"tuition-box\">\n        <h6 id=\"tuition-heading\">Current Showing for Tuition</h6>\n        <hr>\n        <div class=\"tuit-box\" *ngFor=\"let tuit of allTuition\">\n          <p>{{tuit.session}}</p>\n          <p>{{tuit.year}}</p>\n          <p>{{tuit.line1}}</p>\n          <p>{{tuit.line2}}</p>\n          <p>{{tuit.line3}}</p>\n          <p>{{tuit.line4}}</p>\n          <p>{{tuit.line5}}</p>\n          <p>{{tuit.line6}}</p>\n          <p>{{tuit.line7}}</p>\n          <p>{{tuit.line8}}</p>\n          <p>{{tuit.line9}}</p>\n          <p>{{tuit.line10}}</p>\n          <p>{{tuit.line11}}</p>\n          <p>{{tuit.line12}}</p>\n          <p>{{tuit.line13}}</p>\n          <p>{{tuit.line14}}</p>\n          <p>{{tuit.line15}}</p>\n          <p>{{tuit.line16}}</p>\n          <p>{{tuit.line17}}</p>\n          <p>{{tuit.line18}}</p>\n          <p>{{tuit.line19}}</p>\n          <p>{{tuit.line20}}</p>\n          <p>{{tuit.line21}}</p>\n          <p>{{tuit.line22}}</p>\n          <p>{{tuit.line23}}</p>\n          <p>{{tuit.line24}}</p>\n          <p>{{tuit.line25}}</p>\n          <p>{{tuit.line26}}</p>\n          <p>{{tuit.line27}}</p>\n          <p>{{tuit.line28}}</p>\n          <p>{{tuit.line29}}</p>\n          <p>{{tuit.line30}}</p>\n          <button (click)=\"deleteTuit(tuit._id)\" class=\"btn btn-danger\">Delete</button>      \n        </div>\n      </div>\n    </div>    \n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div class=\"card text-center\">\n        <div class=\"card-header\">\n          <ul class=\"nav nav-pills card-header-pills\">\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/students']\">Student List</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/pictures']\">Upload Picture</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/tuition']\">Tuition</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" [routerLink]=\"['/admin/policy']\">Policy</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n      <form (submit)=\"onSubmit()\">\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <label for=\"tuition.session\">Session Type</label>\n            <input [(ngModel)]=\"tuition.session\" name=\"tuition.session\" type=\"text\" class=\"form-control\" id=\"tuition.session\" aria-describedby=\"tuition.session\">\n          </div>\n          <div class=\"col-md-6\">\n            <label for=\"tuition.year\">Year</label>\n            <input [(ngModel)]=\"tuition.year\" name=\"tuition.year\" type=\"text\" class=\"form-control\" id=\"tuition.year\" aria-describedby=\"tuition.year\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line1\" name=\"tuition.line1\" type=\"text\" class=\"form-control\" id=\"tuition.line1\" aria-describedby=\"tuition.line1\" placeholder=\"Line 1\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line2\" name=\"tuition.line2\" type=\"text\" class=\"form-control\" id=\"tuition.line2\" aria-describedby=\"tuition.line2\" placeholder=\"Line 2\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line3\" name=\"tuition.line3\" type=\"text\" class=\"form-control\" id=\"tuition.line3\" aria-describedby=\"tuition.line3\" placeholder=\"Line 3\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line4\" name=\"tuition.line4\" type=\"text\" class=\"form-control\" id=\"tuition.line4\" aria-describedby=\"tuition.line4\" placeholder=\"Line 4\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line5\" name=\"tuition.line5\" type=\"text\" class=\"form-control\" id=\"tuition.line5\" aria-describedby=\"tuition.line5\" placeholder=\"Line 5\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line6\" name=\"tuition.line6\" type=\"text\" class=\"form-control\" id=\"tuition.line6\" aria-describedby=\"tuition.line6\" placeholder=\"Line 6\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line7\" name=\"tuition.line7\" type=\"text\" class=\"form-control\" id=\"tuition.line7\" aria-describedby=\"tuition.line7\" placeholder=\"Line 7\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line8\" name=\"tuition.line8\" type=\"text\" class=\"form-control\" id=\"tuition.line8\" aria-describedby=\"tuition.line8\" placeholder=\"Line 8\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line9\" name=\"tuition.line9\" type=\"text\" class=\"form-control\" id=\"tuition.line9\" aria-describedby=\"tuition.line9\" placeholder=\"Line 9\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line10\" name=\"tuition.line10\" type=\"text\" class=\"form-control\" id=\"tuition.line10\" aria-describedby=\"tuition.line10\" placeholder=\"Line 10\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line11\" name=\"tuition.line11\" type=\"text\" class=\"form-control\" id=\"tuition.line11\" aria-describedby=\"tuition.line11\" placeholder=\"Line 11\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line12\" name=\"tuition.line12\" type=\"text\" class=\"form-control\" id=\"tuition.line12\" aria-describedby=\"tuition.line12\" placeholder=\"Line 12\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line13\" name=\"tuition.line13\" type=\"text\" class=\"form-control\" id=\"tuition.line13\" aria-describedby=\"tuition.line13\" placeholder=\"Line 13\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line14\" name=\"tuition.line14\" type=\"text\" class=\"form-control\" id=\"tuition.line14\" aria-describedby=\"tuition.line14\" placeholder=\"Line 14\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line15\" name=\"tuition.line15\" type=\"text\" class=\"form-control\" id=\"tuition.line15\" aria-describedby=\"tuition.line15\" placeholder=\"Line 15\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line16\" name=\"tuition.line16\" type=\"text\" class=\"form-control\" id=\"tuition.line16\" aria-describedby=\"tuition.line16\" placeholder=\"Line 16\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line17\" name=\"tuition.line17\" type=\"text\" class=\"form-control\" id=\"tuition.line17\" aria-describedby=\"tuition.line17\" placeholder=\"Line 17\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line18\" name=\"tuition.line18\" type=\"text\" class=\"form-control\" id=\"tuition.line18\" aria-describedby=\"tuition.line18\" placeholder=\"Line 18\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line19\" name=\"tuition.line19\" type=\"text\" class=\"form-control\" id=\"tuition.line19\" aria-describedby=\"tuition.line19\" placeholder=\"Line 19\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line20\" name=\"tuition.line20\" type=\"text\" class=\"form-control\" id=\"tuition.line20\" aria-describedby=\"tuition.line20\" placeholder=\"Line 20\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line21\" name=\"tuition.line21\" type=\"text\" class=\"form-control\" id=\"tuition.line21\" aria-describedby=\"tuition.line21\" placeholder=\"Line 21\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line22\" name=\"tuition.line22\" type=\"text\" class=\"form-control\" id=\"tuition.line22\" aria-describedby=\"tuition.line22\" placeholder=\"Line 22\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line23\" name=\"tuition.line23\" type=\"text\" class=\"form-control\" id=\"tuition.line23\" aria-describedby=\"tuition.line23\" placeholder=\"Line 23\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line24\" name=\"tuition.line24\" type=\"text\" class=\"form-control\" id=\"tuition.line24\" aria-describedby=\"tuition.line24\" placeholder=\"Line 24\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line25\" name=\"tuition.line25\" type=\"text\" class=\"form-control\" id=\"tuition.line25\" aria-describedby=\"tuition.line25\" placeholder=\"Line 25\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line26\" name=\"tuition.line26\" type=\"text\" class=\"form-control\" id=\"tuition.line26\" aria-describedby=\"tuition.line26\" placeholder=\"Line 26\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line27\" name=\"tuition.line27\" type=\"text\" class=\"form-control\" id=\"tuition.line27\" aria-describedby=\"tuition.line27\" placeholder=\"Line 27\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line28\" name=\"tuition.line28\" type=\"text\" class=\"form-control\" id=\"tuition.line28\" aria-describedby=\"tuition.line28\" placeholder=\"Line 28\">\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line29\" name=\"tuition.line29\" type=\"text\" class=\"form-control\" id=\"tuition.line29\" aria-describedby=\"tuition.line29\" placeholder=\"Line 29\">\n          </div>\n          <div class=\"col-md-6\">\n            <input [(ngModel)]=\"tuition.line30\" name=\"tuition.line30\" type=\"text\" class=\"form-control\" id=\"tuition.line30\" aria-describedby=\"tuition.line30\" placeholder=\"Line 30\">\n          </div>\n        </div>\n\n        <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" id=\"submitBtn\">Create Tuition</button>\n      </form>\n      <div id=\"tuition-box\">\n        <h6 id=\"tuition-heading\">Current Showing for Tuition</h6>\n        <hr>\n        <div class=\"tuit-box\" *ngFor=\"let tuit of allTuition\">\n          <p>{{tuit.session}}</p>\n          <p>{{tuit.year}}</p>\n          <p>{{tuit.line1}}</p>\n          <p>{{tuit.line2}}</p>\n          <p>{{tuit.line3}}</p>\n          <p>{{tuit.line4}}</p>\n          <p>{{tuit.line5}}</p>\n          <p>{{tuit.line6}}</p>\n          <p>{{tuit.line7}}</p>\n          <p>{{tuit.line8}}</p>\n          <p>{{tuit.line9}}</p>\n          <p>{{tuit.line10}}</p>\n          <p>{{tuit.line11}}</p>\n          <p>{{tuit.line12}}</p>\n          <p>{{tuit.line13}}</p>\n          <p>{{tuit.line14}}</p>\n          <p>{{tuit.line15}}</p>\n          <p>{{tuit.line16}}</p>\n          <p>{{tuit.line17}}</p>\n          <p>{{tuit.line18}}</p>\n          <p>{{tuit.line19}}</p>\n          <p>{{tuit.line20}}</p>\n          <p>{{tuit.line21}}</p>\n          <p>{{tuit.line22}}</p>\n          <p>{{tuit.line23}}</p>\n          <p>{{tuit.line24}}</p>\n          <p>{{tuit.line25}}</p>\n          <p>{{tuit.line26}}</p>\n          <p>{{tuit.line27}}</p>\n          <p>{{tuit.line28}}</p>\n          <p>{{tuit.line29}}</p>\n          <p>{{tuit.line30}}</p>\n          <button (click)=\"deleteTuit(tuit._id)\" class=\"btn btn-danger\">Delete</button>\n        </div>\n      </div>\n    </div>    \n</body>\n</html>"
 
 /***/ }),
 
@@ -805,17 +980,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_schedule_user_schedule_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./user-schedule/user-schedule.component */ "./src/app/user-schedule/user-schedule.component.ts");
 /* harmony import */ var _admin_class_admin_class_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./admin-class/admin-class.component */ "./src/app/admin-class/admin-class.component.ts");
 /* harmony import */ var _admin_students_admin_students_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./admin-students/admin-students.component */ "./src/app/admin-students/admin-students.component.ts");
-/* harmony import */ var _create_user_create_user_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./create-user/create-user.component */ "./src/app/create-user/create-user.component.ts");
-/* harmony import */ var _user_students_user_students_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./user-students/user-students.component */ "./src/app/user-students/user-students.component.ts");
-/* harmony import */ var _userstudentshow_userstudentshow_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./userstudentshow/userstudentshow.component */ "./src/app/userstudentshow/userstudentshow.component.ts");
-/* harmony import */ var _admin_class_show_admin_class_show_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./admin-class-show/admin-class-show.component */ "./src/app/admin-class-show/admin-class-show.component.ts");
-/* harmony import */ var _admin_picture_admin_picture_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./admin-picture/admin-picture.component */ "./src/app/admin-picture/admin-picture.component.ts");
-/* harmony import */ var _admin_tuition_admin_tuition_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./admin-tuition/admin-tuition.component */ "./src/app/admin-tuition/admin-tuition.component.ts");
-/* harmony import */ var _user_gallery_user_gallery_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./user-gallery/user-gallery.component */ "./src/app/user-gallery/user-gallery.component.ts");
-/* harmony import */ var _admin_student_show_admin_student_show_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./admin-student-show/admin-student-show.component */ "./src/app/admin-student-show/admin-student-show.component.ts");
-/* harmony import */ var _admin_login_admin_login_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./admin-login/admin-login.component */ "./src/app/admin-login/admin-login.component.ts");
-/* harmony import */ var _user_edit_user_edit_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./user-edit/user-edit.component */ "./src/app/user-edit/user-edit.component.ts");
-
+/* harmony import */ var _user_students_user_students_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./user-students/user-students.component */ "./src/app/user-students/user-students.component.ts");
+/* harmony import */ var _userstudentshow_userstudentshow_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./userstudentshow/userstudentshow.component */ "./src/app/userstudentshow/userstudentshow.component.ts");
+/* harmony import */ var _admin_class_show_admin_class_show_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./admin-class-show/admin-class-show.component */ "./src/app/admin-class-show/admin-class-show.component.ts");
+/* harmony import */ var _admin_picture_admin_picture_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./admin-picture/admin-picture.component */ "./src/app/admin-picture/admin-picture.component.ts");
+/* harmony import */ var _admin_tuition_admin_tuition_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./admin-tuition/admin-tuition.component */ "./src/app/admin-tuition/admin-tuition.component.ts");
+/* harmony import */ var _user_gallery_user_gallery_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./user-gallery/user-gallery.component */ "./src/app/user-gallery/user-gallery.component.ts");
+/* harmony import */ var _admin_student_show_admin_student_show_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./admin-student-show/admin-student-show.component */ "./src/app/admin-student-show/admin-student-show.component.ts");
+/* harmony import */ var _admin_login_admin_login_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./admin-login/admin-login.component */ "./src/app/admin-login/admin-login.component.ts");
+/* harmony import */ var _admin_policy_admin_policy_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./admin-policy/admin-policy.component */ "./src/app/admin-policy/admin-policy.component.ts");
 
 
 
@@ -844,20 +1017,20 @@ var routes = [
     { path: 'registration', component: _user_register_user_register_component__WEBPACK_IMPORTED_MODULE_6__["UserRegisterComponent"] },
     { path: 'tuition', component: _user_tuition_user_tuition_component__WEBPACK_IMPORTED_MODULE_7__["UserTuitionComponent"] },
     { path: 'schedule', component: _user_schedule_user_schedule_component__WEBPACK_IMPORTED_MODULE_8__["UserScheduleComponent"] },
-    { path: 'register/:id', component: _create_user_create_user_component__WEBPACK_IMPORTED_MODULE_11__["CreateUserComponent"] },
-    { path: 'students', component: _user_students_user_students_component__WEBPACK_IMPORTED_MODULE_12__["UserStudentsComponent"] },
-    { path: 'students/:id', component: _userstudentshow_userstudentshow_component__WEBPACK_IMPORTED_MODULE_13__["UserstudentshowComponent"] },
-    { path: 'gallery', component: _user_gallery_user_gallery_component__WEBPACK_IMPORTED_MODULE_17__["UserGalleryComponent"] },
-    { path: 'edit', component: _user_edit_user_edit_component__WEBPACK_IMPORTED_MODULE_20__["UserEditComponent"] },
+    { path: 'students', component: _user_students_user_students_component__WEBPACK_IMPORTED_MODULE_11__["UserStudentsComponent"] },
+    { path: 'students/:id', component: _userstudentshow_userstudentshow_component__WEBPACK_IMPORTED_MODULE_12__["UserstudentshowComponent"] },
+    { path: 'gallery', component: _user_gallery_user_gallery_component__WEBPACK_IMPORTED_MODULE_16__["UserGalleryComponent"] },
     // ROUTES FOR USERS //
     // ROUTES FOR ADMIN //
-    { path: 'login', component: _admin_login_admin_login_component__WEBPACK_IMPORTED_MODULE_19__["AdminLoginComponent"] },
+    { path: 'login', component: _admin_login_admin_login_component__WEBPACK_IMPORTED_MODULE_18__["AdminLoginComponent"] },
     { path: 'admin', component: _admin_class_admin_class_component__WEBPACK_IMPORTED_MODULE_9__["AdminClassComponent"] },
-    { path: 'admin/class/:id', component: _admin_class_show_admin_class_show_component__WEBPACK_IMPORTED_MODULE_14__["AdminClassShowComponent"] },
+    { path: 'admin/class/:id', component: _admin_class_show_admin_class_show_component__WEBPACK_IMPORTED_MODULE_13__["AdminClassShowComponent"] },
     { path: 'admin/students', component: _admin_students_admin_students_component__WEBPACK_IMPORTED_MODULE_10__["AdminStudentsComponent"] },
-    { path: 'admin/students/:id', component: _admin_student_show_admin_student_show_component__WEBPACK_IMPORTED_MODULE_18__["AdminStudentShowComponent"] },
-    { path: 'admin/pictures', component: _admin_picture_admin_picture_component__WEBPACK_IMPORTED_MODULE_15__["AdminPictureComponent"] },
-    { path: 'admin/tuition', component: _admin_tuition_admin_tuition_component__WEBPACK_IMPORTED_MODULE_16__["AdminTuitionComponent"] },
+    { path: 'admin/students/:id', component: _admin_student_show_admin_student_show_component__WEBPACK_IMPORTED_MODULE_17__["AdminStudentShowComponent"] },
+    { path: 'admin/pictures', component: _admin_picture_admin_picture_component__WEBPACK_IMPORTED_MODULE_14__["AdminPictureComponent"] },
+    { path: 'admin/tuition', component: _admin_tuition_admin_tuition_component__WEBPACK_IMPORTED_MODULE_15__["AdminTuitionComponent"] },
+    { path: 'admin/policy', component: _admin_policy_admin_policy_component__WEBPACK_IMPORTED_MODULE_19__["AdminPolicyComponent"] }
+    // ROUTES FOR ADMIN //
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -893,7 +1066,7 @@ module.exports = "#contact{\r\n    -webkit-text-emphasis: bold;\r\n            t
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>Home</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n  <div class=\"container-fluid\">\n    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n      <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n          <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item ml-4\">\n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/home']\">Home</a>\n            </li>\n            <li class=\"nav-item ml-4\">\n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/schedule']\">Calendar</a>\n            </li>\n            <li class=\"nav-item ml-4\">\n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/tuition']\">Tuition</a>\n            </li>\n            <li class=\"nav-item ml-4\">  \n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/class']\">Classes</a>\n            </li>\n            <li class=\"nav-item ml-4\">  \n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/gallery']\">Gallery</a>\n            </li>\n            <li class=\"nav-item ml-4\">\n                <div class=\"dropdown\">\n                    <button class=\"btn btn-secondary dropdown-toggle btn-primary-outline\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                        Parents\n                    </button>\n                    <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                        <a class=\"dropdown-item\" [routerLink]=\"['/registration']\">Login</a>\n                        <a class=\"dropdown-item\" [routerLink]=\"['/students']\">My Students</a>\n                        <a class=\"dropdown-item\" [routerLink]=\"['/edit']\">Edit Info</a>\n                    </div>\n                </div>\n            </li>\n            <li class=\"nav-item ml-4\">  \n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/login']\">ADMIN</a>\n            </li>\n          </ul>\n      </div>\n\n    </nav>\n  </div>\n  <router-outlet></router-outlet>\n    <div class=\"container-fluid\">\n        <div id=\"footer\" class=\"bg-dark\">\n            <h5 id=\"footer-text\">Contact Us: 626-799-2654 Email: LEARNINGEDGE@GMAIL.COM</h5>\n        </div>\n    </div>\n</body>\n</html>\n"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <title>Home</title>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n  <div class=\"container-fluid\">\n    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n      <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n          <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item ml-4\">\n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/home']\">Home</a>\n            </li>\n            <li class=\"nav-item ml-4\">\n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/schedule']\">Calendar</a>\n            </li>\n            <li class=\"nav-item ml-4\">\n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/tuition']\">Tuition</a>\n            </li>\n            <li class=\"nav-item ml-4\">  \n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/class']\">Classes</a>\n            </li>\n            <li class=\"nav-item ml-4\">  \n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/gallery']\">Gallery</a>\n            </li>\n            <li class=\"nav-item ml-4\">\n                <div class=\"dropdown\">\n                    <button class=\"btn btn-secondary dropdown-toggle btn-primary-outline\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                        Parents\n                    </button>\n                    <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n                        <a class=\"dropdown-item\" [routerLink]=\"['/registration']\">Login</a>\n                        <a class=\"dropdown-item\" [routerLink]=\"['/students']\">My Students</a>\n                    </div>\n                </div>\n            </li>\n            <li class=\"nav-item ml-4\">  \n                <a class=\"nav-link\" id=\"link\" [routerLink]=\"['/login']\">ADMIN</a>\n            </li>\n          </ul>\n      </div>\n\n    </nav>\n  </div>\n  <router-outlet></router-outlet>\n    <div class=\"container-fluid\">\n        <div id=\"footer\" class=\"bg-dark\">\n            <h5 id=\"footer-text\">Contact Us: 626-799-2654 Email: LEARNINGEDGE@GMAIL.COM</h5>\n        </div>\n    </div>\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -969,17 +1142,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _admin_students_admin_students_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./admin-students/admin-students.component */ "./src/app/admin-students/admin-students.component.ts");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _user_show_class_user_show_class_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./user-show-class/user-show-class.component */ "./src/app/user-show-class/user-show-class.component.ts");
-/* harmony import */ var _create_user_create_user_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./create-user/create-user.component */ "./src/app/create-user/create-user.component.ts");
-/* harmony import */ var _user_students_user_students_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./user-students/user-students.component */ "./src/app/user-students/user-students.component.ts");
-/* harmony import */ var _userstudentshow_userstudentshow_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./userstudentshow/userstudentshow.component */ "./src/app/userstudentshow/userstudentshow.component.ts");
-/* harmony import */ var _admin_class_show_admin_class_show_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./admin-class-show/admin-class-show.component */ "./src/app/admin-class-show/admin-class-show.component.ts");
-/* harmony import */ var _admin_picture_admin_picture_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./admin-picture/admin-picture.component */ "./src/app/admin-picture/admin-picture.component.ts");
-/* harmony import */ var _admin_tuition_admin_tuition_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./admin-tuition/admin-tuition.component */ "./src/app/admin-tuition/admin-tuition.component.ts");
-/* harmony import */ var _user_gallery_user_gallery_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./user-gallery/user-gallery.component */ "./src/app/user-gallery/user-gallery.component.ts");
-/* harmony import */ var _admin_student_show_admin_student_show_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./admin-student-show/admin-student-show.component */ "./src/app/admin-student-show/admin-student-show.component.ts");
-/* harmony import */ var _admin_login_admin_login_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./admin-login/admin-login.component */ "./src/app/admin-login/admin-login.component.ts");
-/* harmony import */ var _user_edit_user_edit_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./user-edit/user-edit.component */ "./src/app/user-edit/user-edit.component.ts");
-
+/* harmony import */ var _user_students_user_students_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./user-students/user-students.component */ "./src/app/user-students/user-students.component.ts");
+/* harmony import */ var _userstudentshow_userstudentshow_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./userstudentshow/userstudentshow.component */ "./src/app/userstudentshow/userstudentshow.component.ts");
+/* harmony import */ var _admin_class_show_admin_class_show_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./admin-class-show/admin-class-show.component */ "./src/app/admin-class-show/admin-class-show.component.ts");
+/* harmony import */ var _admin_picture_admin_picture_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./admin-picture/admin-picture.component */ "./src/app/admin-picture/admin-picture.component.ts");
+/* harmony import */ var _admin_tuition_admin_tuition_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./admin-tuition/admin-tuition.component */ "./src/app/admin-tuition/admin-tuition.component.ts");
+/* harmony import */ var _user_gallery_user_gallery_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./user-gallery/user-gallery.component */ "./src/app/user-gallery/user-gallery.component.ts");
+/* harmony import */ var _admin_student_show_admin_student_show_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./admin-student-show/admin-student-show.component */ "./src/app/admin-student-show/admin-student-show.component.ts");
+/* harmony import */ var _admin_login_admin_login_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./admin-login/admin-login.component */ "./src/app/admin-login/admin-login.component.ts");
+/* harmony import */ var _admin_policy_admin_policy_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./admin-policy/admin-policy.component */ "./src/app/admin-policy/admin-policy.component.ts");
 
 
 
@@ -1021,16 +1192,15 @@ var AppModule = /** @class */ (function () {
                 _admin_students_admin_students_component__WEBPACK_IMPORTED_MODULE_14__["AdminStudentsComponent"],
                 _home_home_component__WEBPACK_IMPORTED_MODULE_15__["HomeComponent"],
                 _user_show_class_user_show_class_component__WEBPACK_IMPORTED_MODULE_16__["UserShowClassComponent"],
-                _create_user_create_user_component__WEBPACK_IMPORTED_MODULE_17__["CreateUserComponent"],
-                _user_students_user_students_component__WEBPACK_IMPORTED_MODULE_18__["UserStudentsComponent"],
-                _userstudentshow_userstudentshow_component__WEBPACK_IMPORTED_MODULE_19__["UserstudentshowComponent"],
-                _admin_class_show_admin_class_show_component__WEBPACK_IMPORTED_MODULE_20__["AdminClassShowComponent"],
-                _admin_picture_admin_picture_component__WEBPACK_IMPORTED_MODULE_21__["AdminPictureComponent"],
-                _admin_tuition_admin_tuition_component__WEBPACK_IMPORTED_MODULE_22__["AdminTuitionComponent"],
-                _user_gallery_user_gallery_component__WEBPACK_IMPORTED_MODULE_23__["UserGalleryComponent"],
-                _admin_student_show_admin_student_show_component__WEBPACK_IMPORTED_MODULE_24__["AdminStudentShowComponent"],
-                _admin_login_admin_login_component__WEBPACK_IMPORTED_MODULE_25__["AdminLoginComponent"],
-                _user_edit_user_edit_component__WEBPACK_IMPORTED_MODULE_26__["UserEditComponent"]
+                _user_students_user_students_component__WEBPACK_IMPORTED_MODULE_17__["UserStudentsComponent"],
+                _userstudentshow_userstudentshow_component__WEBPACK_IMPORTED_MODULE_18__["UserstudentshowComponent"],
+                _admin_class_show_admin_class_show_component__WEBPACK_IMPORTED_MODULE_19__["AdminClassShowComponent"],
+                _admin_picture_admin_picture_component__WEBPACK_IMPORTED_MODULE_20__["AdminPictureComponent"],
+                _admin_tuition_admin_tuition_component__WEBPACK_IMPORTED_MODULE_21__["AdminTuitionComponent"],
+                _user_gallery_user_gallery_component__WEBPACK_IMPORTED_MODULE_22__["UserGalleryComponent"],
+                _admin_student_show_admin_student_show_component__WEBPACK_IMPORTED_MODULE_23__["AdminStudentShowComponent"],
+                _admin_login_admin_login_component__WEBPACK_IMPORTED_MODULE_24__["AdminLoginComponent"],
+                _admin_policy_admin_policy_component__WEBPACK_IMPORTED_MODULE_25__["AdminPolicyComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -1049,134 +1219,6 @@ var AppModule = /** @class */ (function () {
     return AppModule;
 }());
 
-
-
-/***/ }),
-
-/***/ "./src/app/create-user/create-user.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/create-user/create-user.component.css ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "#submitBtn{\r\n    background: rgb(73,144,226);\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3JlYXRlLXVzZXIvY3JlYXRlLXVzZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLDRCQUE0QjtDQUMvQiIsImZpbGUiOiJzcmMvYXBwL2NyZWF0ZS11c2VyL2NyZWF0ZS11c2VyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjc3VibWl0QnRue1xyXG4gICAgYmFja2dyb3VuZDogcmdiKDczLDE0NCwyMjYpO1xyXG59Il19 */"
-
-/***/ }),
-
-/***/ "./src/app/create-user/create-user.component.html":
-/*!********************************************************!*\
-  !*** ./src/app/create-user/create-user.component.html ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <h3>We need some basic information</h3>\n      <form (submit)=\"onSubmit()\">\n      <div class='row'>\n        <div class='col'>\n          <div class=\"form-group\">\n            <label for=\"f_name\">First Name</label>\n            <input [(ngModel)]=\"user.f_name\" name=\"user.f_name\" type=\"text\" class=\"form-control\" id=\"f_name\" aria-describedby=\"f_name\" placeholder=\"John\">\n            <small *ngIf=\"errorMessages['f_name']['message'] == 'error' \" id=\"f_name\" class=\"form-text text-danger\">Invalid First Name</small>\n          </div>\n        </div>\n        <div class='col'>\n          <div class=\"form-group\">\n            <label for=\"l_name\">Last Name</label>\n            <input [(ngModel)]=\"user.l_name\" name=\"user.l_name\" type=\"text\" class=\"form-control\" id=\"l_name\" aria-describedby=\"l_name\" placeholder=\"Doe\">\n            <small *ngIf=\"errorMessages['l_name']['message'] == 'error' \" id=\"f_name\" class=\"form-text text-danger\">Invalid Last Name</small>            \n          </div>\n        </div>\n      </div>\n\n\n        <div class=\"form-group\">\n          <label for=\"street_address\">Address</label>\n          <input [(ngModel)]=\"user.street_address\" name=\"user.street_address\" type=\"text\" class=\"form-control\" id=\"street_address\" aria-describedby=\"street_address\" placeholder=\"1315 Fair Oaks Ave.\">\n          <small *ngIf=\"errorMessages['street_address']['message'] == 'error' \" id=\"street_address\" class=\"form-text text-danger\">Invalid Street Address</small>          \n        </div>\n\n\n      <div class=\"form-row\">\n          <div class=\"form-group col-md-6\">\n            <label for=\"city\">City</label>\n            <input [(ngModel)]=\"user.city\" name=\"user.city\" type=\"text\" class=\"form-control\" id=\"city\" placeholder=\"South Pasadena\">\n            <small *ngIf=\"errorMessages['city']['message'] == 'error' \" id=\"city\" class=\"form-text text-danger\">Invalid City</small>          \n          </div>\n          <div class=\"form-group col-md-2\">\n              <label for=\"zip\">Zip</label>\n              <input [(ngModel)]=\"user.zip\" name=\"user.zip\" type=\"text\" class=\"form-control\" id=\"zip\" placeholder=\"91030\">\n              <small *ngIf=\"errorMessages['zip']['message'] == 'error' \" id=\"zip\" class=\"form-text text-danger\">Invalid Zip Code</small>\n            </div>\n          <div class=\"form-group col-md-4\">\n            <label for=\"phone\">Cell Phone</label>\n            <input [(ngModel)]=\"user.phone\" name=\"user.phone\" type=\"text\" class=\"form-control\" id=\"phone\" aria-describedby=\"phone\" placeholder=\"626-799-2654\">\n            <small *ngIf=\"errorMessages['phone']['message'] == 'error' \" id=\"phone\" class=\"form-text text-danger\">Invalid Phone Number</small>            \n          </div>\n        </div>\n        <br>\n        <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" id=\"submitBtn\">Submit</button>\n      </form>\n    </div>    \n</body>\n</html>"
-
-/***/ }),
-
-/***/ "./src/app/create-user/create-user.component.ts":
-/*!******************************************************!*\
-  !*** ./src/app/create-user/create-user.component.ts ***!
-  \******************************************************/
-/*! exports provided: CreateUserComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateUserComponent", function() { return CreateUserComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.es5.js");
-
-
-
-
-
-var CreateUserComponent = /** @class */ (function () {
-    function CreateUserComponent(_httpService, _router, storage) {
-        this._httpService = _httpService;
-        this._router = _router;
-        this.storage = storage;
-        this.user = {
-            uid: "",
-            f_name: "",
-            l_name: "",
-            email: "",
-            phone: "",
-            street_address: "",
-            city: "",
-            zip: ""
-        };
-    }
-    CreateUserComponent.prototype.ngOnInit = function () {
-        this.errorMessages = {
-            f_name: { message: "" },
-            l_name: { message: "" },
-            city: { message: "" },
-            street_address: { message: "" },
-            zip: { message: "" },
-            phone: { message: "" }
-        };
-    };
-    ;
-    CreateUserComponent.prototype.onSubmit = function () {
-        var _this = this;
-        this.user.uid = this.storage.get('uid');
-        this.user.email = this.storage.get('email');
-        var observ = this._httpService.createUser(this.user);
-        observ.subscribe(function (data) {
-            if (data.errors) {
-                _this.errorMessages = {
-                    f_name: { message: "" },
-                    l_name: { message: "" },
-                    city: { message: "" },
-                    street_address: { message: "" },
-                    zip: { message: "" },
-                    phone: { message: "" }
-                };
-                if (data.errors['f_name']) {
-                    _this.errorMessages['f_name']['message'] = "error";
-                }
-                if (data.errors['l_name']) {
-                    _this.errorMessages['l_name']['message'] = "error";
-                }
-                if (data.errors['phone']) {
-                    _this.errorMessages['phone']['message'] = "error";
-                }
-                if (data.errors['city']) {
-                    _this.errorMessages['city']['message'] = "error";
-                }
-                if (data.errors['street_address']) {
-                    _this.errorMessages['street_address']['message'] = "error";
-                }
-                if (data.errors['zip']) {
-                    _this.errorMessages['zip']['message'] = "error";
-                }
-            }
-            else {
-                _this._router.navigate(['/students']);
-            }
-            ;
-        });
-    };
-    ;
-    CreateUserComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-create-user',
-            template: __webpack_require__(/*! ./create-user.component.html */ "./src/app/create-user/create-user.component.html"),
-            styles: [__webpack_require__(/*! ./create-user.component.css */ "./src/app/create-user/create-user.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__["SESSION_STORAGE"])),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__["WebStorageService"]])
-    ], CreateUserComponent);
-    return CreateUserComponent;
-}());
-
-;
 
 
 /***/ }),
@@ -1299,9 +1341,6 @@ var HttpService = /** @class */ (function () {
     HttpService.prototype.findAllUsers = function () {
         return this._http.get('/api/user/all');
     };
-    HttpService.prototype.newUser = function () {
-        this._router.navigate(['/register/' + this.storage.get("uid")]);
-    };
     HttpService.prototype.createUser = function (userObj) {
         return this._http.post('/api/user/create', userObj);
     };
@@ -1390,6 +1429,15 @@ var HttpService = /** @class */ (function () {
     HttpService.prototype.deleteTuit = function (id) {
         return this._http.delete('/api/admin/tuition/' + id);
     };
+    HttpService.prototype.createPolicy = function (policyObj) {
+        return this._http.post('/api/admin/policy', policyObj);
+    };
+    HttpService.prototype.getPolicy = function () {
+        return this._http.get('/api/admin/policy');
+    };
+    HttpService.prototype.deletePolicy = function (policyID) {
+        return this._http.get('/api/admin/policy/' + policyID);
+    };
     HttpService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
@@ -1425,7 +1473,7 @@ module.exports = "#classList{\r\n    text-align: center;\r\n    padding-bottom: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <h1 id=\"classList\">Currently Available Classes</h1>\n      <h3 *ngIf=\"logcheck == false\">You are not logged in. You must login to add students</h3>\n      <div *ngFor=\"let class of allClass\" class=\"col-sm-6 mt-2\">\n        <div class=\"card\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">{{class.title}}</h5>\n            <p class=\"card-text\">{{class.grade}} Grade</p>\n            <p class=\"card-text\">Capacity: {{class.capacity}} students</p>\n            <a [routerLink]=\"['/class', class._id]\" class=\"btn btn-primary\">Go to Class</a>\n          </div>\n        </div>\n      </div> \n    </div>    \n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <h1 id=\"classList\">Currently Available Classes</h1>\n      <h3 *ngIf=\"logcheck == false\">You are not logged in. You must login to add students</h3>\n      <div *ngFor=\"let class of allClass\" class=\"col-sm-6 mt-2\">\n        <div class=\"card\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">{{class.title}}</h5>\n            <p class=\"card-text\">{{class.grade}} Grade</p>\n            <p class=\"card-text\">Capacity: {{class.capacity}} students</p>\n            <p class=\"card-text\">Description: {{class.description}}</p>\n            <a [routerLink]=\"['/class', class._id]\" class=\"btn btn-primary\">Go to Class</a>\n          </div>\n        </div>\n      </div> \n    </div>    \n</body>\n</html>"
 
 /***/ }),
 
@@ -1477,107 +1525,6 @@ var UserClassComponent = /** @class */ (function () {
             angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__["WebStorageService"]])
     ], UserClassComponent);
     return UserClassComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/user-edit/user-edit.component.css":
-/*!***************************************************!*\
-  !*** ./src/app/user-edit/user-edit.component.css ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXItZWRpdC91c2VyLWVkaXQuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/user-edit/user-edit.component.html":
-/*!****************************************************!*\
-  !*** ./src/app/user-edit/user-edit.component.html ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <h3 *ngIf=\"update == true\">Your information has been updated</h3>\n      <form (submit)=\"onSubmit()\">\n      <div class='row'>\n        <div class='col'>\n          <div class=\"form-group\">\n            <label for=\"f_name\">First Name</label>\n            <input [(ngModel)]=\"user.f_name\" name=\"user.f_name\" type=\"text\" class=\"form-control\" id=\"f_name\" aria-describedby=\"f_name\" placeholder=\"John\">\n            <small *ngIf=\"errorMessages['f_name']['message'] == 'error' \" id=\"f_name\" class=\"form-text text-danger\">Invalid First Name</small>\n          </div>\n        </div>\n        <div class='col'>\n          <div class=\"form-group\">\n            <label for=\"l_name\">Last Name</label>\n            <input [(ngModel)]=\"user.l_name\" name=\"user.l_name\" type=\"text\" class=\"form-control\" id=\"l_name\" aria-describedby=\"l_name\" placeholder=\"Doe\">\n            <small *ngIf=\"errorMessages['l_name']['message'] == 'error' \" id=\"f_name\" class=\"form-text text-danger\">Invalid Last Name</small>            \n          </div>\n        </div>\n      </div>\n        <div class=\"form-group\">\n          <label for=\"street_address\">Address</label>\n          <input [(ngModel)]=\"user.street_address\" name=\"user.street_address\" type=\"text\" class=\"form-control\" id=\"street_address\" aria-describedby=\"street_address\" placeholder=\"1315 Fair Oaks Ave.\">\n          <small *ngIf=\"errorMessages['street_address']['message'] == 'error' \" id=\"street_address\" class=\"form-text text-danger\">Invalid Street Address</small>          \n        </div>\n\n      <div class=\"form-row\">\n          <div class=\"form-group col-md-6\">\n            <label for=\"city\">City</label>\n            <input [(ngModel)]=\"user.city\" name=\"user.city\" type=\"text\" class=\"form-control\" id=\"city\" placeholder=\"South Pasadena\">\n            <small *ngIf=\"errorMessages['city']['message'] == 'error' \" id=\"city\" class=\"form-text text-danger\">Invalid City</small>          \n          </div>\n          <div class=\"form-group col-md-2\">\n              <label for=\"zip\">Zip</label>\n              <input [(ngModel)]=\"user.zip\" name=\"user.zip\" type=\"text\" class=\"form-control\" id=\"zip\" placeholder=\"91030\">\n              <small *ngIf=\"errorMessages['zip']['message'] == 'error' \" id=\"zip\" class=\"form-text text-danger\">Invalid Zip Code</small>\n            </div>\n          <div class=\"form-group col-md-4\">\n            <label for=\"phone\">Cell Phone</label>\n            <input [(ngModel)]=\"user.phone\" name=\"user.phone\" type=\"text\" class=\"form-control\" id=\"phone\" aria-describedby=\"phone\" placeholder=\"626-799-2654\">\n            <small *ngIf=\"errorMessages['phone']['message'] == 'error' \" id=\"phone\" class=\"form-text text-danger\">Invalid Phone Number</small>            \n          </div>\n        </div>\n        <br>\n        <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\" id=\"submitBtn\">Update Information</button>\n      </form>\n    </div>    \n</body>\n</html>"
-
-/***/ }),
-
-/***/ "./src/app/user-edit/user-edit.component.ts":
-/*!**************************************************!*\
-  !*** ./src/app/user-edit/user-edit.component.ts ***!
-  \**************************************************/
-/*! exports provided: UserEditComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserEditComponent", function() { return UserEditComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.es5.js");
-
-
-
-
-
-var UserEditComponent = /** @class */ (function () {
-    function UserEditComponent(_httpService, _router, storage) {
-        this._httpService = _httpService;
-        this._router = _router;
-        this.storage = storage;
-        this.user = {
-            uid: "",
-            f_name: "",
-            l_name: "",
-            email: "",
-            phone: "",
-            street_address: "",
-            city: "",
-            zip: ""
-        };
-    }
-    UserEditComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        var observ = this._httpService.getUser();
-        observ.subscribe(function (data) {
-            _this.user = data[0];
-        });
-        this.errorMessages = {
-            f_name: { message: "" },
-            l_name: { message: "" },
-            city: { message: "" },
-            street_address: { message: "" },
-            zip: { message: "" },
-            phone: { message: "" }
-        };
-    };
-    ;
-    UserEditComponent.prototype.onSubmit = function () {
-        var _this = this;
-        var observ = this._httpService.updateUser(this.user);
-        observ.subscribe(function (data) {
-            if (data == "success") {
-                _this.update = true;
-                _this.ngOnInit();
-            }
-        });
-    };
-    UserEditComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-user-edit',
-            template: __webpack_require__(/*! ./user-edit.component.html */ "./src/app/user-edit/user-edit.component.html"),
-            styles: [__webpack_require__(/*! ./user-edit.component.css */ "./src/app/user-edit/user-edit.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__["SESSION_STORAGE"])),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__["WebStorageService"]])
-    ], UserEditComponent);
-    return UserEditComponent;
 }());
 
 
@@ -1729,12 +1676,6 @@ var UserRegisterComponent = /** @class */ (function () {
                 _this.storage.set('uid', firebaseUser.uid);
                 _this.storage.set('email', firebaseUser.email);
                 _this.fireLog = true;
-                var observ = _this._httpService.findUser(firebaseUser.uid);
-                observ.subscribe(function (data) {
-                    if (data == false) {
-                        _this._httpService.newUser();
-                    }
-                });
             }
             else {
                 _this.fireLog = false;
@@ -1851,7 +1792,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <h2>Which student is interested in this class?</h2>\n          <div class=\"card w-50\">\n            <div class=\"card-body\">\n              <h5 class=\"card-title\">{{class.title}}</h5>\n              <p class=\"card-text\">{{class.grade}} Grade</p>\n              <p class=\"card-text\">Capacity: {{class.capacity}} students</p>\n            </div>\n          </div>\n          <h6>Choose</h6>\n          <form (submit)=\"onSubmit()\">\n            <select [(ngModel)]=\"applyStudent\" name=\"applyStudent\">\n              <option *ngFor=\"let student of students\" value=\"{{student._id}}\">{{student.f_name}} {{student.l_name}}</option>\n            </select>\n            <br>\n            <button type=\"submit\" class=\"btn btn-primary\" id=\"submitBtn\">Waitlist</button>\n          </form>\n    </div>\n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <h2>Which student is interested in this class?</h2>\n          <div class=\"card w-50\">\n            <div class=\"card-body\">\n              <h5 class=\"card-title\">{{class.title}}</h5>\n              <p class=\"card-text\">{{class.grade}} Grade</p>\n              <p class=\"card-text\">Capacity: {{class.capacity}} students</p>\n              <p class=\"card-text\">Description: {{class.description}}</p>\n            </div>\n          </div>\n          <h6>Choose</h6>\n          <form (submit)=\"onSubmit()\">\n            <select [(ngModel)]=\"applyStudent\" name=\"applyStudent\">\n              <option *ngFor=\"let student of students\" value=\"{{student._id}}\">{{student.f_name}} {{student.l_name}}</option>\n            </select>\n            <br>\n            <button type=\"submit\" class=\"btn btn-primary\" id=\"submitBtn\">Waitlist</button>\n          </form>\n    </div>\n</body>\n</html>"
 
 /***/ }),
 
@@ -1886,7 +1827,8 @@ var UserShowClassComponent = /** @class */ (function () {
         this.class = {
             title: '',
             grade: '',
-            capcity: 0
+            capcity: 0,
+            description: ""
         };
     }
     UserShowClassComponent.prototype.ngOnInit = function () {
@@ -1951,7 +1893,7 @@ module.exports = "#studcard{\r\n    display: inline-block\r\n}\r\n#showstudent{\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"assets/bootstrap/css/bootstrap.min.css\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div id='showstudent'>\n        <h3>Current Students</h3>\n        <h4 [hidden]=\"students[0]\">You currently have no students added</h4>\n        <div *ngFor=\"let student of students\" class=\"card m-3\" id=\"studcard\" style=\"width: 18rem;\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">{{student.f_name}} {{student.l_name}}</h5>\n            <h6 class=\"card-subtitle mb-2 text-muted\">{{student.grade}} Grade</h6>\n            <p class=\"card-text\">{{student.school}}</p>\n            <a class=\"card-link\" [routerLink]=\"['/students', student._id]\">Show</a>\n          </div>\n        </div>\n      </div>\n      <h3>Add a Student</h3>\n      <form (submit)=\"onSubmit()\">\n        <div class=\"row\">\n          <div class='col-md-3 col-sm-12'>\n              <div class=\"form-group\">\n                <label for=\"student.f_name\">First Name</label>\n                <input [(ngModel)]=\"student.f_name\" name=\"student.f_name\" type=\"text\" class=\"form-control\" id=\"f_name\" aria-describedby=\"f_name\">\n                <small *ngIf=\"errorMessages['f_name']['message'] == 'error' \" id=\"f_name\" class=\"form-text text-danger\">Invalid First Name</small>\n              </div>\n            </div>\n            <div class='col-md-3 col-sm-12'>\n              <div class=\"form-group\">\n                <label for=\"student.l_name\">Last Name</label>\n                <input [(ngModel)]=\"student.l_name\" name=\"student.l_name\" type=\"text\" class=\"form-control\" id=\"l_name\" aria-describedby=\"l_name\">\n                <small *ngIf=\"errorMessages['l_name']['message'] == 'error' \" id=\"f_name\" class=\"form-text text-danger\">Invalid Last Name</small>            \n              </div>\n            </div>\n            <div class='col-md-3 col-sm-12'>\n              <div class=\"form-group\">\n                <label for=\"student.school\">School</label>\n                <input [(ngModel)]=\"student.school\" name=\"student.school\" type=\"text\" class=\"form-control\" id=\"school\" aria-describedby=\"school\">\n                <small *ngIf=\"errorMessages['school']['message'] == 'error' \" id=\"school\" class=\"form-text text-danger\">Require School</small>            \n              </div>\n            </div>\n            <div class=\"col-md-3 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"gradeSelect\">Grade</label>\n                <select [(ngModel)]=\"student.grade\" name=\"student.grade\" class=\"form-control\" id=\"gradeSelect\">\n                  <option value=\"1st\">1st</option>\n                  <option value=\"2nd\">2nd</option>\n                  <option value=\"3rd\">3rd</option>\n                  <option value=\"4th\">4th</option>\n                  <option value=\"5th\">5th</option>\n                  <option value=\"6th\">6th</option>\n                  <option value=\"7th\">7th</option>\n                  <option value=\"8th\">8th</option>\n                  <option value=\"9th\">9th</option>\n                  <option value=\"10th\">10th</option>\n                  <option value=\"11th\">11th</option>\n                  <option value=\"12th\">12th</option>              \n                </select>\n                <small *ngIf=\"errorMessages['grade']['message'] == 'error' \" class=\"form-text text-danger\">Invalid Grade</small>            \n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact1_name\">Emergency Contact(Required)</label>\n                <input [(ngModel)]=\"student.e_contact1_name\" name=\"student.e_contact1_name\" type=\"text\" class=\"form-control\" id=\"e_contact1_name\" aria-describedby=\"e_contact1_name\">\n                <small *ngIf=\"errorMessages['e_contact1_name']['message'] == 'error' \" id=\"e_contact1_name\" class=\"form-text text-danger\">Requires Name</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact1_relation\">Relation</label>\n                <input [(ngModel)]=\"student.e_contact1_relation\" name=\"student.e_contact1_relation\" type=\"text\" class=\"form-control\" id=\"e_contact1_relation\" aria-describedby=\"e_contact1_relation\">\n                <small *ngIf=\"errorMessages['e_contact1_relation']['message'] == 'error' \" id=\"e_contact1_relation\" class=\"form-text text-danger\">Requires Relation</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact1_phone\">Phone</label>\n                <input [(ngModel)]=\"student.e_contact1_phone\" name=\"student.e_contact1_phone\" type=\"text\" class=\"form-control\" id=\"e_contact1_phone\" aria-describedby=\"e_contact1_phone\">\n                <small *ngIf=\"errorMessages['e_contact1_phone']['message'] == 'error' \" id=\"e_contact1_phone\" class=\"form-text text-danger\">Requires Phone</small>\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact2_name\">Emergency Contact(Optional)</label>\n                <input [(ngModel)]=\"student.e_contact2_name\" name=\"student.e_contact2_name\" type=\"text\" class=\"form-control\" id=\"e_contact2_name\" aria-describedby=\"e_contact2_name\">\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact2_relation\">Relation</label>\n                <input [(ngModel)]=\"student.e_contact2_relation\" name=\"student.e_contact2_relation\" type=\"text\" class=\"form-control\" id=\"e_contact2_relation\" aria-describedby=\"e_contact2_relation\">\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact2_phone\">Phone</label>\n                <input [(ngModel)]=\"student.e_contact2_phone\" name=\"student.e_contact2_phone\" type=\"text\" class=\"form-control\" id=\"e_contact2_phone\" aria-describedby=\"e_contact2_phone\">\n              </div>\n            </div>\n          </div>\n          <button type=\"submit\" class=\"btn btn-primary\">Submit Student</button>\n      </form>\n      <br>\n      <br>\n    </div>    \n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div id='showstudent'>\n        <h3>Current Students</h3>\n        <h4 [hidden]=\"students[0]\">You currently have no students added</h4>\n        <div *ngFor=\"let student of students\" class=\"card m-3\" id=\"studcard\" style=\"width: 18rem;\">\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">{{student.f_name}} {{student.l_name}}</h5>\n            <h6 class=\"card-subtitle mb-2 text-muted\">{{student.grade}} Grade</h6>\n            <p class=\"card-text\">{{student.school}}</p>\n            <a class=\"card-link\" [routerLink]=\"['/students', student._id]\">Add Allergy/Change Info</a>\n          </div>\n        </div>\n      </div>\n      <h3>Add a Student</h3>\n      <form (submit)=\"onSubmit()\">\n        <div class=\"row\">\n          <div class='col-md-3 col-sm-12'>\n              <div class=\"form-group\">\n                <label for=\"student.f_name\">First Name</label>\n                <input [(ngModel)]=\"student.f_name\" name=\"student.f_name\" type=\"text\" class=\"form-control\" id=\"f_name\" aria-describedby=\"f_name\">\n                <small *ngIf=\"errorMessages['f_name']['message'] == 'error' \" id=\"f_name\" class=\"form-text text-danger\">Invalid First Name</small>\n              </div>\n            </div>\n            <div class='col-md-3 col-sm-12'>\n              <div class=\"form-group\">\n                <label for=\"student.l_name\">Last Name</label>\n                <input [(ngModel)]=\"student.l_name\" name=\"student.l_name\" type=\"text\" class=\"form-control\" id=\"l_name\" aria-describedby=\"l_name\">\n                <small *ngIf=\"errorMessages['l_name']['message'] == 'error' \" id=\"f_name\" class=\"form-text text-danger\">Invalid Last Name</small>            \n              </div>\n            </div>\n            <div class='col-md-3 col-sm-12'>\n              <div class=\"form-group\">\n                <label for=\"student.school\">School</label>\n                <input [(ngModel)]=\"student.school\" name=\"student.school\" type=\"text\" class=\"form-control\" id=\"school\" aria-describedby=\"school\">\n                <small *ngIf=\"errorMessages['school']['message'] == 'error' \" id=\"school\" class=\"form-text text-danger\">Require School</small>            \n              </div>\n            </div>\n            <div class=\"col-md-3 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"gradeSelect\">Grade</label>\n                <select [(ngModel)]=\"student.grade\" name=\"student.grade\" class=\"form-control\" id=\"gradeSelect\">\n                  <option value=\"1st\">1st</option>\n                  <option value=\"2nd\">2nd</option>\n                  <option value=\"3rd\">3rd</option>\n                  <option value=\"4th\">4th</option>\n                  <option value=\"5th\">5th</option>\n                  <option value=\"6th\">6th</option>\n                  <option value=\"7th\">7th</option>\n                  <option value=\"8th\">8th</option>\n                  <option value=\"9th\">9th</option>\n                  <option value=\"10th\">10th</option>\n                  <option value=\"11th\">11th</option>\n                  <option value=\"12th\">12th</option>              \n                </select>\n                <small *ngIf=\"errorMessages['grade']['message'] == 'error' \" class=\"form-text text-danger\">Invalid Grade</small>            \n              </div>\n            </div>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"street_address\">Address</label>\n            <input [(ngModel)]=\"student.street_address\" name=\"student.street_address\" type=\"text\" class=\"form-control\" id=\"street_address\" aria-describedby=\"street_address\" placeholder=\"1315 Fair Oaks Ave.\">\n            <small *ngIf=\"errorMessages['street_address']['message'] == 'error' \" id=\"street_address\" class=\"form-text text-danger\">Invalid Street Address</small>          \n          </div>\n          <div class=\"form-row\">\n            <div class=\"form-group col-md-6\">\n              <label for=\"city\">City</label>\n              <input [(ngModel)]=\"student.city\" name=\"student.city\" type=\"text\" class=\"form-control\" id=\"city\" placeholder=\"South Pasadena\">\n              <small *ngIf=\"errorMessages['city']['message'] == 'error' \" id=\"city\" class=\"form-text text-danger\">Invalid City</small>          \n            </div>\n            <div class=\"form-group col-md-2\">\n                <label for=\"zip\">Zip</label>\n                <input [(ngModel)]=\"student.zip\" name=\"student.zip\" type=\"text\" class=\"form-control\" id=\"zip\" placeholder=\"91030\">\n                <small *ngIf=\"errorMessages['zip']['message'] == 'error' \" id=\"zip\" class=\"form-text text-danger\">Invalid Zip Code</small>\n              </div>\n            <div class=\"form-group col-md-4\">\n              <label for=\"phone\">Home Phone</label>\n              <input [(ngModel)]=\"student.phone\" name=\"student.phone\" type=\"text\" class=\"form-control\" id=\"phone\" aria-describedby=\"phone\" placeholder=\"626-799-2654\">\n              <small *ngIf=\"errorMessages['phone']['message'] == 'error' \" id=\"phone\" class=\"form-text text-danger\">Invalid Phone Number</small>            \n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian1_name\">Mother/Guardian</label>\n                <input [(ngModel)]=\"student.guardian1_name\" name=\"student.guardian1_name\" type=\"text\" class=\"form-control\" id=\"student.guardian1_name\" aria-describedby=\"guardian1_name\">\n                <small *ngIf=\"errorMessages['guardian1_name']['message'] == 'error' \" id=\"guardian1_name\" class=\"form-text text-danger\">Requires Name</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian1_email\">Email</label>\n                <input [(ngModel)]=\"student.guardian1_email\" name=\"student.guardian1_email\" type=\"text\" class=\"form-control\" id=\"student.guardian1_email\" aria-describedby=\"guardian1_email\">\n                <small *ngIf=\"errorMessages['guardian1_email']['message'] == 'error' \" id=\"guardian1_email\" class=\"form-text text-danger\">Requires Email</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian1_cell\">Cell</label>\n                <input [(ngModel)]=\"student.guardian1_cell\" name=\"student.guardian1_cell\" type=\"text\" class=\"form-control\" id=\"student.guardian1_cell\" aria-describedby=\"guardian1_cell\">\n                <small *ngIf=\"errorMessages['guardian1_cell']['message'] == 'error' \" id=\"guardian1_cell\" class=\"form-text text-danger\">Requires Email</small>\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian2_name\">Father/Guardian</label>\n                <input [(ngModel)]=\"student.guardian2_name\" name=\"student.guardian2_name\" type=\"text\" class=\"form-control\" id=\"student.guardian2_name\" aria-describedby=\"guardian2_name\">\n                <small *ngIf=\"errorMessages['guardian2_name']['message'] == 'error' \" id=\"guardian2_name\" class=\"form-text text-danger\">Requires Name</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian2_email\">Email</label>\n                <input [(ngModel)]=\"student.guardian2_email\" name=\"student.guardian2_email\" type=\"text\" class=\"form-control\" id=\"student.guardian2_email\" aria-describedby=\"guardian2_email\">\n                <small *ngIf=\"errorMessages['guardian2_email']['message'] == 'error' \" id=\"guardian2_email\" class=\"form-text text-danger\">Requires Email</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.guardian2_cell\">Cell</label>\n                <input [(ngModel)]=\"student.guardian2_cell\" name=\"student.guardian2_cell\" type=\"text\" class=\"form-control\" id=\"student.guardian2_cell\" aria-describedby=\"guardian2_cell\">\n                <small *ngIf=\"errorMessages['guardian2_cell']['message'] == 'error' \" id=\"guardian2_cell\" class=\"form-text text-danger\">Requires Email</small>\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact1_name\">Emergency Contact(Required)</label>\n                <input [(ngModel)]=\"student.e_contact1_name\" name=\"student.e_contact1_name\" type=\"text\" class=\"form-control\" id=\"e_contact1_name\" aria-describedby=\"e_contact1_name\">\n                <small *ngIf=\"errorMessages['e_contact1_name']['message'] == 'error' \" id=\"e_contact1_name\" class=\"form-text text-danger\">Requires Name</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact1_relation\">Relation</label>\n                <input [(ngModel)]=\"student.e_contact1_relation\" name=\"student.e_contact1_relation\" type=\"text\" class=\"form-control\" id=\"e_contact1_relation\" aria-describedby=\"e_contact1_relation\">\n                <small *ngIf=\"errorMessages['e_contact1_relation']['message'] == 'error' \" id=\"e_contact1_relation\" class=\"form-text text-danger\">Requires Relation</small>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact1_phone\">Phone</label>\n                <input [(ngModel)]=\"student.e_contact1_phone\" name=\"student.e_contact1_phone\" type=\"text\" class=\"form-control\" id=\"e_contact1_phone\" aria-describedby=\"e_contact1_phone\">\n                <small *ngIf=\"errorMessages['e_contact1_phone']['message'] == 'error' \" id=\"e_contact1_phone\" class=\"form-text text-danger\">Requires Phone</small>\n              </div>\n            </div>\n          </div>\n          <div class=\"row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact2_name\">Emergency Contact(Optional)</label>\n                <input [(ngModel)]=\"student.e_contact2_name\" name=\"student.e_contact2_name\" type=\"text\" class=\"form-control\" id=\"e_contact2_name\" aria-describedby=\"e_contact2_name\">\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact2_relation\">Relation</label>\n                <input [(ngModel)]=\"student.e_contact2_relation\" name=\"student.e_contact2_relation\" type=\"text\" class=\"form-control\" id=\"e_contact2_relation\" aria-describedby=\"e_contact2_relation\">\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"student.e_contact2_phone\">Phone</label>\n                <input [(ngModel)]=\"student.e_contact2_phone\" name=\"student.e_contact2_phone\" type=\"text\" class=\"form-control\" id=\"e_contact2_phone\" aria-describedby=\"e_contact2_phone\">\n              </div>\n            </div>\n          </div>\n          <div>\n            <h5 *ngFor=\"let pol of policy\">{{pol.line1}}</h5>\n          </div>\n          <div class=\"form-check\">\n            <input [(ngModel)]=\"checkbox\" name=\"checkbox\" class=\"form-check-input\" type=\"checkbox\" id=\"registerCheck\">\n            <label class=\"form-check-label\" for=\"registerCheck\">\n              By checking this box, you agree to abide by the terms and conditions provided above.\n            </label>\n            <small *ngIf=\"checkbox == false\" id=\"registerCheck\" class=\"form-text text-danger\">You must agree to the policies to register</small>\n          </div>\n          <br>\n          <button type=\"submit\" class=\"btn btn-primary\">Submit Student</button>\n      </form>\n      <br>\n      <br>\n    </div>\n</body>\n</html>"
 
 /***/ }),
 
@@ -1981,11 +1923,22 @@ var UserStudentsComponent = /** @class */ (function () {
         this._router = _router;
         this.storage = storage;
         this.students = [];
+        this.checkbox = false;
         this.student = {
             f_name: "",
             l_name: "",
             grade: "",
             parent_id: "",
+            street_address: "",
+            city: "",
+            zip: "",
+            phone: "",
+            guardian1_name: "",
+            guardian1_email: "",
+            guardian1_cell: "",
+            guardian2_name: "",
+            guardian2_email: "",
+            guardian2_cell: "",
             e_contact1_name: "",
             e_contact1_relation: "",
             e_contact1_phone: "",
@@ -2000,16 +1953,47 @@ var UserStudentsComponent = /** @class */ (function () {
         if (!this.storage.get('uid')) {
             this._router.navigate(['/registration']);
         }
+        else {
+            var check = this._httpService.findUser(this.storage.get('uid'));
+            check.subscribe(function (data) {
+                if (data === false) {
+                    _this.newUser = {
+                        uid: _this.storage.get("uid")
+                    };
+                    var create = _this._httpService.createUser(_this.newUser);
+                    create.subscribe(function (data) {
+                        console.log(data);
+                    });
+                }
+                else {
+                    var observ = _this._httpService.getUser();
+                    observ.subscribe(function (data) {
+                        _this.user = data['0'];
+                        _this.students = data['0'].students;
+                        console.log(data);
+                    });
+                }
+            });
+            var policyObserv = this._httpService.getPolicy();
+            policyObserv.subscribe(function (data) {
+                _this.policy = data;
+            });
+        }
         ;
-        var observ = this._httpService.getUser();
-        observ.subscribe(function (data) {
-            _this.user = data['0'];
-            _this.students = data['0'].students;
-        });
         this.errorMessages = {
             f_name: { message: "" },
             l_name: { message: "" },
             grade: { message: "" },
+            street_address: { message: "" },
+            city: { message: "" },
+            zip: { message: "" },
+            phone: { message: "" },
+            guardian1_name: { message: "" },
+            guardian1_email: { message: "" },
+            guardian1_cell: { message: "" },
+            guardian2_name: { message: "" },
+            guardian2_email: { message: "" },
+            guardian2_cell: { message: "" },
             e_contact1_name: { message: "" },
             e_contact1_relation: { message: "" },
             e_contact1_phone: { message: "" },
@@ -2020,6 +2004,16 @@ var UserStudentsComponent = /** @class */ (function () {
             l_name: "",
             grade: "",
             parent_id: this.storage.get('uid'),
+            street_address: "",
+            city: "",
+            zip: "",
+            phone: "",
+            guardian1_name: "",
+            guardian1_email: "",
+            guardian1_cell: "",
+            guardian2_name: "",
+            guardian2_email: "",
+            guardian2_cell: "",
             e_contact1_name: "",
             e_contact1_relation: "",
             e_contact1_phone: "",
@@ -2031,44 +2025,71 @@ var UserStudentsComponent = /** @class */ (function () {
     };
     UserStudentsComponent.prototype.onSubmit = function () {
         var _this = this;
-        var observ = this._httpService.addStudent(this.student);
-        observ.subscribe(function (data) {
-            if (data.errors) {
-                _this.errorMessages = {
-                    f_name: { message: "" },
-                    l_name: { message: "" },
-                    grade: { message: "" },
-                    e_contact1_name: { message: "" },
-                    e_contact1_relation: { message: "" },
-                    e_contact1_phone: { message: "" },
-                    school: { message: "" }
-                };
-                if (data.errors['f_name']) {
-                    _this.errorMessages['f_name']['message'] = "error";
+        if (this.checkbox == false) {
+            this.checkboxBool = false;
+        }
+        else {
+            var observ = this._httpService.addStudent(this.student);
+            observ.subscribe(function (data) {
+                console.log(data);
+                if (data === null) {
+                    if (data.errors['f_name']) {
+                        _this.errorMessages['f_name']['message'] = "error";
+                    }
+                    if (data.errors['l_name']) {
+                        _this.errorMessages['l_name']['message'] = "error";
+                    }
+                    if (data.errors['grade']) {
+                        _this.errorMessages['grade']['message'] = "error";
+                    }
+                    if (data.errors['street_address']) {
+                        _this.errorMessages['street_address']['message'] = "error";
+                    }
+                    if (data.errors['city']) {
+                        _this.errorMessages['city']['message'] = "error";
+                    }
+                    if (data.errors['zip']) {
+                        _this.errorMessages['zip']['message'] = "error";
+                    }
+                    if (data.errors['phone']) {
+                        _this.errorMessages['phone']['message'] = "error";
+                    }
+                    if (data.errors['guardian1_name']) {
+                        _this.errorMessages['guardian1_name']['message'] = "error";
+                    }
+                    if (data.errors['guardian1_email']) {
+                        _this.errorMessages['guardian1_email']['message'] = "error";
+                    }
+                    if (data.errors['guardian1_cell']) {
+                        _this.errorMessages['guardian1_cell']['message'] = "error";
+                    }
+                    if (data.errors['guardian2_name']) {
+                        _this.errorMessages['guardian2_name']['message'] = "error";
+                    }
+                    if (data.errors['guardian2_email']) {
+                        _this.errorMessages['guardian2_email']['message'] = "error";
+                    }
+                    if (data.errors['guardian2_cell']) {
+                        _this.errorMessages['guardian2_cell']['message'] = "error";
+                    }
+                    if (data.errors['e_contact1_name']) {
+                        _this.errorMessages['e_contact1_name']['message'] = "error";
+                    }
+                    if (data.errors['e_contact1_relation']) {
+                        _this.errorMessages['e_contact1_relation']['message'] = "error";
+                    }
+                    if (data.errors['e_contact1_phone']) {
+                        _this.errorMessages['e_contact1_phone']['message'] = "error";
+                    }
+                    if (data.errors['school']) {
+                        _this.errorMessages['school']['message'] = "error";
+                    }
                 }
-                if (data.errors['l_name']) {
-                    _this.errorMessages['l_name']['message'] = "error";
+                else {
+                    _this.ngOnInit();
                 }
-                if (data.errors['grade']) {
-                    _this.errorMessages['grade']['message'] = "error";
-                }
-                if (data.errors['e_contact1_name']) {
-                    _this.errorMessages['e_contact1_name']['message'] = "error";
-                }
-                if (data.errors['e_contact1_relation']) {
-                    _this.errorMessages['e_contact1_relation']['message'] = "error";
-                }
-                if (data.errors['e_contact1_phone']) {
-                    _this.errorMessages['e_contact1_phone']['message'] = "error";
-                }
-                if (data.errors['school']) {
-                    _this.errorMessages['school']['message'] = "error";
-                }
-            }
-            else {
-                _this.ngOnInit();
-            }
-        });
+            });
+        }
     };
     UserStudentsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2083,6 +2104,7 @@ var UserStudentsComponent = /** @class */ (function () {
     return UserStudentsComponent;
 }());
 
+;
 
 
 /***/ }),
@@ -2105,7 +2127,7 @@ module.exports = "h6{\r\n    margin-bottom: 15px;\r\n}\r\n#tuition-box{\r\n    d
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div *ngFor=\"let tuit of tuition\" class=\"col-md-6\" id=\"tuition-box\">\n        <div class=\"card\">\n          <h5 class=\"card-header\">{{tuit.session}}</h5>\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">{{tuit.year}}</h5>\n            <p class=\"card-text\">{{tuit.line1}}</p>\n            <p class=\"card-text\">{{tuit.line2}}</p>\n            <p class=\"card-text\">{{tuit.line3}}</p>\n            <p class=\"card-text\">{{tuit.line4}}</p>\n            <p class=\"card-text\">{{tuit.line5}}</p>\n            <p class=\"card-text\">{{tuit.line6}}</p>\n            <p class=\"card-text\">{{tuit.line7}}</p>\n            <p class=\"card-text\">{{tuit.line8}}</p>\n            <p class=\"card-text\">{{tuit.line9}}</p>\n            <p class=\"card-text\">{{tuit.line10}}</p>\n            <p class=\"card-text\">{{tuit.line11}}</p>\n            <p class=\"card-text\">{{tuit.line12}}</p>\n            <p class=\"card-text\">{{tuit.line13}}</p>\n            <p class=\"card-text\">{{tuit.line14}}</p>\n            <p class=\"card-text\">{{tuit.line15}}</p>\n            <p class=\"card-text\">{{tuit.line16}}</p>\n            <p class=\"card-text\">{{tuit.line17}}</p>\n            <p class=\"card-text\">{{tuit.line18}}</p>\n            <p class=\"card-text\">{{tuit.line19}}</p>\n            <p class=\"card-text\">{{tuit.line20}}</p>\n            <p class=\"card-text\">{{tuit.line21}}</p>\n            <p class=\"card-text\">{{tuit.line22}}</p>\n            <p class=\"card-text\">{{tuit.line23}}</p>\n            <p class=\"card-text\">{{tuit.line24}}</p>\n            <p class=\"card-text\">{{tuit.line25}}</p>\n            <p class=\"card-text\">{{tuit.line26}}</p>\n            <p class=\"card-text\">{{tuit.line27}}</p>\n            <p class=\"card-text\">{{tuit.line28}}</p>\n            <p class=\"card-text\">{{tuit.line29}}</p>\n            <p class=\"card-text\">{{tuit.line30}}</p>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"card text-white bg-info rounded-0\">\n        <div class=\"card-header\">\n          Policies\n        </div>\n        <div class=\"card-body\">\n          <h6>Tuition is due within 10 days after invoice is sent. A $25 late fee will be charged after the 10th day. $50 charge for returned checks</h6>\n          <h6>Missed days are nonrefundable. Tuition can be prorated with 2 week prior notification for weeks that a student will not be able to attend class</h6>\n          <h6>4 week notification of withdrawal is required or $100 will be charged</h6>\n          <h6>Learning Edge reserves the right to charge $1 per minute after 7:00PM Mon-Thur and 6:30PM on Fridays. If Learning Edge is unable to reach a parent or guardian before 8:00PM, the police department will be contacted.</h6>\n        </div>\n      </div>\n    </div>\n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div *ngFor=\"let tuit of tuition\" class=\"col-md-6\" id=\"tuition-box\">\n        <div class=\"card\">\n          <h5 class=\"card-header\">{{tuit.session}}</h5>\n          <div class=\"card-body\">\n            <h5 class=\"card-title\">{{tuit.year}}</h5>\n            <p class=\"card-text\">{{tuit.line1}}</p>\n            <p class=\"card-text\">{{tuit.line2}}</p>\n            <p class=\"card-text\">{{tuit.line3}}</p>\n            <p class=\"card-text\">{{tuit.line4}}</p>\n            <p class=\"card-text\">{{tuit.line5}}</p>\n            <p class=\"card-text\">{{tuit.line6}}</p>\n            <p class=\"card-text\">{{tuit.line7}}</p>\n            <p class=\"card-text\">{{tuit.line8}}</p>\n            <p class=\"card-text\">{{tuit.line9}}</p>\n            <p class=\"card-text\">{{tuit.line10}}</p>\n            <p class=\"card-text\">{{tuit.line11}}</p>\n            <p class=\"card-text\">{{tuit.line12}}</p>\n            <p class=\"card-text\">{{tuit.line13}}</p>\n            <p class=\"card-text\">{{tuit.line14}}</p>\n            <p class=\"card-text\">{{tuit.line15}}</p>\n            <p class=\"card-text\">{{tuit.line16}}</p>\n            <p class=\"card-text\">{{tuit.line17}}</p>\n            <p class=\"card-text\">{{tuit.line18}}</p>\n            <p class=\"card-text\">{{tuit.line19}}</p>\n            <p class=\"card-text\">{{tuit.line20}}</p>\n            <p class=\"card-text\">{{tuit.line21}}</p>\n            <p class=\"card-text\">{{tuit.line22}}</p>\n            <p class=\"card-text\">{{tuit.line23}}</p>\n            <p class=\"card-text\">{{tuit.line24}}</p>\n            <p class=\"card-text\">{{tuit.line25}}</p>\n            <p class=\"card-text\">{{tuit.line26}}</p>\n            <p class=\"card-text\">{{tuit.line27}}</p>\n            <p class=\"card-text\">{{tuit.line28}}</p>\n            <p class=\"card-text\">{{tuit.line29}}</p>\n            <p class=\"card-text\">{{tuit.line30}}</p>\n          </div>\n        </div>\n      </div>\n\n      <div class=\"card text-white bg-info rounded-0\">\n        <div class=\"card-header\">\n          Policies\n        </div>\n        <div class=\"card-body\">\n          <h6 *ngFor=\"let policy of allPolicy\">{{policy.line1}}</h6>\n        </div>\n      </div>\n    </div>\n</body>\n</html>"
 
 /***/ }),
 
@@ -2140,6 +2162,10 @@ var UserTuitionComponent = /** @class */ (function () {
         var observ = this._httpService.getAllTuition();
         observ.subscribe(function (data) {
             _this.tuition = data;
+        });
+        var policyObserv = this._httpService.getPolicy();
+        policyObserv.subscribe(function (data) {
+            _this.allPolicy = data;
         });
     };
     UserTuitionComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -2177,7 +2203,7 @@ module.exports = "#studentInfo{\r\n    border: 1px solid black;\r\n    padding: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div id='studentInfo'>\n        <div id=\"left\">\n          <h2 id=\"title\">Student Info</h2>\n          <h4>{{student.f_name}} {{student.l_name}}</h4>\n          <p class=\"fontUp\">School: {{student.school}}</p>\n          <p class=\"fontUp\">Grade: {{student.grade}}</p>\n          \n          <h3>Emergency Contact</h3>\n          <p class=\"e_contact\">{{student.e_contact1_name}}</p>\n          <p class=\"e_contact\">Relation: {{student.e_contact1_relation}}</p>\n          <p class=\"e_contact\">Contact: {{student.e_contact1_phone}}</p>\n          <br>\n          <br>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_name\">{{student.e_contact2_name}}</p>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_relation\">Relation: {{student.e_contact2_relation}}</p>\n          <p class=\"e_contact\" [hidden]=\"!student.e_contact2_phone\">Phone: {{student.e_contact2_phone}}</p>\n        </div>\n        <div id=\"right\">\n          <table class=\"table table-striped\">\n              <thead>\n                <th>Allergy Type</th>\n                <th>Severity</th>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let allergy of dballergy\">\n                  <td>{{allergy.type}}</td>\n                  <td>{{allergy.severity}}</td>\n                </tr>\n              </tbody>\n            </table>\n        </div>\n      </div>\n      <form (submit)=\"onSubmit()\">\n          <div class=\"form-row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"allergy\">Allergy</label>\n                <input [(ngModel)]=\"allergy.type\" name=\"allergy.type\" type=\"text\" class=\"form-control\" id=\"allergy\" aria-describedby=\"allergy\" placeholder=\"Peanut\">\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"allergySelect\">Severity</label>\n                <select [(ngModel)]=\"allergy.severity\" name=\"allergy.severity\" class=\"form-control\" id=\"allergySelect\">\n                    <option value=\"Potentially Fatal\">Potentially Fatal</option>\n                    <option value=\"Damaging to Health\">Damaging to Health</option>\n                    <option value=\"Inconvenient\">Inconvenient</option>\n                  </select>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                  <label for=\"allergyBtn\">Add Allergy</label>\n                  <button type=\"submit\" class=\"btn btn-primary form-control\" id=\"allergyBtn\">Submit</button>\n              </div>\n            </div>\n          </div>\n        </form>\n        <hr>\n          <form (submit)=\"onEdit()\">\n            <div class=\"form-row\">\n                <div class='col-md-3 col-sm-12'>\n                  <div class=\"form-group\">\n                    <label for=\"f_name\">First Name</label>\n                    <input [(ngModel)]=\"student.f_name\" name=\"student.f_name\" type=\"text\" class=\"form-control\" id=\"f_name\" aria-describedby=\"f_name\" placeholder=\"John\">\n                    <!-- <small *ngIf=\"errorMessages['f_name']['message'] == 'error' \" id=\"f_name\" class=\"form-text text-danger\">Invalid First Name</small> -->\n                  </div>\n                </div>\n                <div class='col-md-3 col-sm-12'>\n                  <div class=\"form-group\">\n                    <label for=\"l_name\">Last Name</label>\n                    <input [(ngModel)]=\"student.l_name\" name=\"student.l_name\" type=\"text\" class=\"form-control\" id=\"l_name\" aria-describedby=\"l_name\" placeholder=\"Doe\">\n                    <!-- <small *ngIf=\"errorMessages['l_name']['message'] == 'error' \" id=\"f_name\" class=\"form-text text-danger\">Invalid Last Name</small>             -->\n                  </div>\n                </div>\n                <div class=\"col-md-3 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"gradeSelect\">Grade</label>\n                    <select [(ngModel)]=\"student.grade\" name=\"student.grade\" class=\"form-control\" id=\"gradeSelect\">\n                      <option value=\"1st\">1st</option>\n                      <option value=\"2nd\">2nd</option>\n                      <option value=\"3rd\">3rd</option>\n                      <option value=\"4th\">4th</option>\n                      <option value=\"5th\">5th</option>\n                      <option value=\"6th\">6th</option>\n                      <option value=\"7th\">7th</option>\n                      <option value=\"8th\">8th</option>\n                      <option value=\"9th\">9th</option>\n                      <option value=\"10th\">10th</option>\n                      <option value=\"11th\">11th</option>\n                      <option value=\"12th\">12th</option>              \n                    </select>\n                    <!-- <small *ngIf=\"errorMessages['grade']['message'] == 'error' \" class=\"form-text text-danger\">Invalid Grade</small>             -->\n                  </div>\n                </div>\n                <div class=\"col-md-3 col-sm-12\">\n                  <label for=\"updateBtn\">Edit Information</label>\n                  <button type=\"submit\" class=\"btn btn-primary form-control\" id=\"updateBtn\">Submit</button>\n                </div>\n              </div>\n            </form>\n    </div>    \n\n  <script src=\"assets/bootstrap/js/bootstrap.min.js\"></script>\n  <script src=\"assets/jquery/jquery.min.js\"></script>\n  <script src=\"assets/popper.js/popper.min.js\"></script>\n</body>\n</html>"
+module.exports = "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"home.component.css\">\n</head>\n<body>\n    <div class=\"container-fluid\">\n      <div id='studentInfo'>\n        <div id=\"left\">\n          <h2 id=\"title\">Student Info</h2>\n          <h4>{{student.f_name}} {{student.l_name}}</h4>\n          <p class=\"fontUp\">School: {{student.school}}</p>\n          <p class=\"fontUp\">Grade: {{student.grade}}</p>\n        </div>\n        <div id=\"right\">\n          <table class=\"table table-striped\">\n              <thead>\n                <th>Allergy Type</th>\n                <th>Severity</th>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let allergy of dballergy\">\n                  <td>{{allergy.type}}</td>\n                  <td>{{allergy.severity}}</td>\n                </tr>\n              </tbody>\n            </table>\n        </div>\n      </div>\n      <form (submit)=\"onSubmit()\">\n          <div class=\"form-row\">\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"allergy\">Allergy</label>\n                <input [(ngModel)]=\"allergy.type\" name=\"allergy.type\" type=\"text\" class=\"form-control\" id=\"allergy\" aria-describedby=\"allergy\" placeholder=\"Peanut\">\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                <label for=\"allergySelect\">Severity</label>\n                <select [(ngModel)]=\"allergy.severity\" name=\"allergy.severity\" class=\"form-control\" id=\"allergySelect\">\n                    <option value=\"Potentially Fatal\">Potentially Fatal</option>\n                    <option value=\"Damaging to Health\">Damaging to Health</option>\n                    <option value=\"Inconvenient\">Inconvenient</option>\n                  </select>\n              </div>\n            </div>\n            <div class=\"col-md-4 col-sm-12\">\n              <div class=\"form-group\">\n                  <label for=\"allergyBtn\">Add Allergy</label>\n                  <button type=\"submit\" class=\"btn btn-primary form-control\" id=\"allergyBtn\">Submit</button>\n              </div>\n            </div>\n          </div>\n        </form>\n        <hr>\n          <form (submit)=\"onEdit()\">\n            <div class=\"form-row\">\n                <div class='col-md-3 col-sm-12'>\n                  <div class=\"form-group\">\n                    <label for=\"f_name\">First Name</label>\n                    <input [(ngModel)]=\"student.f_name\" name=\"student.f_name\" type=\"text\" class=\"form-control\" id=\"f_name\" aria-describedby=\"f_name\" placeholder=\"John\">\n                  </div>\n                </div>\n                <div class='col-md-3 col-sm-12'>\n                  <div class=\"form-group\">\n                    <label for=\"l_name\">Last Name</label>\n                    <input [(ngModel)]=\"student.l_name\" name=\"student.l_name\" type=\"text\" class=\"form-control\" id=\"l_name\" aria-describedby=\"l_name\" placeholder=\"Doe\">\n                  </div>\n                </div>\n                <div class=\"col-md-3 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"gradeSelect\">Grade</label>\n                    <select [(ngModel)]=\"student.grade\" name=\"student.grade\" class=\"form-control\" id=\"gradeSelect\">\n                      <option value=\"1st\">1st</option>\n                      <option value=\"2nd\">2nd</option>\n                      <option value=\"3rd\">3rd</option>\n                      <option value=\"4th\">4th</option>\n                      <option value=\"5th\">5th</option>\n                      <option value=\"6th\">6th</option>\n                      <option value=\"7th\">7th</option>\n                      <option value=\"8th\">8th</option>\n                      <option value=\"9th\">9th</option>\n                      <option value=\"10th\">10th</option>\n                      <option value=\"11th\">11th</option>\n                      <option value=\"12th\">12th</option>              \n                    </select>\n                  </div>\n                </div>\n                <div class=\"col-md-3 col-sm-12\">\n                  <label for=\"updateBtn\">Edit Information</label>\n                  <button type=\"submit\" class=\"btn btn-primary form-control\" id=\"updateBtn\">Update</button>\n                </div>\n              </div>\n              <div class=\"form-group\">\n                <label for=\"street_address\">Address</label>\n                <input [(ngModel)]=\"student.street_address\" name=\"student.street_address\" type=\"text\" class=\"form-control\" id=\"street_address\" aria-describedby=\"street_address\" placeholder=\"1315 Fair Oaks Ave.\">\n                <small *ngIf=\"errorMessages['street_address']['message'] == 'error' \" id=\"street_address\" class=\"form-text text-danger\">Invalid Street Address</small>          \n              </div>\n              <div class=\"form-row\">\n                <div class=\"form-group col-md-6\">\n                  <label for=\"city\">City</label>\n                  <input [(ngModel)]=\"student.city\" name=\"student.city\" type=\"text\" class=\"form-control\" id=\"city\" placeholder=\"South Pasadena\">\n                  <small *ngIf=\"errorMessages['city']['message'] == 'error' \" id=\"city\" class=\"form-text text-danger\">Invalid City</small>          \n                </div>\n                <div class=\"form-group col-md-2\">\n                    <label for=\"zip\">Zip</label>\n                    <input [(ngModel)]=\"student.zip\" name=\"student.zip\" type=\"text\" class=\"form-control\" id=\"zip\" placeholder=\"91030\">\n                    <small *ngIf=\"errorMessages['zip']['message'] == 'error' \" id=\"zip\" class=\"form-text text-danger\">Invalid Zip Code</small>\n                  </div>\n                <div class=\"form-group col-md-4\">\n                  <label for=\"phone\">Home Phone</label>\n                  <input [(ngModel)]=\"student.phone\" name=\"student.phone\" type=\"text\" class=\"form-control\" id=\"phone\" aria-describedby=\"phone\" placeholder=\"626-799-2654\">\n                  <small *ngIf=\"errorMessages['phone']['message'] == 'error' \" id=\"phone\" class=\"form-text text-danger\">Invalid Phone Number</small>            \n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.guardian1_name\">Mother/Guardian</label>\n                    <input [(ngModel)]=\"student.guardian1_name\" name=\"student.guardian1_name\" type=\"text\" class=\"form-control\" id=\"student.guardian1_name\" aria-describedby=\"guardian1_name\">\n                    <small *ngIf=\"errorMessages['guardian1_name']['message'] == 'error' \" id=\"guardian1_name\" class=\"form-text text-danger\">Requires Name</small>\n                  </div>\n                </div>\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.guardian1_email\">Email</label>\n                    <input [(ngModel)]=\"student.guardian1_email\" name=\"student.guardian1_email\" type=\"text\" class=\"form-control\" id=\"student.guardian1_email\" aria-describedby=\"guardian1_email\">\n                    <small *ngIf=\"errorMessages['guardian1_email']['message'] == 'error' \" id=\"guardian1_email\" class=\"form-text text-danger\">Requires Email</small>\n                  </div>\n                </div>\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.guardian1_cell\">Cell</label>\n                    <input [(ngModel)]=\"student.guardian1_cell\" name=\"student.guardian1_cell\" type=\"text\" class=\"form-control\" id=\"student.guardian1_cell\" aria-describedby=\"guardian1_cell\">\n                    <small *ngIf=\"errorMessages['guardian1_cell']['message'] == 'error' \" id=\"guardian1_cell\" class=\"form-text text-danger\">Requires Email</small>\n                  </div>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.guardian2_name\">Father/Guardian</label>\n                    <input [(ngModel)]=\"student.guardian2_name\" name=\"student.guardian2_name\" type=\"text\" class=\"form-control\" id=\"student.guardian2_name\" aria-describedby=\"guardian2_name\">\n                    <small *ngIf=\"errorMessages['guardian2_name']['message'] == 'error' \" id=\"guardian2_name\" class=\"form-text text-danger\">Requires Name</small>\n                  </div>\n                </div>\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.guardian2_email\">Email</label>\n                    <input [(ngModel)]=\"student.guardian2_email\" name=\"student.guardian2_email\" type=\"text\" class=\"form-control\" id=\"student.guardian2_email\" aria-describedby=\"guardian2_email\">\n                    <small *ngIf=\"errorMessages['guardian2_email']['message'] == 'error' \" id=\"guardian2_email\" class=\"form-text text-danger\">Requires Email</small>\n                  </div>\n                </div>\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.guardian2_cell\">Cell</label>\n                    <input [(ngModel)]=\"student.guardian2_cell\" name=\"student.guardian2_cell\" type=\"text\" class=\"form-control\" id=\"student.guardian2_cell\" aria-describedby=\"guardian2_cell\">\n                    <small *ngIf=\"errorMessages['guardian2_cell']['message'] == 'error' \" id=\"guardian2_cell\" class=\"form-text text-danger\">Requires Email</small>\n                  </div>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.e_contact1_name\">Emergency Contact(Required)</label>\n                    <input [(ngModel)]=\"student.e_contact1_name\" name=\"student.e_contact1_name\" type=\"text\" class=\"form-control\" id=\"e_contact1_name\" aria-describedby=\"e_contact1_name\">\n                    <small *ngIf=\"errorMessages['e_contact1_name']['message'] == 'error' \" id=\"e_contact1_name\" class=\"form-text text-danger\">Requires Name</small>\n                  </div>\n                </div>\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.e_contact1_relation\">Relation</label>\n                    <input [(ngModel)]=\"student.e_contact1_relation\" name=\"student.e_contact1_relation\" type=\"text\" class=\"form-control\" id=\"e_contact1_relation\" aria-describedby=\"e_contact1_relation\">\n                    <small *ngIf=\"errorMessages['e_contact1_relation']['message'] == 'error' \" id=\"e_contact1_relation\" class=\"form-text text-danger\">Requires Relation</small>\n                  </div>\n                </div>\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.e_contact1_phone\">Phone</label>\n                    <input [(ngModel)]=\"student.e_contact1_phone\" name=\"student.e_contact1_phone\" type=\"text\" class=\"form-control\" id=\"e_contact1_phone\" aria-describedby=\"e_contact1_phone\">\n                    <small *ngIf=\"errorMessages['e_contact1_phone']['message'] == 'error' \" id=\"e_contact1_phone\" class=\"form-text text-danger\">Requires Phone</small>\n                  </div>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.e_contact2_name\">Emergency Contact(Optional)</label>\n                    <input [(ngModel)]=\"student.e_contact2_name\" name=\"student.e_contact2_name\" type=\"text\" class=\"form-control\" id=\"e_contact2_name\" aria-describedby=\"e_contact2_name\">\n                  </div>\n                </div>\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.e_contact2_relation\">Relation</label>\n                    <input [(ngModel)]=\"student.e_contact2_relation\" name=\"student.e_contact2_relation\" type=\"text\" class=\"form-control\" id=\"e_contact2_relation\" aria-describedby=\"e_contact2_relation\">\n                  </div>\n                </div>\n                <div class=\"col-md-4 col-sm-12\">\n                  <div class=\"form-group\">\n                    <label for=\"student.e_contact2_phone\">Phone</label>\n                    <input [(ngModel)]=\"student.e_contact2_phone\" name=\"student.e_contact2_phone\" type=\"text\" class=\"form-control\" id=\"e_contact2_phone\" aria-describedby=\"e_contact2_phone\">\n                  </div>\n                </div>\n              </div>\n            </form>\n    </div>\n</body>\n</html>"
 
 /***/ }),
 
@@ -2211,7 +2237,24 @@ var UserstudentshowComponent = /** @class */ (function () {
             f_name: "",
             l_name: "",
             grade: "",
-            parent_id: ""
+            parent_id: "",
+            street_address: "",
+            city: "",
+            zip: "",
+            phone: "",
+            guardian1_name: "",
+            guardian1_email: "",
+            guardian1_cell: "",
+            guardian2_name: "",
+            guardian2_email: "",
+            guardian2_cell: "",
+            e_contact1_name: "",
+            e_contact1_relation: "",
+            e_contact1_phone: "",
+            e_contact2_name: "",
+            e_contact2_relation: "",
+            e_contact2_phone: "",
+            school: ""
         };
         this.allergy = {
             type: "",
@@ -2220,7 +2263,21 @@ var UserstudentshowComponent = /** @class */ (function () {
         this.errorMessages = {
             f_name: { message: "" },
             l_name: { message: "" },
-            grade: { message: "" }
+            grade: { message: "" },
+            street_address: { message: "" },
+            city: { message: "" },
+            zip: { message: "" },
+            phone: { message: "" },
+            guardian1_name: { message: "" },
+            guardian1_email: { message: "" },
+            guardian1_cell: { message: "" },
+            guardian2_name: { message: "" },
+            guardian2_email: { message: "" },
+            guardian2_cell: { message: "" },
+            e_contact1_name: { message: "" },
+            e_contact1_relation: { message: "" },
+            e_contact1_phone: { message: "" },
+            school: { message: "" },
         };
         this.dballergy = [];
     }
@@ -2230,6 +2287,7 @@ var UserstudentshowComponent = /** @class */ (function () {
             _this.studentID = params['id'];
             var observ = _this._httpService.getStudent(_this.studentID);
             observ.subscribe(function (data) {
+                console.log("Grabbed student:", data);
                 _this.student = data;
                 _this.dballergy = data.allergies;
             });
@@ -2241,11 +2299,6 @@ var UserstudentshowComponent = /** @class */ (function () {
         observ.subscribe(function (data) {
             console.log("onEdit returned: ", data);
             if (data.errors) {
-                _this.errorMessages = {
-                    f_name: { message: "" },
-                    l_name: { message: "" },
-                    grade: { message: "" }
-                };
                 if (data.errors['f_name']) {
                     _this.errorMessages['f_name']['message'] = "error";
                 }
@@ -2254,6 +2307,48 @@ var UserstudentshowComponent = /** @class */ (function () {
                 }
                 if (data.errors['grade']) {
                     _this.errorMessages['grade']['message'] = "error";
+                }
+                if (data.errors['street_address']) {
+                    _this.errorMessages['street_address']['message'] = "error";
+                }
+                if (data.errors['city']) {
+                    _this.errorMessages['city']['message'] = "error";
+                }
+                if (data.errors['zip']) {
+                    _this.errorMessages['zip']['message'] = "error";
+                }
+                if (data.errors['phone']) {
+                    _this.errorMessages['phone']['message'] = "error";
+                }
+                if (data.errors['guardian1_name']) {
+                    _this.errorMessages['guardian1_name']['message'] = "error";
+                }
+                if (data.errors['guardian1_email']) {
+                    _this.errorMessages['guardian1_email']['message'] = "error";
+                }
+                if (data.errors['guardian1_cell']) {
+                    _this.errorMessages['guardian1_cell']['message'] = "error";
+                }
+                if (data.errors['guardian2_name']) {
+                    _this.errorMessages['guardian2_name']['message'] = "error";
+                }
+                if (data.errors['guardian2_email']) {
+                    _this.errorMessages['guardian2_email']['message'] = "error";
+                }
+                if (data.errors['guardian2_cell']) {
+                    _this.errorMessages['guardian2_cell']['message'] = "error";
+                }
+                if (data.errors['e_contact1_name']) {
+                    _this.errorMessages['e_contact1_name']['message'] = "error";
+                }
+                if (data.errors['e_contact1_relation']) {
+                    _this.errorMessages['e_contact1_relation']['message'] = "error";
+                }
+                if (data.errors['e_contact1_phone']) {
+                    _this.errorMessages['e_contact1_phone']['message'] = "error";
+                }
+                if (data.errors['school']) {
+                    _this.errorMessages['school']['message'] = "error";
                 }
             }
         });

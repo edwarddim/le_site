@@ -51,10 +51,7 @@
           Policies
         </div>
         <div class="card-body">
-          <h6>Tuition is due within 10 days after invoice is sent. A $25 late fee will be charged after the 10th day. $50 charge for returned checks</h6>
-          <h6>Missed days are nonrefundable. Tuition can be prorated with 2 week prior notification for weeks that a student will not be able to attend class</h6>
-          <h6>4 week notification of withdrawal is required or $100 will be charged</h6>
-          <h6>Learning Edge reserves the right to charge $1 per minute after 7:00PM Mon-Thur and 6:30PM on Fridays. If Learning Edge is unable to reach a parent or guardian before 8:00PM, the police department will be contacted.</h6>
+          <h6 *ngFor="let policy of allPolicy">{{policy.line1}}</h6>
         </div>
       </div>
     </div>

@@ -4,8 +4,6 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="home.component.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -17,7 +15,7 @@
             <h5 class="card-title">{{student.f_name}} {{student.l_name}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{student.grade}} Grade</h6>
             <p class="card-text">{{student.school}}</p>
-            <a class="card-link" [routerLink]="['/students', student._id]">Show</a>
+            <a class="card-link" [routerLink]="['/students', student._id]">Add Allergy/Change Info</a>
           </div>
         </div>
       </div>
@@ -66,6 +64,74 @@
               </div>
             </div>
           </div>
+          <div class="form-group">
+            <label for="street_address">Address</label>
+            <input [(ngModel)]="student.street_address" name="student.street_address" type="text" class="form-control" id="street_address" aria-describedby="street_address" placeholder="1315 Fair Oaks Ave.">
+            <small *ngIf="errorMessages['street_address']['message'] == 'error' " id="street_address" class="form-text text-danger">Invalid Street Address</small>          
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="city">City</label>
+              <input [(ngModel)]="student.city" name="student.city" type="text" class="form-control" id="city" placeholder="South Pasadena">
+              <small *ngIf="errorMessages['city']['message'] == 'error' " id="city" class="form-text text-danger">Invalid City</small>          
+            </div>
+            <div class="form-group col-md-2">
+                <label for="zip">Zip</label>
+                <input [(ngModel)]="student.zip" name="student.zip" type="text" class="form-control" id="zip" placeholder="91030">
+                <small *ngIf="errorMessages['zip']['message'] == 'error' " id="zip" class="form-text text-danger">Invalid Zip Code</small>
+              </div>
+            <div class="form-group col-md-4">
+              <label for="phone">Home Phone</label>
+              <input [(ngModel)]="student.phone" name="student.phone" type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="626-799-2654">
+              <small *ngIf="errorMessages['phone']['message'] == 'error' " id="phone" class="form-text text-danger">Invalid Phone Number</small>            
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian1_name">Mother/Guardian</label>
+                <input [(ngModel)]="student.guardian1_name" name="student.guardian1_name" type="text" class="form-control" id="student.guardian1_name" aria-describedby="guardian1_name">
+                <small *ngIf="errorMessages['guardian1_name']['message'] == 'error' " id="guardian1_name" class="form-text text-danger">Requires Name</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian1_email">Email</label>
+                <input [(ngModel)]="student.guardian1_email" name="student.guardian1_email" type="text" class="form-control" id="student.guardian1_email" aria-describedby="guardian1_email">
+                <small *ngIf="errorMessages['guardian1_email']['message'] == 'error' " id="guardian1_email" class="form-text text-danger">Requires Email</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian1_cell">Cell</label>
+                <input [(ngModel)]="student.guardian1_cell" name="student.guardian1_cell" type="text" class="form-control" id="student.guardian1_cell" aria-describedby="guardian1_cell">
+                <small *ngIf="errorMessages['guardian1_cell']['message'] == 'error' " id="guardian1_cell" class="form-text text-danger">Requires Email</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian2_name">Father/Guardian</label>
+                <input [(ngModel)]="student.guardian2_name" name="student.guardian2_name" type="text" class="form-control" id="student.guardian2_name" aria-describedby="guardian2_name">
+                <small *ngIf="errorMessages['guardian2_name']['message'] == 'error' " id="guardian2_name" class="form-text text-danger">Requires Name</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian2_email">Email</label>
+                <input [(ngModel)]="student.guardian2_email" name="student.guardian2_email" type="text" class="form-control" id="student.guardian2_email" aria-describedby="guardian2_email">
+                <small *ngIf="errorMessages['guardian2_email']['message'] == 'error' " id="guardian2_email" class="form-text text-danger">Requires Email</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian2_cell">Cell</label>
+                <input [(ngModel)]="student.guardian2_cell" name="student.guardian2_cell" type="text" class="form-control" id="student.guardian2_cell" aria-describedby="guardian2_cell">
+                <small *ngIf="errorMessages['guardian2_cell']['message'] == 'error' " id="guardian2_cell" class="form-text text-danger">Requires Email</small>
+              </div>
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-4 col-sm-12">
               <div class="form-group">
@@ -109,10 +175,21 @@
               </div>
             </div>
           </div>
+          <div>
+            <h5 *ngFor="let pol of policy">{{pol.line1}}</h5>
+          </div>
+          <div class="form-check">
+            <input [(ngModel)]="checkbox" name="checkbox" class="form-check-input" type="checkbox" id="registerCheck">
+            <label class="form-check-label" for="registerCheck">
+              By checking this box, you agree to abide by the terms and conditions provided above.
+            </label>
+            <small *ngIf="checkbox == false" id="registerCheck" class="form-text text-danger">You must agree to the policies to register</small>
+          </div>
+          <br>
           <button type="submit" class="btn btn-primary">Submit Student</button>
       </form>
       <br>
       <br>
-    </div>    
+    </div>
 </body>
 </html>

@@ -14,7 +14,8 @@ export class AdminClassShowComponent implements OnInit {
   class = {
       title: '',
       grade: '',
-      capcity: 0
+      capcity: 0,
+      description: ""
   }
   applied = [];
   accepted = [];

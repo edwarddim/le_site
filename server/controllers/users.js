@@ -4,6 +4,7 @@ var Student = mongoose.model('Student')
 var Allergy = mongoose.model('Allergy')
 var Class = mongoose.model('Class')
 var Tuition = mongoose.model('Tuition')
+var Policy = mongoose.model('Policy')
 
 module.exports = {
     checker: function(req, res){
@@ -19,7 +20,6 @@ module.exports = {
             }
         })
     },
-
     create: function(req, res){
         var newUser = new User(req.body)
         newUser.save(function(err){
@@ -60,13 +60,8 @@ module.exports = {
                 res.json(err);
             }
             else{
-                User.findOneAndUpdate({uid: req.params.id}, {$push: {students: newStud}}, function(err, data){
-                    if(err){
-                        res.json(err)
-                    }
-                    else{
-                        res.json(data)
-                    }
+                User.findOneAndUpdate({uid: req.params.id}, {$push: {students: newStud}}, function(data){
+                    res.json(data)
                 })
             }
         })
@@ -120,17 +115,25 @@ module.exports = {
                         for(let i =0; i < data['students'].length; i++){
                             if(data['students'][i]._id == req.params.id){
                                 data['students'][i].allergies.push(newAllergy)
-                                Student.find({_id: req.params.id}, function(err, data){
-                                    data[0].allergies.push(newAllergy);
-                                })
                             }
                         }
-                        data.save(function(err, data){
+                        data.save(function(err, userData){
                             if(err){
                                 res.json(err)
                             }
                             else{
-                                res.json("success on creating allergy and saving userf")
+                                Student.findOne({_id: req.params.id}, function(err, studData){
+                                    console.log(data)
+                                    studData.allergies.push(newAllergy);
+                                    studData.save(function(err, data){
+                                        if(err){
+                                            res.json(err)
+                                        }
+                                        else{
+                                            res.json(data)
+                                        }
+                                    })
+                                })
                             }
                         })
                     }
@@ -150,20 +153,27 @@ module.exports = {
                     res.json(err)
                 }
                 else{
-                    res.json(data)
+                    Student.findOneAndUpdate( {_id:req.body._id} , req.body ,
+                    {runValidators:true},
+                    function(err, data){
+                        if(err){
+                            res.json(err)
+                        }
+                        else{
+                            res.json(data)
+                        }
+                    })
                 }
             })
         })
     },
     updateStudentOnly: function(req, res){
         Student.findOne({_id:req.params.id}, function(err, data){
-            console.log(data)
             if(err){
                 res.json(err)
             }
             else{
                 data.notes = req.body.notes
-                data.grade = req.body.grade
                 data.save(function(err, data){
                     if(err){
                         res.json(err)
@@ -318,5 +328,36 @@ module.exports = {
             }
         })
     },
-    
+    createPolicy: function(req, res){
+        var policy = new Policy(req.body);
+        policy.save(function(err, data){
+            if(err){
+                res.json(err)
+            }
+            else{
+                res.json(data);
+            }
+        })
+    },
+    getPolicy: function(req, res){
+        Policy.find({}, function(err, data){
+            if(err){
+                res.json(err);
+            }
+            else{
+                res.json(data)
+            }
+        })
+    },
+    deletePolicy: function(req, res){
+        Policy.deleteOne({_id:req.params.id}, function(err, data){
+            if(err){
+                res.json(err)
+            }
+            else{
+                res.json("Deleted Policy")
+            }
+        })
+    },
+
 };

@@ -20,6 +20,9 @@
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/admin/tuition']">Tuition</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/policy']">Policy</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -55,6 +58,12 @@
                 <label for="student.l_name">Capacity</label>
                 <input [(ngModel)]="class.capacity" name="class.capacity" type="number" class="form-control" id="class.capacity" aria-describedby="class.capacity">
               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label for="class.description">Class Description</label>
+              <input [(ngModel)]="class.description" name="class.description" type="text" class="form-control" id="class.description" aria-describedby="class.description" placeholder="Class Description">
             </div>
           </div>
           <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitBtn">Create Class</button>

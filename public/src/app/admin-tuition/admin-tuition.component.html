@@ -20,6 +20,9 @@
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/admin/tuition']">Tuition</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/policy']">Policy</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -193,7 +196,7 @@
           <p>{{tuit.line28}}</p>
           <p>{{tuit.line29}}</p>
           <p>{{tuit.line30}}</p>
-          <button (click)="deleteTuit(tuit._id)" class="btn btn-danger">Delete</button>      
+          <button (click)="deleteTuit(tuit._id)" class="btn btn-danger">Delete</button>
         </div>
       </div>
     </div>    

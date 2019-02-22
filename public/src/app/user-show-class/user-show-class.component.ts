@@ -18,7 +18,8 @@ export class UserShowClassComponent implements OnInit {
   class = {
     title: '',
     grade: '',
-    capcity: 0
+    capcity: 0,
+    description: ""
   }
   constructor(private _httpService: HttpService, private _router: Router,
               @Inject(SESSION_STORAGE) private storage: WebStorageService, private activatedRoute: ActivatedRoute) { }

@@ -35,12 +35,6 @@ export class UserRegisterComponent implements OnInit {
         this.storage.set('uid', firebaseUser.uid);
         this.storage.set('email', firebaseUser.email);
         this.fireLog = true;
-        let observ = this._httpService.findUser(firebaseUser.uid)
-        observ.subscribe((data:any)=>{
-          if(data == false){
-            this._httpService.newUser();
-          }
-        })
       }
       else{
           this.fireLog = false;

@@ -12,6 +12,19 @@ var StudentSchema = mongoose.Schema({
     grade: {type: String, required: [true, "error"]},
     notes: {type: String},
 
+    street_address: {type: String, required: [true, "error"], minlength: [2, "error"]},
+    city: {type: String, required: [true, "error"], minlength: [2, "error"]},
+    zip: {type: Number, required: [true, "error"],minlength:[5, "error"] ,maxlength:[5, "error"]},
+    phone: {type: Number, required: [true, "error"]},
+
+    guardian1_name: {type: String, required: [true, "error"]},
+    guardian1_email: {type: String, required: [true, "error"]},
+    guardian1_cell: {type: String, required: [true, "error"]},
+
+    guardian2_name: {type: String, required: [true, "error"]},
+    guardian2_email: {type: String, required: [true, "error"]},
+    guardian2_cell: {type: String, required: [true, "error"]},
+
     e_contact1_name: {type: String, required: [true, "error"]},
     e_contact1_relation: {type: String, required: [true, "error"]},
     e_contact1_phone: {type: String, required: [true, "error"]},
@@ -26,13 +39,6 @@ var StudentSchema = mongoose.Schema({
 
 var UserSchema = mongoose.Schema({
     uid: {type: String},
-    f_name: {type: String, required: [true, "error"], minlength: [2, "error"]},
-    l_name: {type: String, required: [true, "error"], minlength: [2, "error"]},
-    email: {type: String, required: [true, "error"]},
-    phone: {type: String, required: [true, "error"]},
-    street_address: {type: String, required: [true, "error"], minlength: [2, "error"]},
-    city: {type: String, required: [true, "error"], minlength: [2, "error"]},
-    zip: {type: Number, required: [true, "error"],minlength:[5, "error"] ,maxlength:[5, "error"]},
     students : [StudentSchema]
 })
 
@@ -46,6 +52,7 @@ var ClassSchema = mongoose.Schema({
     title: {type: String, required: true},
     grade: {type: String, required: true},
     capacity: {type: Number, required:true},
+    description: {type: String},
     applied: [StudentSchema],
     accepted: [StudentSchema]
 })
@@ -85,9 +92,14 @@ var TuitionSchema = mongoose.Schema({
     line30: {type: String}
 })
 
+var PolicySchema = mongoose.Schema({
+    line1: {type: String}
+})
+
 mongoose.model('User', UserSchema)
 mongoose.model('Student', StudentSchema)
 mongoose.model('Allergy', AllergySchema)
 mongoose.model('Admin', AdminSchema)
 mongoose.model('Class', ClassSchema)
 mongoose.model('Tuition', TuitionSchema)
+mongoose.model('Policy', PolicySchema)

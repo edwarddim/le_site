@@ -13,7 +13,8 @@ export class AdminClassComponent implements OnInit {
   class = {
     title: "",
     grade: "",
-    capacity:0
+    capacity:0,
+    description:""
   }
   allClass = [];
   constructor(private _httpService: HttpService, private _router: Router,
@@ -36,7 +37,8 @@ export class AdminClassComponent implements OnInit {
       this.class = {
         title: "",
         grade: "",
-        capacity:0
+        capacity:0,
+        description:""
       }
     })
   }

@@ -8,7 +8,6 @@ import { UserTuitionComponent } from './user-tuition/user-tuition.component';
 import { UserScheduleComponent } from './user-schedule/user-schedule.component';
 import { AdminClassComponent } from './admin-class/admin-class.component';
 import { AdminStudentsComponent } from './admin-students/admin-students.component';
-import { CreateUserComponent } from './create-user/create-user.component';
 import { UserStudentsComponent } from './user-students/user-students.component';
 import { UserstudentshowComponent } from './userstudentshow/userstudentshow.component'
 import { AdminClassShowComponent } from './admin-class-show/admin-class-show.component';
@@ -17,7 +16,7 @@ import { AdminTuitionComponent } from './admin-tuition/admin-tuition.component';
 import { UserGalleryComponent } from './user-gallery/user-gallery.component';
 import { AdminStudentShowComponent } from './admin-student-show/admin-student-show.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { UserEditComponent } from './user-edit/user-edit.component';
+import { AdminPolicyComponent } from './admin-policy/admin-policy.component';
 
 const routes: Routes = [
   // ROUTES FOR USERS //
@@ -27,11 +26,9 @@ const routes: Routes = [
   {path: 'registration', component: UserRegisterComponent},
   {path: 'tuition', component: UserTuitionComponent},
   {path: 'schedule', component: UserScheduleComponent},
-  {path: 'register/:id', component: CreateUserComponent},
   {path: 'students', component: UserStudentsComponent},
   {path: 'students/:id', component: UserstudentshowComponent},
   {path: 'gallery', component: UserGalleryComponent},
-  {path: 'edit', component: UserEditComponent},
   // ROUTES FOR USERS //
 
 
@@ -43,6 +40,7 @@ const routes: Routes = [
   {path: 'admin/students/:id', component: AdminStudentShowComponent},
   {path: 'admin/pictures', component: AdminPictureComponent},
   {path: 'admin/tuition', component: AdminTuitionComponent},
+  {path: 'admin/policy', component: AdminPolicyComponent}
   // ROUTES FOR ADMIN //
 ];
 

@@ -118,4 +118,7 @@ module.exports = function(app){
     app.get('/api/admin/tuition', users.getAllTuition)
     app.post('/api/admin/tuition', users.createTuition)
     app.delete('/api/admin/tuition/:id', users.deleteTuition)
+    app.post('/api/admin/policy', users.createPolicy)
+    app.get('/api/admin/policy', users.getPolicy)
+    app.get('/api/admin/policy/:id', users.deletePolicy)
 }

@@ -20,6 +20,9 @@
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/admin/tuition']">Tuition</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/admin/policy']">Policy</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -28,10 +31,13 @@
           <h2>{{student.f_name}} {{student.l_name}}</h2>
           <p class="fontUp"><span>School:</span> {{student.school}}</p>
           <p class="fontUp"><span>Grade:</span> {{student.grade}}</p>
-          <p class="fontUp"><span>Home Address:</span> {{parent.street_address}} {{parent.city}}, {{parent.zip}}</p>
+          <p class="fontUp"><span>Home Address:</span> {{student.street_address}} {{student.city}} {{student.zip}}</p>
           <br>
-          <p class="fontUp"><span>Guardian:</span> {{parent.f_name}} {{parent.l_name}}</p>
-          <p class="fontUp"><span>Contact Info:</span> {{parent.phone}} // {{parent.email}}</p>
+          <p class="fontUp"><span>Guardian:</span> {{student.guardian1_name}}</p>
+          <p class="fontUp"><span>Contact Info:</span> {{student.guardian1_email}} // {{student.guardian1_cell}}</p>
+
+          <p class="fontUp"><span>Guardian:</span> {{student.guardian2_name}}</p>
+          <p class="fontUp"><span>Contact Info:</span> {{student.guardian2_email}} // {{student.guardian2_cell}}</p>
 
           <h3>Emergency Contact</h3>
           <p class="e_contact"><span>Name:</span> {{student.e_contact1_name}}</p>
@@ -61,8 +67,20 @@
         </div>
       </div>
       <hr>
-        <form (submit)="onEdit()">
-          <div class="form-row">
+      <form (submit)="onEdit()">
+        <div class="form-row">
+            <div class='col-md-3 col-sm-12'>
+              <div class="form-group">
+                <label for="f_name">First Name</label>
+                <input [(ngModel)]="student.f_name" name="student.f_name" type="text" class="form-control" id="f_name" aria-describedby="f_name" placeholder="John">
+              </div>
+            </div>
+            <div class='col-md-3 col-sm-12'>
+              <div class="form-group">
+                <label for="l_name">Last Name</label>
+                <input [(ngModel)]="student.l_name" name="student.l_name" type="text" class="form-control" id="l_name" aria-describedby="l_name" placeholder="Doe">
+              </div>
+            </div>
             <div class="col-md-3 col-sm-12">
               <div class="form-group">
                 <label for="gradeSelect">Grade</label>
@@ -80,12 +98,122 @@
                   <option value="11th">11th</option>
                   <option value="12th">12th</option>              
                 </select>
-                <!-- <small *ngIf="errorMessages['grade']['message'] == 'error' " class="form-text text-danger">Invalid Grade</small>             -->
               </div>
             </div>
             <div class="col-md-3 col-sm-12">
               <label for="updateBtn">Edit Information</label>
-              <button type="submit" class="btn btn-primary form-control" id="updateBtn">Submit</button>
+              <button type="submit" class="btn btn-primary form-control" id="updateBtn">Update</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="street_address">Address</label>
+            <input [(ngModel)]="student.street_address" name="student.street_address" type="text" class="form-control" id="street_address" aria-describedby="street_address" placeholder="1315 Fair Oaks Ave.">
+            <small *ngIf="errorMessages['street_address']['message'] == 'error' " id="street_address" class="form-text text-danger">Invalid Street Address</small>          
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="city">City</label>
+              <input [(ngModel)]="student.city" name="student.city" type="text" class="form-control" id="city" placeholder="South Pasadena">
+              <small *ngIf="errorMessages['city']['message'] == 'error' " id="city" class="form-text text-danger">Invalid City</small>          
+            </div>
+            <div class="form-group col-md-2">
+                <label for="zip">Zip</label>
+                <input [(ngModel)]="student.zip" name="student.zip" type="text" class="form-control" id="zip" placeholder="91030">
+                <small *ngIf="errorMessages['zip']['message'] == 'error' " id="zip" class="form-text text-danger">Invalid Zip Code</small>
+              </div>
+            <div class="form-group col-md-4">
+              <label for="phone">Home Phone</label>
+              <input [(ngModel)]="student.phone" name="student.phone" type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="626-799-2654">
+              <small *ngIf="errorMessages['phone']['message'] == 'error' " id="phone" class="form-text text-danger">Invalid Phone Number</small>            
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian1_name">Mother/Guardian</label>
+                <input [(ngModel)]="student.guardian1_name" name="student.guardian1_name" type="text" class="form-control" id="student.guardian1_name" aria-describedby="guardian1_name">
+                <small *ngIf="errorMessages['guardian1_name']['message'] == 'error' " id="guardian1_name" class="form-text text-danger">Requires Name</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian1_email">Email</label>
+                <input [(ngModel)]="student.guardian1_email" name="student.guardian1_email" type="text" class="form-control" id="student.guardian1_email" aria-describedby="guardian1_email">
+                <small *ngIf="errorMessages['guardian1_email']['message'] == 'error' " id="guardian1_email" class="form-text text-danger">Requires Email</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian1_cell">Cell</label>
+                <input [(ngModel)]="student.guardian1_cell" name="student.guardian1_cell" type="text" class="form-control" id="student.guardian1_cell" aria-describedby="guardian1_cell">
+                <small *ngIf="errorMessages['guardian1_cell']['message'] == 'error' " id="guardian1_cell" class="form-text text-danger">Requires Email</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian2_name">Father/Guardian</label>
+                <input [(ngModel)]="student.guardian2_name" name="student.guardian2_name" type="text" class="form-control" id="student.guardian2_name" aria-describedby="guardian2_name">
+                <small *ngIf="errorMessages['guardian2_name']['message'] == 'error' " id="guardian2_name" class="form-text text-danger">Requires Name</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian2_email">Email</label>
+                <input [(ngModel)]="student.guardian2_email" name="student.guardian2_email" type="text" class="form-control" id="student.guardian2_email" aria-describedby="guardian2_email">
+                <small *ngIf="errorMessages['guardian2_email']['message'] == 'error' " id="guardian2_email" class="form-text text-danger">Requires Email</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.guardian2_cell">Cell</label>
+                <input [(ngModel)]="student.guardian2_cell" name="student.guardian2_cell" type="text" class="form-control" id="student.guardian2_cell" aria-describedby="guardian2_cell">
+                <small *ngIf="errorMessages['guardian2_cell']['message'] == 'error' " id="guardian2_cell" class="form-text text-danger">Requires Email</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact1_name">Emergency Contact(Required)</label>
+                <input [(ngModel)]="student.e_contact1_name" name="student.e_contact1_name" type="text" class="form-control" id="e_contact1_name" aria-describedby="e_contact1_name">
+                <small *ngIf="errorMessages['e_contact1_name']['message'] == 'error' " id="e_contact1_name" class="form-text text-danger">Requires Name</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact1_relation">Relation</label>
+                <input [(ngModel)]="student.e_contact1_relation" name="student.e_contact1_relation" type="text" class="form-control" id="e_contact1_relation" aria-describedby="e_contact1_relation">
+                <small *ngIf="errorMessages['e_contact1_relation']['message'] == 'error' " id="e_contact1_relation" class="form-text text-danger">Requires Relation</small>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact1_phone">Phone</label>
+                <input [(ngModel)]="student.e_contact1_phone" name="student.e_contact1_phone" type="text" class="form-control" id="e_contact1_phone" aria-describedby="e_contact1_phone">
+                <small *ngIf="errorMessages['e_contact1_phone']['message'] == 'error' " id="e_contact1_phone" class="form-text text-danger">Requires Phone</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact2_name">Emergency Contact(Optional)</label>
+                <input [(ngModel)]="student.e_contact2_name" name="student.e_contact2_name" type="text" class="form-control" id="e_contact2_name" aria-describedby="e_contact2_name">
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact2_relation">Relation</label>
+                <input [(ngModel)]="student.e_contact2_relation" name="student.e_contact2_relation" type="text" class="form-control" id="e_contact2_relation" aria-describedby="e_contact2_relation">
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+              <div class="form-group">
+                <label for="student.e_contact2_phone">Phone</label>
+                <input [(ngModel)]="student.e_contact2_phone" name="student.e_contact2_phone" type="text" class="form-control" id="e_contact2_phone" aria-describedby="e_contact2_phone">
+              </div>
             </div>
           </div>
         </form>

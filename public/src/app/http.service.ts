@@ -27,9 +27,6 @@ export class HttpService implements OnInit{
   findAllUsers(){
     return this._http.get('/api/user/all')
   }
-  newUser(){
-    this._router.navigate(['/register/' + this.storage.get("uid")]);
-  }
   createUser(userObj){
     return this._http.post('/api/user/create', userObj);
   }
@@ -117,6 +114,15 @@ export class HttpService implements OnInit{
   }
   deleteTuit(id){
     return this._http.delete('/api/admin/tuition/'+id)
+  }
+  createPolicy(policyObj){
+    return this._http.post('/api/admin/policy', policyObj)
+  }
+  getPolicy(){
+    return this._http.get('/api/admin/policy')
+  }
+  deletePolicy(policyID){
+    return this._http.get('/api/admin/policy/'+ policyID)
   }
 
 };

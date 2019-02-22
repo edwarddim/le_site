@@ -16,7 +16,6 @@ import { AdminClassComponent } from './admin-class/admin-class.component';
 import { AdminStudentsComponent } from './admin-students/admin-students.component';
 import { HomeComponent } from './home/home.component';
 import { UserShowClassComponent } from './user-show-class/user-show-class.component';
-import { CreateUserComponent } from './create-user/create-user.component';
 import { UserStudentsComponent } from './user-students/user-students.component';
 import { UserstudentshowComponent } from './userstudentshow/userstudentshow.component';
 import { AdminClassShowComponent } from './admin-class-show/admin-class-show.component';
@@ -25,7 +24,7 @@ import { AdminTuitionComponent } from './admin-tuition/admin-tuition.component';
 import { UserGalleryComponent } from './user-gallery/user-gallery.component';
 import { AdminStudentShowComponent } from './admin-student-show/admin-student-show.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { UserEditComponent } from './user-edit/user-edit.component';
+import { AdminPolicyComponent } from './admin-policy/admin-policy.component';
 
 
 @NgModule({
@@ -39,7 +38,6 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     AdminStudentsComponent,
     HomeComponent,
     UserShowClassComponent,
-    CreateUserComponent,
     UserStudentsComponent,
     UserstudentshowComponent,
     AdminClassShowComponent,
@@ -48,7 +46,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     UserGalleryComponent,
     AdminStudentShowComponent,
     AdminLoginComponent,
-    UserEditComponent
+    AdminPolicyComponent
   ],
   imports: [
     BrowserModule,
