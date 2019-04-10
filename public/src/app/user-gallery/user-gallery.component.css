@@ -1,5 +1,4 @@
-#pic{
-    margin: 5px;
-    border: 5px solid black;
-    display: inline-block;
+#galleryBox{
+    padding: 2%;
+    text-align: center;
 }

@@ -25,6 +25,7 @@ import { UserGalleryComponent } from './user-gallery/user-gallery.component';
 import { AdminStudentShowComponent } from './admin-student-show/admin-student-show.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminPolicyComponent } from './admin-policy/admin-policy.component';
+import { NgxGalleryModule } from 'ngx-gallery';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { AdminPolicyComponent } from './admin-policy/admin-policy.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    StorageServiceModule
+    StorageServiceModule,
+    NgxGalleryModule
   ],
   providers: [
     HttpService,

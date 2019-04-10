@@ -7,7 +7,9 @@
 </head>
 <body>
   <div class="container-fluid">
-    <img *ngFor="let pic of gallery" src="{{pic.filePath}}" alt="No Image" id="pic" class="col-md-5">
+    <div id="galleryBox">
+      <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+    </div>
   </div>
 </body>
 </html>

@@ -1150,6 +1150,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _admin_student_show_admin_student_show_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./admin-student-show/admin-student-show.component */ "./src/app/admin-student-show/admin-student-show.component.ts");
 /* harmony import */ var _admin_login_admin_login_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./admin-login/admin-login.component */ "./src/app/admin-login/admin-login.component.ts");
 /* harmony import */ var _admin_policy_admin_policy_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./admin-policy/admin-policy.component */ "./src/app/admin-policy/admin-policy.component.ts");
+/* harmony import */ var ngx_gallery__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ngx-gallery */ "./node_modules/ngx-gallery/bundles/ngx-gallery.umd.js");
+/* harmony import */ var ngx_gallery__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(ngx_gallery__WEBPACK_IMPORTED_MODULE_26__);
+
 
 
 
@@ -1206,7 +1209,8 @@ var AppModule = /** @class */ (function () {
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
-                angular_webstorage_service__WEBPACK_IMPORTED_MODULE_6__["StorageServiceModule"]
+                angular_webstorage_service__WEBPACK_IMPORTED_MODULE_6__["StorageServiceModule"],
+                ngx_gallery__WEBPACK_IMPORTED_MODULE_26__["NgxGalleryModule"]
             ],
             providers: [
                 _http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"],
@@ -1537,7 +1541,7 @@ var UserClassComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#pic{\r\n    margin: 5px;\r\n    border: 5px solid black;\r\n    display: inline-block;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci1nYWxsZXJ5L3VzZXItZ2FsbGVyeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLHdCQUF3QjtJQUN4QixzQkFBc0I7Q0FDekIiLCJmaWxlIjoic3JjL2FwcC91c2VyLWdhbGxlcnkvdXNlci1nYWxsZXJ5LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjcGlje1xyXG4gICAgbWFyZ2luOiA1cHg7XHJcbiAgICBib3JkZXI6IDVweCBzb2xpZCBibGFjaztcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG4iXX0= */"
+module.exports = "#galleryBox{\r\n    padding: 2%;\r\n    text-align: center;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci1nYWxsZXJ5L3VzZXItZ2FsbGVyeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLG1CQUFtQjtDQUN0QiIsImZpbGUiOiJzcmMvYXBwL3VzZXItZ2FsbGVyeS91c2VyLWdhbGxlcnkuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNnYWxsZXJ5Qm94e1xyXG4gICAgcGFkZGluZzogMiU7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -1548,7 +1552,7 @@ module.exports = "#pic{\r\n    margin: 5px;\r\n    border: 5px solid black;\r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <meta charset=\"utf-8\" />\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n</head>\r\n<body>\r\n  <div class=\"container-fluid\">\r\n    <img *ngFor=\"let pic of gallery\" src=\"{{pic.filePath}}\" alt=\"No Image\" id=\"pic\" class=\"col-md-5\">\r\n  </div>\r\n</body>\r\n</html>"
+module.exports = "<!DOCTYPE html>\r\n<html>\r\n<head>\r\n  <meta charset=\"utf-8\" />\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n</head>\r\n<body>\r\n  <div class=\"container-fluid\">\r\n    <div id=\"galleryBox\">\r\n      <ngx-gallery [options]=\"galleryOptions\" [images]=\"galleryImages\"></ngx-gallery>\r\n    </div>\r\n  </div>\r\n</body>\r\n</html>"
 
 /***/ }),
 
@@ -1567,6 +1571,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.es5.js");
+/* harmony import */ var ngx_gallery__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-gallery */ "./node_modules/ngx-gallery/bundles/ngx-gallery.umd.js");
+/* harmony import */ var ngx_gallery__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ngx_gallery__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_6__);
+
+
 
 
 
@@ -1577,14 +1587,43 @@ var UserGalleryComponent = /** @class */ (function () {
         this._httpService = _httpService;
         this._router = _router;
         this.storage = storage;
-        this.gallery = [];
+        this.galleryArray = [];
     }
     UserGalleryComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.galleryOptions = [
+            {
+                width: '600px',
+                height: '400px',
+                thumbnailsColumns: 4,
+                imageAnimation: ngx_gallery__WEBPACK_IMPORTED_MODULE_5__["NgxGalleryAnimation"].Slide
+            },
+            // max-width 800
+            {
+                breakpoint: 800,
+                width: '100%',
+                height: '600px',
+                imagePercent: 80,
+                thumbnailsPercent: 20,
+                thumbnailsMargin: 20,
+                thumbnailMargin: 20
+            },
+            // max-width 400
+            {
+                breakpoint: 400,
+                preview: false
+            }
+        ];
         var observ = this._httpService.getGalleryPics();
         observ.subscribe(function (data) {
-            console.log(data);
-            _this.gallery = data;
+            data.map(function (pic) {
+                _this.galleryArray.push({
+                    small: pic.filePath,
+                    medium: pic.filePath,
+                    big: pic.filePath
+                });
+            });
+            _this.galleryImages = _this.galleryArray;
         });
     };
     UserGalleryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
