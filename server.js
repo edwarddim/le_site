@@ -24,7 +24,6 @@ var path = require('path');
 app.use(express.static(path.join(__dirname,'/public/dist/public')));
 
 app.all("*", (req,res,next) => {
-    console.log("Didn't match anything")
     res.sendFile(path.resolve("./public/dist/public/index.html"))
 });
 

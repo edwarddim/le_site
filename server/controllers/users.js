@@ -294,7 +294,6 @@ module.exports = {
         })
     },
     savePicture: function(req, res){
-        console.log("req.body at the controller: ", req.body)
         res.json('Arrived at controller function')
     },
     createTuition: function(req, res){

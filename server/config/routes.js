@@ -15,6 +15,7 @@ const upload = multer({storage:storage});
 
 
 module.exports = function(app){
+    console.log(app);
     app.get('/api/usercheck/:id', users.checker)
 
     app.get('/api/user/:id', users.getUser);

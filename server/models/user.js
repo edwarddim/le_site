@@ -95,7 +95,6 @@ var TuitionSchema = mongoose.Schema({
 var PolicySchema = mongoose.Schema({
     line1: {type: String}
 })
-
 mongoose.model('User', UserSchema)
 mongoose.model('Student', StudentSchema)
 mongoose.model('Allergy', AllergySchema)

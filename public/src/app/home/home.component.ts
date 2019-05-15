@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ElementRef } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Router } from '@angular/router';
 import { SESSION_STORAGE, WebStorageService } from 'angular-webstorage-service';
@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   allPics = [];
   firstPic: any;
   constructor(private _httpService: HttpService, private _router: Router,
-              @Inject(SESSION_STORAGE) private storage: WebStorageService) { }
+              @Inject(SESSION_STORAGE) private storage: WebStorageService,private elRef: ElementRef) { }
 
   ngOnInit() {
     let observ = this._httpService.getFrontPics();
@@ -27,8 +27,6 @@ export class HomeComponent implements OnInit {
         }
       }
     })
-    console.log("LOG ON INIT")
-    console.log(document.getElementById('readmore'))
   }
 
 }

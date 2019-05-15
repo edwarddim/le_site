@@ -17,8 +17,12 @@
 #footer{
     text-align: center;
     padding: 10px;
+    background-color: #436396;
 }
 #footer-text{
     color: white;
     display: inline-block;
+}
+#navbar{
+    background-color: #436396;
 }
