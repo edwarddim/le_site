@@ -5,6 +5,7 @@
 }
 #link{
     color: white;
+    float: right;
 }
 #topjumbo{
     background-color: rgb(254,191,88)
@@ -19,4 +20,5 @@
 }
 #footer-text{
     color: white;
+    display: inline-block;
 }

@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="home.component.css">
 </head>
 <body>
-  <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse d-flex align-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item ml-4">
                 <a class="nav-link" id="link" [routerLink]="['']">Home</a>
@@ -47,12 +47,65 @@
           </ul>
       </div>
 
+    </nav> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="d-flex flex-grow-1">
+            <span class="w-100 d-lg-none d-block"><!-- hidden spacer to center brand on mobile --></span>
+            <a class="navbar-brand" href="#">
+                LOGO
+            </a>
+            <div class="w-100 text-right">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar7">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar7">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+                <li class="nav-item ml-4">
+                    <a class="nav-link" id="link" [routerLink]="['']">Home</a>
+                </li>
+                <li class="nav-item ml-4">
+                    <a class="nav-link" id="link" [routerLink]="['/schedule']">Calendar</a>
+                </li>
+                <li class="nav-item ml-4">  
+                    <a class="nav-link" id="link" [routerLink]="['/class']">Classes</a>
+                </li>
+                <li class="nav-item ml-4">  
+                    <a class="nav-link" id="link" [routerLink]="['/gallery']">Gallery</a>
+                </li>
+                <li class="nav-item ml-4">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle btn-primary-outline" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Classes
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" [routerLink]="['/elementaryclasses']">Elementary</a>
+                            <a class="dropdown-item" [routerLink]="['/middleschoolclasses']">Middle School</a>
+                            <a class="dropdown-item" [routerLink]="['/highschoolclasses']">High School</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item ml-4">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle btn-primary-outline" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Parents
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" [routerLink]="['/registration']">Login</a>
+                            <a class="dropdown-item" [routerLink]="['/students']">My Students</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </nav>
   </div>
   <router-outlet></router-outlet>
-    <div class="container-fluid">
+    <div class="container">
         <div id="footer" class="bg-dark">
             <h5 id="footer-text">Contact Us: 626-799-2654 Email: LEARNINGEDGECENTER@GMAIL.COM</h5>
+            <a id="link" [routerLink]="['/login']">ADMIN</a>
         </div>
     </div>
 </body>

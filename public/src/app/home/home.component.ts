@@ -27,6 +27,8 @@ export class HomeComponent implements OnInit {
         }
       }
     })
+    console.log("LOG ON INIT")
+    console.log(document.getElementById('readmore'))
   }
 
 }
