@@ -17,6 +17,8 @@ import { UserGalleryComponent } from './user-gallery/user-gallery.component';
 import { AdminStudentShowComponent } from './admin-student-show/admin-student-show.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminPolicyComponent } from './admin-policy/admin-policy.component';
+import { UserAboutusComponent } from './user-aboutus/user-aboutus.component';
+import { UserContactusComponent } from './user-contactus/user-contactus.component';
 
 const routes: Routes = [
   // ROUTES FOR USERS //
@@ -29,6 +31,8 @@ const routes: Routes = [
   {path: 'students', component: UserStudentsComponent},
   {path: 'students/:id', component: UserstudentshowComponent},
   {path: 'gallery', component: UserGalleryComponent},
+  {path: 'aboutus', component: UserAboutusComponent},
+  {path: 'contactus', component: UserContactusComponent},
   // ROUTES FOR USERS //
 
 

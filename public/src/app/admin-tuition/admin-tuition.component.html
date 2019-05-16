@@ -1,204 +1,193 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="home.component.css">
-</head>
-<body>
-    <div class="container-fluid">
-      <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-pills card-header-pills">
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/admin/students']">Student List</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/admin/pictures']">Upload Picture</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/admin/tuition']">Tuition</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/admin/policy']">Policy</a>
-            </li>
-          </ul>
-        </div>
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/students']">Student List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/pictures']">Upload Picture</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/tuition']">Tuition</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/policy']">Policy</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <form (submit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="tuition.session">Session Type</label>
+        <input [(ngModel)]="tuition.session" name="tuition.session" type="text" class="form-control" id="tuition.session" aria-describedby="tuition.session">
       </div>
-      <form (submit)="onSubmit()">
-        <div class="row">
-          <div class="col-md-6">
-            <label for="tuition.session">Session Type</label>
-            <input [(ngModel)]="tuition.session" name="tuition.session" type="text" class="form-control" id="tuition.session" aria-describedby="tuition.session">
-          </div>
-          <div class="col-md-6">
-            <label for="tuition.year">Year</label>
-            <input [(ngModel)]="tuition.year" name="tuition.year" type="text" class="form-control" id="tuition.year" aria-describedby="tuition.year">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line1" name="tuition.line1" type="text" class="form-control" id="tuition.line1" aria-describedby="tuition.line1" placeholder="Line 1">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line2" name="tuition.line2" type="text" class="form-control" id="tuition.line2" aria-describedby="tuition.line2" placeholder="Line 2">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line3" name="tuition.line3" type="text" class="form-control" id="tuition.line3" aria-describedby="tuition.line3" placeholder="Line 3">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line4" name="tuition.line4" type="text" class="form-control" id="tuition.line4" aria-describedby="tuition.line4" placeholder="Line 4">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line5" name="tuition.line5" type="text" class="form-control" id="tuition.line5" aria-describedby="tuition.line5" placeholder="Line 5">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line6" name="tuition.line6" type="text" class="form-control" id="tuition.line6" aria-describedby="tuition.line6" placeholder="Line 6">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line7" name="tuition.line7" type="text" class="form-control" id="tuition.line7" aria-describedby="tuition.line7" placeholder="Line 7">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line8" name="tuition.line8" type="text" class="form-control" id="tuition.line8" aria-describedby="tuition.line8" placeholder="Line 8">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line9" name="tuition.line9" type="text" class="form-control" id="tuition.line9" aria-describedby="tuition.line9" placeholder="Line 9">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line10" name="tuition.line10" type="text" class="form-control" id="tuition.line10" aria-describedby="tuition.line10" placeholder="Line 10">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line11" name="tuition.line11" type="text" class="form-control" id="tuition.line11" aria-describedby="tuition.line11" placeholder="Line 11">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line12" name="tuition.line12" type="text" class="form-control" id="tuition.line12" aria-describedby="tuition.line12" placeholder="Line 12">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line13" name="tuition.line13" type="text" class="form-control" id="tuition.line13" aria-describedby="tuition.line13" placeholder="Line 13">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line14" name="tuition.line14" type="text" class="form-control" id="tuition.line14" aria-describedby="tuition.line14" placeholder="Line 14">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line15" name="tuition.line15" type="text" class="form-control" id="tuition.line15" aria-describedby="tuition.line15" placeholder="Line 15">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line16" name="tuition.line16" type="text" class="form-control" id="tuition.line16" aria-describedby="tuition.line16" placeholder="Line 16">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line17" name="tuition.line17" type="text" class="form-control" id="tuition.line17" aria-describedby="tuition.line17" placeholder="Line 17">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line18" name="tuition.line18" type="text" class="form-control" id="tuition.line18" aria-describedby="tuition.line18" placeholder="Line 18">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line19" name="tuition.line19" type="text" class="form-control" id="tuition.line19" aria-describedby="tuition.line19" placeholder="Line 19">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line20" name="tuition.line20" type="text" class="form-control" id="tuition.line20" aria-describedby="tuition.line20" placeholder="Line 20">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line21" name="tuition.line21" type="text" class="form-control" id="tuition.line21" aria-describedby="tuition.line21" placeholder="Line 21">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line22" name="tuition.line22" type="text" class="form-control" id="tuition.line22" aria-describedby="tuition.line22" placeholder="Line 22">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line23" name="tuition.line23" type="text" class="form-control" id="tuition.line23" aria-describedby="tuition.line23" placeholder="Line 23">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line24" name="tuition.line24" type="text" class="form-control" id="tuition.line24" aria-describedby="tuition.line24" placeholder="Line 24">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line25" name="tuition.line25" type="text" class="form-control" id="tuition.line25" aria-describedby="tuition.line25" placeholder="Line 25">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line26" name="tuition.line26" type="text" class="form-control" id="tuition.line26" aria-describedby="tuition.line26" placeholder="Line 26">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line27" name="tuition.line27" type="text" class="form-control" id="tuition.line27" aria-describedby="tuition.line27" placeholder="Line 27">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line28" name="tuition.line28" type="text" class="form-control" id="tuition.line28" aria-describedby="tuition.line28" placeholder="Line 28">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line29" name="tuition.line29" type="text" class="form-control" id="tuition.line29" aria-describedby="tuition.line29" placeholder="Line 29">
-          </div>
-          <div class="col-md-6">
-            <input [(ngModel)]="tuition.line30" name="tuition.line30" type="text" class="form-control" id="tuition.line30" aria-describedby="tuition.line30" placeholder="Line 30">
-          </div>
-        </div>
+      <div class="col-md-6">
+        <label for="tuition.year">Year</label>
+        <input [(ngModel)]="tuition.year" name="tuition.year" type="text" class="form-control" id="tuition.year" aria-describedby="tuition.year">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line1" name="tuition.line1" type="text" class="form-control" id="tuition.line1" aria-describedby="tuition.line1" placeholder="Line 1">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line2" name="tuition.line2" type="text" class="form-control" id="tuition.line2" aria-describedby="tuition.line2" placeholder="Line 2">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line3" name="tuition.line3" type="text" class="form-control" id="tuition.line3" aria-describedby="tuition.line3" placeholder="Line 3">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line4" name="tuition.line4" type="text" class="form-control" id="tuition.line4" aria-describedby="tuition.line4" placeholder="Line 4">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line5" name="tuition.line5" type="text" class="form-control" id="tuition.line5" aria-describedby="tuition.line5" placeholder="Line 5">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line6" name="tuition.line6" type="text" class="form-control" id="tuition.line6" aria-describedby="tuition.line6" placeholder="Line 6">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line7" name="tuition.line7" type="text" class="form-control" id="tuition.line7" aria-describedby="tuition.line7" placeholder="Line 7">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line8" name="tuition.line8" type="text" class="form-control" id="tuition.line8" aria-describedby="tuition.line8" placeholder="Line 8">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line9" name="tuition.line9" type="text" class="form-control" id="tuition.line9" aria-describedby="tuition.line9" placeholder="Line 9">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line10" name="tuition.line10" type="text" class="form-control" id="tuition.line10" aria-describedby="tuition.line10" placeholder="Line 10">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line11" name="tuition.line11" type="text" class="form-control" id="tuition.line11" aria-describedby="tuition.line11" placeholder="Line 11">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line12" name="tuition.line12" type="text" class="form-control" id="tuition.line12" aria-describedby="tuition.line12" placeholder="Line 12">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line13" name="tuition.line13" type="text" class="form-control" id="tuition.line13" aria-describedby="tuition.line13" placeholder="Line 13">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line14" name="tuition.line14" type="text" class="form-control" id="tuition.line14" aria-describedby="tuition.line14" placeholder="Line 14">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line15" name="tuition.line15" type="text" class="form-control" id="tuition.line15" aria-describedby="tuition.line15" placeholder="Line 15">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line16" name="tuition.line16" type="text" class="form-control" id="tuition.line16" aria-describedby="tuition.line16" placeholder="Line 16">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line17" name="tuition.line17" type="text" class="form-control" id="tuition.line17" aria-describedby="tuition.line17" placeholder="Line 17">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line18" name="tuition.line18" type="text" class="form-control" id="tuition.line18" aria-describedby="tuition.line18" placeholder="Line 18">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line19" name="tuition.line19" type="text" class="form-control" id="tuition.line19" aria-describedby="tuition.line19" placeholder="Line 19">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line20" name="tuition.line20" type="text" class="form-control" id="tuition.line20" aria-describedby="tuition.line20" placeholder="Line 20">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line21" name="tuition.line21" type="text" class="form-control" id="tuition.line21" aria-describedby="tuition.line21" placeholder="Line 21">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line22" name="tuition.line22" type="text" class="form-control" id="tuition.line22" aria-describedby="tuition.line22" placeholder="Line 22">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line23" name="tuition.line23" type="text" class="form-control" id="tuition.line23" aria-describedby="tuition.line23" placeholder="Line 23">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line24" name="tuition.line24" type="text" class="form-control" id="tuition.line24" aria-describedby="tuition.line24" placeholder="Line 24">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line25" name="tuition.line25" type="text" class="form-control" id="tuition.line25" aria-describedby="tuition.line25" placeholder="Line 25">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line26" name="tuition.line26" type="text" class="form-control" id="tuition.line26" aria-describedby="tuition.line26" placeholder="Line 26">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line27" name="tuition.line27" type="text" class="form-control" id="tuition.line27" aria-describedby="tuition.line27" placeholder="Line 27">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line28" name="tuition.line28" type="text" class="form-control" id="tuition.line28" aria-describedby="tuition.line28" placeholder="Line 28">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line29" name="tuition.line29" type="text" class="form-control" id="tuition.line29" aria-describedby="tuition.line29" placeholder="Line 29">
+      </div>
+      <div class="col-md-6">
+        <input [(ngModel)]="tuition.line30" name="tuition.line30" type="text" class="form-control" id="tuition.line30" aria-describedby="tuition.line30" placeholder="Line 30">
+      </div>
+    </div>
 
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitBtn">Create Tuition</button>
-      </form>
-      <div id="tuition-box">
-        <h6 id="tuition-heading">Current Showing for Tuition</h6>
-        <hr>
-        <div class="tuit-box" *ngFor="let tuit of allTuition">
-          <p>{{tuit.session}}</p>
-          <p>{{tuit.year}}</p>
-          <p>{{tuit.line1}}</p>
-          <p>{{tuit.line2}}</p>
-          <p>{{tuit.line3}}</p>
-          <p>{{tuit.line4}}</p>
-          <p>{{tuit.line5}}</p>
-          <p>{{tuit.line6}}</p>
-          <p>{{tuit.line7}}</p>
-          <p>{{tuit.line8}}</p>
-          <p>{{tuit.line9}}</p>
-          <p>{{tuit.line10}}</p>
-          <p>{{tuit.line11}}</p>
-          <p>{{tuit.line12}}</p>
-          <p>{{tuit.line13}}</p>
-          <p>{{tuit.line14}}</p>
-          <p>{{tuit.line15}}</p>
-          <p>{{tuit.line16}}</p>
-          <p>{{tuit.line17}}</p>
-          <p>{{tuit.line18}}</p>
-          <p>{{tuit.line19}}</p>
-          <p>{{tuit.line20}}</p>
-          <p>{{tuit.line21}}</p>
-          <p>{{tuit.line22}}</p>
-          <p>{{tuit.line23}}</p>
-          <p>{{tuit.line24}}</p>
-          <p>{{tuit.line25}}</p>
-          <p>{{tuit.line26}}</p>
-          <p>{{tuit.line27}}</p>
-          <p>{{tuit.line28}}</p>
-          <p>{{tuit.line29}}</p>
-          <p>{{tuit.line30}}</p>
-          <button (click)="deleteTuit(tuit._id)" class="btn btn-danger">Delete</button>
-        </div>
-      </div>
-    </div>    
-</body>
-</html>
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitBtn">Create Tuition</button>
+  </form>
+  <div id="tuition-box">
+    <h6 id="tuition-heading">Current Showing for Tuition</h6>
+    <hr>
+    <div class="tuit-box" *ngFor="let tuit of allTuition">
+      <p>{{tuit.session}}</p>
+      <p>{{tuit.year}}</p>
+      <p>{{tuit.line1}}</p>
+      <p>{{tuit.line2}}</p>
+      <p>{{tuit.line3}}</p>
+      <p>{{tuit.line4}}</p>
+      <p>{{tuit.line5}}</p>
+      <p>{{tuit.line6}}</p>
+      <p>{{tuit.line7}}</p>
+      <p>{{tuit.line8}}</p>
+      <p>{{tuit.line9}}</p>
+      <p>{{tuit.line10}}</p>
+      <p>{{tuit.line11}}</p>
+      <p>{{tuit.line12}}</p>
+      <p>{{tuit.line13}}</p>
+      <p>{{tuit.line14}}</p>
+      <p>{{tuit.line15}}</p>
+      <p>{{tuit.line16}}</p>
+      <p>{{tuit.line17}}</p>
+      <p>{{tuit.line18}}</p>
+      <p>{{tuit.line19}}</p>
+      <p>{{tuit.line20}}</p>
+      <p>{{tuit.line21}}</p>
+      <p>{{tuit.line22}}</p>
+      <p>{{tuit.line23}}</p>
+      <p>{{tuit.line24}}</p>
+      <p>{{tuit.line25}}</p>
+      <p>{{tuit.line26}}</p>
+      <p>{{tuit.line27}}</p>
+      <p>{{tuit.line28}}</p>
+      <p>{{tuit.line29}}</p>
+      <p>{{tuit.line30}}</p>
+      <button (click)="deleteTuit(tuit._id)" class="btn btn-danger">Delete</button>
+    </div>
+  </div>
+</div>    

@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-    <div class="container-fluid">
-    <div class="card text-center">
-      <div class="card-header">
-        You will be redirected
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Sign-In using your Google Account</h5>
-        <a id="googbutton" class="btn btn-primary">Google</a>
-        <a id="googbuttonout" class="btn btn-secondary">Sign-Out</a>
-        <h4 *ngIf="fireLog == true">You are currently logged in</h4>
-        <h4 *ngIf="fireLog == false">You are currently not logged in</h4>
-      </div>
-      <div class="card-footer text-muted">
-        Powered by Google
-      </div>
-    </div>
-
-    </div>
-</body>
-</html>
+<div class="container">
+<div class="card text-center">
+  <div class="card-header">
+    You will be redirected
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Sign-In using your Google Account</h5>
+    <a id="googbutton" class="btn btn-primary">Google</a>
+    <a id="googbuttonout" class="btn btn-secondary">Sign-Out</a>
+    <h4 *ngIf="fireLog == true">You are currently logged in</h4>
+    <h4 *ngIf="fireLog == false">You are currently not logged in</h4>
+  </div>
+  <div class="card-footer text-muted">
+    Powered by Google
+  </div>
+</div>
+</div>

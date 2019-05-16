@@ -123,7 +123,6 @@ module.exports = {
                             }
                             else{
                                 Student.findOne({_id: req.params.id}, function(err, studData){
-                                    console.log(data)
                                     studData.allergies.push(newAllergy);
                                     studData.save(function(err, data){
                                         if(err){

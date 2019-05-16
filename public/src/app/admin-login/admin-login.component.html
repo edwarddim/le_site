@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="home.component.css">
-</head>
-<body>
-    <div class="container-fluid">
-      <br>
-      <form (submit)="onSubmit()">
-        <div class="input-group mb-3">
-          <input [(ngModel)]="password" name="password" type="password" class="form-control" placeholder="Enter Password" aria-describedby="button-addon2">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Login</button>
-          </div>
-        </div>
-      </form>
-    </div>    
-</body>
-</html>
+<div class="container">
+  <br>
+  <form (submit)="onSubmit()">
+    <div class="input-group mb-3">
+      <input [(ngModel)]="password" name="password" type="password" class="form-control" placeholder="Enter Password" aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Login</button>
+      </div>
+    </div>
+  </form>
+</div>    

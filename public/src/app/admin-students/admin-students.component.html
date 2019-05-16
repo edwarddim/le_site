@@ -1,78 +1,66 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="home.component.css">
-</head>
-<body>
-    <div class="container-fluid">
-      <div class="card text-center">
-        <div class="card-header">
-          <ul class="nav nav-pills card-header-pills">
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/admin/students']">Student List</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/admin/pictures']">Upload Picture</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/admin/tuition']">Tuition</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/admin/policy']">Policy</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <form (submit)="searchFirst()">
-            <div class='row'>
-              <div class='col'>
-                <div class="form-group">
-                  <label for="f_name">First Name</label>
-                  <input [(ngModel)]="f_name_txt" name="f_name_txt" type="text" class="form-control" id="f_name" aria-describedby="f_name" placeholder="John">
-                </div>
-              </div>
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/students']">Student List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/pictures']">Upload Picture</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/tuition']">Tuition</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/policy']">Policy</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form (submit)="searchFirst()">
+        <div class='row'>
+          <div class='col'>
+            <div class="form-group">
+              <label for="f_name">First Name</label>
+              <input [(ngModel)]="f_name_txt" name="f_name_txt" type="text" class="form-control" id="f_name" aria-describedby="f_name" placeholder="John">
             </div>
-            <button type="submit" class="btn btn-primary" id="submitBtn">Search by First Name</button>
-          </form>
+          </div>
         </div>
-        <div class="col">
-          <form (submit)="searchLast()">
-            <div class="row">
-              <div class='col'>
-                <div class="form-group">
-                  <label for="l_name">Last Name</label>
-                  <input [(ngModel)]="l_name_txt" name="l_name_txt" type="text" class="form-control" id="l_name" aria-describedby="l_name" placeholder="Doe">
-                </div>
-              </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn">Search by First Name</button>
+      </form>
+    </div>
+    <div class="col">
+      <form (submit)="searchLast()">
+        <div class="row">
+          <div class='col'>
+            <div class="form-group">
+              <label for="l_name">Last Name</label>
+              <input [(ngModel)]="l_name_txt" name="l_name_txt" type="text" class="form-control" id="l_name" aria-describedby="l_name" placeholder="Doe">
             </div>
-            <button type="submit" class="btn btn-primary" id="submitBtn">Search by Last Name</button>
-          </form>
+          </div>
         </div>
-      </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn">Search by Last Name</button>
+      </form>
+    </div>
+  </div>
 
-      <div id="studentList">
-        <h3>List of Students</h3>
-        <table class="table">
-          <thead>
-            <th>Name</th>
-            <th>Grade</th>
-          </thead>
-          <tbody>
-            <tr *ngFor="let student of student_list">
-              <th>
-                <a [routerLink]="['/admin/students', student._id]">{{student.f_name}} {{student.l_name}}</a>
-              </th>
-              <th>{{student.grade}}</th>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      
-    </div>    
-</body>
-</html>
+  <div id="studentList">
+    <h3>List of Students</h3>
+    <table class="table">
+      <thead>
+        <th>Name</th>
+        <th>Grade</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of student_list">
+          <th>
+            <a [routerLink]="['/admin/students', student._id]">{{student.f_name}} {{student.l_name}}</a>
+          </th>
+          <th>{{student.grade}}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>    

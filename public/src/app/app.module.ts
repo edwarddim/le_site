@@ -26,6 +26,8 @@ import { AdminStudentShowComponent } from './admin-student-show/admin-student-sh
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminPolicyComponent } from './admin-policy/admin-policy.component';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { UserAboutusComponent } from './user-aboutus/user-aboutus.component';
+import { UserContactusComponent } from './user-contactus/user-contactus.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { NgxGalleryModule } from 'ngx-gallery';
     UserGalleryComponent,
     AdminStudentShowComponent,
     AdminLoginComponent,
-    AdminPolicyComponent
+    AdminPolicyComponent,
+    UserAboutusComponent,
+    UserContactusComponent
   ],
   imports: [
     BrowserModule,
