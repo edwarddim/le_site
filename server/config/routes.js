@@ -3,7 +3,6 @@ const multer = require('multer')
 const fs = require('fs')
 const Media = require('../models/media.js')
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('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');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
