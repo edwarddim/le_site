@@ -2,6 +2,8 @@ const users = require('./../controllers/users.js');
 const multer = require('multer')
 const fs = require('fs')
 const Media = require('../models/media.js')
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey('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');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
@@ -12,7 +14,6 @@ const storage = multer.diskStorage({
     }
 });
 const upload = multer({storage:storage});
-
 
 module.exports = function(app){
     app.get('/api/usercheck/:id', users.checker)
@@ -121,4 +122,14 @@ module.exports = function(app){
     app.post('/api/admin/policy', users.createPolicy)
     app.get('/api/admin/policy', users.getPolicy)
     app.get('/api/admin/policy/:id', users.deletePolicy)
+    app.post('/api/admin/sendemail', (req, res)=>{
+        const msg = {
+            to: 'eddieim@gmail.com',
+            from: req.body.from,
+            subject: req.body.subject,
+            text: req.body.text,
+          };
+          sgMail.send(msg);
+          res.json("EMAIL SENT");
+    })
 }

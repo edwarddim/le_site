@@ -1454,6 +1454,9 @@ var HttpService = /** @class */ (function () {
     HttpService.prototype.deletePolicy = function (policyID) {
         return this._http.get('/api/admin/policy/' + policyID);
     };
+    HttpService.prototype.sendSdgMail = function (msg) {
+        return this._http.post('/api/admin/sendemail', msg);
+    };
     HttpService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
             providedIn: 'root'
@@ -1610,7 +1613,7 @@ var UserClassComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3VzZXItY29udGFjdHVzL3VzZXItY29udGFjdHVzLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "#header{\r\n    text-align: center;\r\n}\r\n#locationBox{\r\n    overflow:hidden;\r\n    padding-bottom:56.25%;\r\n    position:relative;\r\n    height:0;\r\n}\r\n#locationBox iframe{\r\n    left:0;\r\n    top:0;\r\n    height:100%;\r\n    width:100%;\r\n    position:absolute;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci1jb250YWN0dXMvdXNlci1jb250YWN0dXMuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLG1CQUFtQjtDQUN0QjtBQUNEO0lBQ0ksZ0JBQWdCO0lBQ2hCLHNCQUFzQjtJQUN0QixrQkFBa0I7SUFDbEIsU0FBUztDQUNaO0FBQ0Q7SUFDSSxPQUFPO0lBQ1AsTUFBTTtJQUNOLFlBQVk7SUFDWixXQUFXO0lBQ1gsa0JBQWtCO0NBQ3JCIiwiZmlsZSI6InNyYy9hcHAvdXNlci1jb250YWN0dXMvdXNlci1jb250YWN0dXMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNoZWFkZXJ7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuI2xvY2F0aW9uQm94e1xyXG4gICAgb3ZlcmZsb3c6aGlkZGVuO1xyXG4gICAgcGFkZGluZy1ib3R0b206NTYuMjUlO1xyXG4gICAgcG9zaXRpb246cmVsYXRpdmU7XHJcbiAgICBoZWlnaHQ6MDtcclxufVxyXG4jbG9jYXRpb25Cb3ggaWZyYW1le1xyXG4gICAgbGVmdDowO1xyXG4gICAgdG9wOjA7XHJcbiAgICBoZWlnaHQ6MTAwJTtcclxuICAgIHdpZHRoOjEwMCU7XHJcbiAgICBwb3NpdGlvbjphYnNvbHV0ZTtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -1621,7 +1624,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<body>\n    <div class=\"container\">\n      <h1>CONTACT US</h1>\n    </div>\n</body>"
+module.exports = "<body>\n    <div class=\"container\">\n      <div id=\"header\">\n        <h2>Contact Us</h2>\n      </div>\n      <div id=\"mailBox\">\n        <form (submit)=\"onSubmit()\">\n          <div class=\"form-group\">\n            <label for=\"email\">Email address</label>\n            <input [(ngModel)]=\"msg.from\" name=\"msg.from\" type=\"email\" class=\"form-control\" id=\"email\">\n            <small *ngIf=\"msgError.from == 'false'\" id=\"email\" class=\"form-text text-danger\">Enter Valid Email</small>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"name\">Name</label>\n            <input [(ngModel)]=\"msg.name\" name=\"msg.name\" type=\"text\" class=\"form-control\" id=\"name\">\n            <small *ngIf=\"msgError.name == 'false'\" id=\"name\" class=\"form-text text-danger\">Must Enter Name</small>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"subject\">Subject</label>\n            <input [(ngModel)]=\"msg.subject\" name=\"msg.subject\" type=\"text\" class=\"form-control\" id=\"subject\">\n            <small *ngIf=\"msgError.subject == 'false'\" id=\"subject\" class=\"form-text text-danger\">Must Enter Subject</small>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"message\">Message</label>\n            <textarea [(ngModel)]=\"msg.text\" name=\"msg.text\" class=\"form-control\" id=\"message\" rows=\"3\"></textarea>\n            <small *ngIf=\"msgError.text == 'false'\" id=\"message\" class=\"form-text text-danger\">Must Enter Message</small>\n          </div>\n          <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n        </form>\n      </div>\n      <hr>\n      <div id=\"locationBox\">\n        <iframe\n        width=\"600\"\n        height=\"450\"\n        frameborder=\"0\" style=\"border:0\"\n        src=\"https://www.google.com/maps/embed/v1/place?key=AIzaSyBl9uJu8VldXjaa5tSV9gCgSP6iA2ShNwg\n          &q=learning+edge+south+pasadena\" allowfullscreen></iframe>\n      </div>\n    </div>\n</body>"
 
 /***/ }),
 
@@ -1637,20 +1640,83 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserContactusComponent", function() { return UserContactusComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.es5.js");
+
+
+
+
 
 
 var UserContactusComponent = /** @class */ (function () {
-    function UserContactusComponent() {
+    function UserContactusComponent(_httpService, _router, storage) {
+        this._httpService = _httpService;
+        this._router = _router;
+        this.storage = storage;
+        this.msg = {
+            from: '',
+            subject: '',
+            text: '',
+            name: ''
+        };
+        this.msgError = {
+            from: '',
+            subject: '',
+            text: '',
+            name: ''
+        };
     }
     UserContactusComponent.prototype.ngOnInit = function () {
     };
+    UserContactusComponent.prototype.onSubmit = function () {
+        console.log("Sending EMAIL through SendGrid");
+        this.msgError = {
+            from: '',
+            subject: '',
+            text: '',
+            name: ''
+        };
+        // console.log("msgErr before validation: ", this.msgError)
+        var validateEmail = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.msg.from, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email);
+        var checkEmail = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.msg.from, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
+        var validateSubject = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.msg.subject, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
+        var validateText = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.msg.text, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
+        var validateName = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](this.msg.name, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required);
+        console.log("ValidateEmail: ", validateEmail.errors);
+        console.log("CheckEmail: ", checkEmail.errors);
+        console.log("validateSub: ", validateSubject.errors);
+        console.log("ValidateTEXT: ", validateText.errors);
+        console.log("ValidateName: ", validateName.errors);
+        if (validateEmail.errors != null || checkEmail.errors != null) {
+            this.msgError.from = 'false';
+        }
+        if (validateSubject.errors != null) {
+            this.msgError.subject = 'false';
+        }
+        if (validateText.errors != null) {
+            this.msgError.text = 'false';
+        }
+        if (validateName.errors != null) {
+            this.msgError.name = 'false';
+        }
+        console.log("msgError after validation: ", this.msgError);
+        // let observ = this._httpService.sendSdgMail(this.msg);
+        // observ.subscribe((data:any)=>{
+        //   console.log("Returned data: ", data);
+        // })
+    };
+    ;
     UserContactusComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-user-contactus',
             template: __webpack_require__(/*! ./user-contactus.component.html */ "./src/app/user-contactus/user-contactus.component.html"),
             styles: [__webpack_require__(/*! ./user-contactus.component.css */ "./src/app/user-contactus/user-contactus.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(angular_webstorage_service__WEBPACK_IMPORTED_MODULE_5__["SESSION_STORAGE"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+            angular_webstorage_service__WEBPACK_IMPORTED_MODULE_5__["WebStorageService"]])
     ], UserContactusComponent);
     return UserContactusComponent;
 }());

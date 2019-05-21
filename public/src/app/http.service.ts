@@ -124,5 +124,8 @@ export class HttpService implements OnInit{
   deletePolicy(policyID){
     return this._http.get('/api/admin/policy/'+ policyID)
   }
+  sendSdgMail(msg){
+    return this._http.post('/api/admin/sendemail', msg)
+  }
 
 };
