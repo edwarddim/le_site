@@ -1,0 +1,21 @@
+#classButton{
+    color: white;
+}
+#fallScheduleToggle{
+    margin-left: 5px;
+}
+#summerScheduleToggle{
+    margin-left: 5px;
+}
+h3{
+    display: inline-block;
+    vertical-align: bottom;
+}
+#fallSchedule{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#summerSchedule{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

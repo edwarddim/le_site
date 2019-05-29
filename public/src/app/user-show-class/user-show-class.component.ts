@@ -25,31 +25,25 @@ export class UserShowClassComponent implements OnInit {
               @Inject(SESSION_STORAGE) private storage: WebStorageService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    let observ = this._httpService.getUser();
-    observ.subscribe((data:any)=>{
-      this.user = data['0']
-      this.students = data['0'].students
-    })
-
-    this.activatedRoute.params.subscribe(params=>{
-      this.classID = params['id']
-      let observ = this._httpService.getClass(this.classID);
-      observ.subscribe((data:any)=>{
-        this.class = data['0']
-      })
-    })
+  //   this.activatedRoute.params.subscribe(params=>{
+  //     this.classID = params['id']
+  //     let observ = this._httpService.getClass(this.classID);
+  //     observ.subscribe((data:any)=>{
+  //       this.class = data['0']
+  //     })
+  //   })
   };
 
-  onSubmit(){
-    for(let i=0; i < this.students.length; i++){
-      if(this.students[i]._id==this.applyStudent){
-        this.applyStudent = this.students[i];
-        let observ = this._httpService.addStudentToClass(this.applyStudent, this.classID)
-        observ.subscribe((data:any)=>{
-          console.log(data)
-        })
-      }
-    }
-  }
+  // onSubmit(){
+  //   for(let i=0; i < this.students.length; i++){
+  //     if(this.students[i]._id==this.applyStudent){
+  //       this.applyStudent = this.students[i];
+  //       let observ = this._httpService.addStudentToClass(this.applyStudent, this.classID)
+  //       observ.subscribe((data:any)=>{
+  //         console.log(data)
+  //       })
+  //     }
+  //   }
+  // }
 
 }

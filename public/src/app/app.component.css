@@ -15,18 +15,44 @@
     outline:none;
 }
 #footer{
-    text-align: center;
-    padding: 10px;
-    background-color: #436396;
+    padding: 5px;
+    background-color: #0570C0;
 }
 #footer-text{
     color: white;
     display: inline-block;
 }
 #navbar{
-    background-color: #436396;
+    background-color: #0570C0;
 }
 #dropdownMenuButton{
-    outline-color: #436396;
-    background-color: #436396;
+    outline-color: #0570C0;
+    background-color: #0570C0;
+}
+#logo{
+    height: 50px;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#footerAddress{
+    display: inline-block;
+    text-align: left;
+    padding: 5px;
+    color: white;
+}
+#footerNav{
+    text-align: right;
+}
+.footerAddress-row{
+    color: white;
+    display: block;
+}
+ul > li >a{
+    color: white;
+}
+#footerAddressLink{
+    outline: none;
 }

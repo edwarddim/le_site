@@ -4,29 +4,43 @@
         <h2>Contact Us</h2>
       </div>
       <div id="mailBox">
-        <form (submit)="onSubmit()">
-          <div class="form-group">
-            <label for="email">Email address</label>
-            <input [(ngModel)]="msg.from" name="msg.from" type="email" class="form-control" id="email">
-            <small *ngIf="msgError.from == 'false'" id="email" class="form-text text-danger">Enter Valid Email</small>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <form (submit)="onSubmit()">
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input [(ngModel)]="msg.from" name="msg.from" type="email" class="form-control" id="email">
+                <small *ngIf="msgError.from == 'false'" id="email" class="form-text text-danger">Enter Valid Email</small>
+              </div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input [(ngModel)]="msg.name" name="msg.name" type="text" class="form-control" id="name">
+                <small *ngIf="msgError.name == 'false'" id="name" class="form-text text-danger">Must Enter Name</small>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input [(ngModel)]="msg.subject" name="msg.subject" type="text" class="form-control" id="subject">
+                <small *ngIf="msgError.subject == 'false'" id="subject" class="form-text text-danger">Must Enter Subject</small>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea [(ngModel)]="msg.text" name="msg.text" class="form-control" id="message" rows="3"></textarea>
+                <small *ngIf="msgError.text == 'false'" id="message" class="form-text text-danger">Must Enter Message</small>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
           </div>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input [(ngModel)]="msg.name" name="msg.name" type="text" class="form-control" id="name">
-            <small *ngIf="msgError.name == 'false'" id="name" class="form-text text-danger">Must Enter Name</small>
+          <div class="col-md-6 col-sm-12">
+            <ul class="list-group list-group-flush">
+              <h3 class="list-group-item">Hours of Operation</h3>
+              <li class="list-group-item">Monday - 12pm ~ 7pm</li>
+              <li class="list-group-item">Tuesday - 12pm ~ 7pm</li>
+              <li class="list-group-item">Wednesday - 12pm ~ 7pm</li>
+              <li class="list-group-item">Thursday - 12pm ~ 7pm</li>
+              <li class="list-group-item">Friday - 12pm ~ 7pm</li>
+            </ul>
           </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input [(ngModel)]="msg.subject" name="msg.subject" type="text" class="form-control" id="subject">
-            <small *ngIf="msgError.subject == 'false'" id="subject" class="form-text text-danger">Must Enter Subject</small>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea [(ngModel)]="msg.text" name="msg.text" class="form-control" id="message" rows="3"></textarea>
-            <small *ngIf="msgError.text == 'false'" id="message" class="form-text text-danger">Must Enter Message</small>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
       </div>
       <hr>
       <div id="locationBox">

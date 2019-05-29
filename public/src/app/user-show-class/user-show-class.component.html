@@ -1,19 +1,39 @@
 <div class="container">
-  <h2>Which student is interested in this class?</h2>
-      <div class="card w-50">
-        <div class="card-body">
-          <h5 class="card-title">{{class.title}}</h5>
-          <p class="card-text">{{class.grade}} Grade</p>
-          <p class="card-text">Capacity: {{class.capacity}} students</p>
-          <p class="card-text">Description: {{class.description}}</p>
-        </div>
-      </div>
-      <h6>Choose</h6>
-      <form (submit)="onSubmit()">
-        <select [(ngModel)]="applyStudent" name="applyStudent">
-          <option *ngFor="let student of students" value="{{student._id}}">{{student.f_name}} {{student.l_name}}</option>
-        </select>
-        <br>
-        <button type="submit" class="btn btn-primary" id="submitBtn">Waitlist</button>
-      </form>
+  <div class="jumbotron" id="classWindow">
+    <h1 class="display-4">CLASS TITLE</h1>
+    <p class="lead">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <hr class="my-4">
+    <div class="col-md-6 col-sm-12">
+      <table class="table table-sm table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">CLASS OPTIONS</th>
+            <th scope="col">6 WKS/WEEKLY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>9:00am ~ 12:15pm</td>
+            <td>$1050/200</td>
+          </tr>
+          <tr>
+            <td>9:00am ~ 4:00pm</td>
+            <td>$1900/360</td>
+          </tr>
+          <tr>
+            <td>9:00am ~ 6:00pm</td>
+            <td>$2150/400</td>
+          </tr>
+          <tr>
+            <td>1:00pm ~ 4:00pm</td>
+            <td>$1050/200</td>
+          </tr>
+          <tr>
+            <td>1:00pm ~ 6:00pm</td>
+            <td>$1500/280</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

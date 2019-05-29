@@ -1,0 +1,94 @@
+<div class="container">
+  <h1>Elementary</h1>
+  <div id="scheduleBox">
+
+  </div>
+  <div class="row">
+    <div id="regular" class="col-md-6 col-sm-12">
+      <!-- <h3>Fall</h3> -->
+      <!-- <button id="fallScheduleToggle" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#fallSchedule" aria-expanded="false" aria-controls="fallSchedule">
+        Fall Schedule
+      </button> -->
+      <a data-toggle="collapse" href="#fallSchedule" role="button" aria-expanded="false" aria-controls="fallSchedule">
+        <h3>Show Fall Schedule</h3>
+      </a>
+      <div class="collapse" id="fallSchedule">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">TIME</th>
+              <th scope="col">CLASS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>9 ~ 10:30am</td>
+              <td>LANGUAGE ARTS</td>
+            </tr>
+            <tr>
+              <td>10:30 ~ 10:45am</td>
+              <td>BREAK</td>
+            </tr>
+            <tr>
+              <td>10:45 ~ 12:15pm</td>
+              <td>MATH</td>
+            </tr>
+            <tr>
+              <td>12:15 ~ 1pm</td>
+              <td>LUNCH</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">TITLE</h5>
+          <p class="card-text">5th Grade</p>
+          <p class="card-text">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a [routerLink]="['/class', class._id]" id="classButton" class="btn btn-primary">Go to Class</a>
+        </div>
+      </div>
+    </div>
+    <div id="summer" class="col-md-6 col-sm-12">
+      <a data-toggle="collapse" href="#summerSchedule" role="button" aria-expanded="false" aria-controls="summerSchedule">
+        <h3>Show Summer Schedule</h3>
+      </a>
+      <div class="collapse" id="summerSchedule">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">TIME</th>
+              <th scope="col">CLASS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>9 ~ 10:30am</td>
+              <td>LANGUAGE ARTS</td>
+            </tr>
+            <tr>
+              <td>10:30 ~ 10:45am</td>
+              <td>BREAK</td>
+            </tr>
+            <tr>
+              <td>10:45 ~ 12:15pm</td>
+              <td>MATH</td>
+            </tr>
+            <tr>
+              <td>12:15 ~ 1pm</td>
+              <td>LUNCH</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">TITLE</h5>
+          <p class="card-text">5th Grade</p>
+          <p class="card-text">Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a [routerLink]="['/class', class._id]" id="classButton" class="btn btn-primary">Go to Class</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

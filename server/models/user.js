@@ -48,13 +48,25 @@ var AdminSchema = mongoose.Schema({
     password: {type: String, required: true}
 })
 
-var ClassSchema = mongoose.Schema({
+var ElementarySchema = mongoose.Schema({
+    session: {type: String, require: true},
     title: {type: String, required: true},
     grade: {type: String, required: true},
-    capacity: {type: Number, required:true},
-    description: {type: String},
-    applied: [StudentSchema],
-    accepted: [StudentSchema]
+    description: {type: String}
+})
+
+var MiddleSchoolSchema = mongoose.Schema({
+    session: {type: String, require: true},
+    title: {type: String, required: true},
+    grade: {type: String, required: true},
+    description: {type: String}
+})
+
+var HighSchoolSchema = mongoose.Schema({
+    session: {type: String, require: true},
+    title: {type: String, required: true},
+    grade: {type: String, required: true},
+    description: {type: String}
 })
 
 var TuitionSchema = mongoose.Schema({
@@ -92,13 +104,11 @@ var TuitionSchema = mongoose.Schema({
     line30: {type: String}
 })
 
-var PolicySchema = mongoose.Schema({
-    line1: {type: String}
-})
 mongoose.model('User', UserSchema)
 mongoose.model('Student', StudentSchema)
 mongoose.model('Allergy', AllergySchema)
 mongoose.model('Admin', AdminSchema)
-mongoose.model('Class', ClassSchema)
 mongoose.model('Tuition', TuitionSchema)
-mongoose.model('Policy', PolicySchema)
+mongoose.model('Elementary', ElementarySchema)
+mongoose.model('MiddleSchool', MiddleSchoolSchema)
+mongoose.model('HighSchool', HighSchoolSchema)

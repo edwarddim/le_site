@@ -19,12 +19,15 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminPolicyComponent } from './admin-policy/admin-policy.component';
 import { UserAboutusComponent } from './user-aboutus/user-aboutus.component';
 import { UserContactusComponent } from './user-contactus/user-contactus.component';
+import { UserElementaryComponent } from './user-elementary/user-elementary.component';
+import { UserMiddleschoolComponent } from './user-middleschool/user-middleschool.component';
+import { UserHighschoolComponent } from './user-highschool/user-highschool.component';
 
 const routes: Routes = [
   // ROUTES FOR USERS //
   {path: '', component: HomeComponent},
   {path: 'class', component: UserClassComponent},
-  {path: 'class/:id', component: UserShowClassComponent},
+  {path: 'class/example', component: UserShowClassComponent},
   {path: 'registration', component: UserRegisterComponent},
   {path: 'tuition', component: UserTuitionComponent},
   {path: 'schedule', component: UserScheduleComponent},
@@ -33,6 +36,9 @@ const routes: Routes = [
   {path: 'gallery', component: UserGalleryComponent},
   {path: 'aboutus', component: UserAboutusComponent},
   {path: 'contactus', component: UserContactusComponent},
+  {path: 'elementaryclasses', component: UserElementaryComponent},
+  {path: 'middleschoolclasses', component: UserMiddleschoolComponent},
+  {path: 'highschoolclasses', component: UserHighschoolComponent},
   // ROUTES FOR USERS //
 
 

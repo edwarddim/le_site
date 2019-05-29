@@ -4,5 +4,15 @@
     margin-bottom: 10px;
 }
 #cardBody{
-    background-color: #436396;
+    background-color: #bbdafc;
+    border-radius: 0 !important;
+}
+#collapseOne{
+    border-radius: 0 !important;
+}
+#collapseTwo{
+    border-radius: 0 !important;
+}
+#collapseThree{
+    border-radius: 0 !important;
 }

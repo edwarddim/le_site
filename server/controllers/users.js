@@ -2,9 +2,7 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User');
 var Student = mongoose.model('Student')
 var Allergy = mongoose.model('Allergy')
-var Class = mongoose.model('Class')
 var Tuition = mongoose.model('Tuition')
-var Policy = mongoose.model('Policy')
 
 module.exports = {
     checker: function(req, res){

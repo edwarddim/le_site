@@ -28,6 +28,9 @@ import { AdminPolicyComponent } from './admin-policy/admin-policy.component';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { UserAboutusComponent } from './user-aboutus/user-aboutus.component';
 import { UserContactusComponent } from './user-contactus/user-contactus.component';
+import { UserElementaryComponent } from './user-elementary/user-elementary.component';
+import { UserMiddleschoolComponent } from './user-middleschool/user-middleschool.component';
+import { UserHighschoolComponent } from './user-highschool/user-highschool.component';
 
 
 @NgModule({
@@ -51,7 +54,10 @@ import { UserContactusComponent } from './user-contactus/user-contactus.componen
     AdminLoginComponent,
     AdminPolicyComponent,
     UserAboutusComponent,
-    UserContactusComponent
+    UserContactusComponent,
+    UserElementaryComponent,
+    UserMiddleschoolComponent,
+    UserHighschoolComponent
   ],
   imports: [
     BrowserModule,
