@@ -30,14 +30,12 @@ export class UserContactusComponent implements OnInit {
 
   }
   onSubmit(){
-    console.log("Sending EMAIL through SendGrid")
     this.msgError = {
       from: '',
       subject: '',
       text: '',
       name: ''
     }
-    // console.log("msgErr before validation: ", this.msgError)
 
     var validateEmail = new FormControl(this.msg.from, Validators.email)
     var checkEmail = new FormControl(this.msg.from, Validators.required)
@@ -45,11 +43,6 @@ export class UserContactusComponent implements OnInit {
     var validateText = new FormControl(this.msg.text, Validators.required)
     var validateName = new FormControl(this.msg.name, Validators.required)
 
-    console.log("ValidateEmail: ", validateEmail.errors)
-    console.log("CheckEmail: ", checkEmail.errors)
-    console.log("validateSub: ", validateSubject.errors)
-    console.log("ValidateTEXT: ", validateText.errors)
-    console.log("ValidateName: ", validateName.errors)
     
     if(validateEmail.errors != null || checkEmail.errors != null){
       this.msgError.from = 'false';
@@ -63,12 +56,6 @@ export class UserContactusComponent implements OnInit {
     if(validateName.errors != null){
       this.msgError.name = 'false';
     }
-    console.log("msgError after validation: ", this.msgError)
-    
-    // let observ = this._httpService.sendSdgMail(this.msg);
-    // observ.subscribe((data:any)=>{
-    //   console.log("Returned data: ", data);
-    // })
   };
 
 }

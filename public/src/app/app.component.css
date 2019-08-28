@@ -6,9 +6,7 @@
 #link{
     color: white;
     float: right;
-}
-#topjumbo{
-    background-color: rgb(254,191,88)
+    font-size: 1.2rem;
 }
 .btn-primary-outline{
     background-color: transparent;
@@ -16,21 +14,22 @@
 }
 #footer{
     padding: 5px;
-    background-color: #0570C0;
+    background-color: #758df0;
 }
 #footer-text{
     color: white;
     display: inline-block;
 }
 #navbar{
-    background-color: #0570C0;
+    background-color: #758df0;
 }
 #dropdownMenuButton{
     outline-color: #0570C0;
     background-color: #0570C0;
+    font-size: 1.2rem;
 }
 #logo{
-    height: 50px;
+    height: 100px;
 }
 ul{
     list-style-type: none;

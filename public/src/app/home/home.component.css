@@ -3,14 +3,11 @@
     color: white;
     padding-left: 15rem;
 }
-#navbar{
-    background: rgb(73,144,226);
-}
 #link{
     color: white;
 }
 #topjumbo{
-    background-color: rgb(254,191,88);
+    background-color: #FDDA08;
     margin-bottom: 0;
 }
 #readmore{
@@ -19,4 +16,8 @@
 }
 #classCard{
     max-height: 300px;
+}
+#summerBannerCard{
+    margin-top: 20px;
+    height: 200px;
 }
