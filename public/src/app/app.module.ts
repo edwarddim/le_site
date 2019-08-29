@@ -31,6 +31,7 @@ import { UserContactusComponent } from './user-contactus/user-contactus.componen
 import { UserElementaryComponent } from './user-elementary/user-elementary.component';
 import { UserMiddleschoolComponent } from './user-middleschool/user-middleschool.component';
 import { UserHighschoolComponent } from './user-highschool/user-highschool.component';
+import { AdminUnderConstructionComponent } from './admin-under-construction/admin-under-construction.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { UserHighschoolComponent } from './user-highschool/user-highschool.compo
     UserContactusComponent,
     UserElementaryComponent,
     UserMiddleschoolComponent,
-    UserHighschoolComponent
+    UserHighschoolComponent,
+    AdminUnderConstructionComponent
   ],
   imports: [
     BrowserModule,

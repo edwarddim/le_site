@@ -22,10 +22,12 @@ import { UserContactusComponent } from './user-contactus/user-contactus.componen
 import { UserElementaryComponent } from './user-elementary/user-elementary.component';
 import { UserMiddleschoolComponent } from './user-middleschool/user-middleschool.component';
 import { UserHighschoolComponent } from './user-highschool/user-highschool.component';
+import {AdminUnderConstructionComponent} from './admin-under-construction/admin-under-construction.component';
 
 const routes: Routes = [
   // ROUTES FOR USERS //
-  {path: '', component: HomeComponent},
+  // {path: '', component: HomeComponent},
+  {path: '', component: AdminUnderConstructionComponent},
   {path: 'class', component: UserClassComponent},
   {path: 'class/example', component: UserShowClassComponent},
   {path: 'registration', component: UserRegisterComponent},
